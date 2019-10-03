@@ -18,9 +18,20 @@ document.write(typeof jacky + " " + jacky);
 
 
 //question 7
+document.write("<br><br><h3>question7</h3>");
 
 var two = "blinking";
-
 for(var i=0; i<two.length;i++){
   document.write(two[i].replace("b","c") + "<br>");
 }
+
+
+
+//question 8
+document.write("<br><br><h3>question8</h3>");
+
+var nameList = new Array(6);
+nameList = [1, "jecc  ", 2, "janet  ", 3, "joshua"];
+nameList[1] = "jack  ";
+
+document.write(nameList);
