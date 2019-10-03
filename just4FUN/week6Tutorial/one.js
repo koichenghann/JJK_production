@@ -35,3 +35,20 @@ nameList = [1, "jecc  ", 2, "janet  ", 3, "joshua"];
 nameList[1] = "jack  ";
 
 document.write(nameList);
+
+
+
+//question 9
+var jsObj = new Object();
+console.log(typeof jsObj);
+jsObj.id = 13;
+jsObj.name = "jeff";
+jsObj.address = "KL";
+
+for(var x in jsObj)
+  console.log(x);
+
+
+var jsObj2 = {id:12, name:jeff};
+console.log(jsObj2.id);
+console.log(jsObj2.name);
