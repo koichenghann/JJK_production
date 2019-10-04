@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>html CRUD with pure java script</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+
+  <body>
+    <table>
+      <tr>
+        <td>
+          <form class="" action="index.html" method="post" autocomplete="off" onsubmit="event.preventDefault(); onFormSubmit();">
+            <div>
+              <label>Full Name</label>
+              <input type="text" name="fullname" value="" id="fullName">
+            </div>
+            <div>
+              <label>EMP Code</label>
+              <input type="text" name="empCode" value="" id="empCode">
+            </div>
+            <div>
+              <label>Salary</label>
+              <input type="text" name="salary" value="" id="salary">
+            </div>
+            <div>
+              <label>City</label>
+              <input type="text" name="city" value="" id="city">
+            </div>
+            <div class="form-action-button">
+              <input type="submit" name="" value="submit">
+            </div>
+          </form>
+        </td>
+
+
+        <td>
+          <table class="list" id="employeeList">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>EMP Code</th>
+                <th>Salary</th>
+                <th>City</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
