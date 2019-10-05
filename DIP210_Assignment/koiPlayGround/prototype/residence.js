@@ -6,21 +6,38 @@ var dummyResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung
                       {residenceID:"B208", address:"No.911, Jalan Jalan, Kampung madosa, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
                       {residenceID:"MPU4", address:"No.911, Jalan Jalan, Kampung madosa, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
                       {residenceID:"ELM2", address:"No.911, Jalan Jalan, Kampung madosa, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},];
+var disMode;
 
+//incomplete
 function hideCol(){
-  var tableHead = document.getElementById("leftPane")
+  if(disMode == "hidden")
+    disMode = "";
+  else
+    disMode = "hidden";
+
+  document.getElementById("residenceNo_th").setAttribute("class", disMode);
+  //populateTable(dummyResidence);
+}
+
+
+//incomplete
+function deleteRow(row){
+  //var table = document.getElementById("leftPane").getElementsByTagName("tbody")[0].deleteRow[row];
 
 }
 
 
 function populateTable(table){
+  //var table = document.getElementById("leftPane").getElementsByTagName("tbody")[0];
+  //table.innerHTML = "jeff";
+
   for(var i=0; i<table.length; i++){
-    insertTableRow(i, dummyResidence);
+    insertRow(i, dummyResidence);
   }
 }
 
 
-function insertTableRow(item, dataSource){
+function insertRow(item, dataSource){
   var table = document.getElementById("leftPane").getElementsByTagName("tbody")[0];
   var newRow = table.insertRow(table.length);
 
@@ -34,36 +51,19 @@ function insertTableRow(item, dataSource){
                   newRow.setAttribute("onClick", "showForm(this)");
 
 
-  No.innerHTML            = 001
+  No.innerHTML            = item;
   residenceID.innerHTML   = dataSource[item].residenceID;
   address.innerHTML       = dataSource[item].address;
   units.innerHTML         = dataSource[item].units;
   unitSize.innerHTML      = dataSource[item].unitSize;
   monthlyRental.innerHTML = dataSource[item].monthlyRental;
+
+
+  No.setAttribute("class", disMode);
 }
 
 
-function ffinsertNewRecord_for_reference_only(data) {
-    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.fullName;
-    cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.empCode;
-    cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.salary;
-    cell4 = newRow.insertCell(3);
-    cell4.innerHTML = data.city;
-    cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-                       <a onClick="onDelete(this)">Delete</a>`;
-}
-
-
-function showForm(residenceSelection){
-  if (residenceSelection == null){
-
-  }
+function showForm(selectedRow){
   document.getElementById("rightPane").innerHTML = `<form class="" action="index.html" method="post">
                                                       <div class="form-group">
                                                         <label for="residenceID_in">Residence ID</label>
@@ -85,8 +85,7 @@ function showForm(residenceSelection){
                                                         <label for="monthlyRental_in">Monthly Rental</label>
                                                         <input type="text" class="form-control" name="" id="monthlyRental_in" value="" placeholder="Enter Monthly Rental (MYR)">
                                                       </div>
-                                                    </form>
-                                                    <b><p id="selectedUnit"></P></b>
-                                                    `;
-  document.getElementById("selectedUnit").innerHTML = this.units;
+                                                    </form>`;
+
+    document.getElementById("residenceID_in").value = selectedRow.cells[0].innerHTML;
 }
