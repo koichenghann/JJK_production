@@ -3,38 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>template</title>
+
+    <!--Link to css file-->
     <link rel="stylesheet" href="user_homepage.css"/>
+
+    <!--bootstrap front-end design framework-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed" style="background-color:#ffe6d9;">
+      <a class="navbar-brand" href="#"><strong>MHS</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarListInfo">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">APPLICATION STATUS</a>
+            <a class="nav-link" href="#">Setup New Residence</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">ABOUT</a>
+            <a class="nav-link" href="#">View Application</a>
           </li>
+        </ul>
 
-          <!--<li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>-->
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
         </ul>
 
       </div>
+
+
     </nav>
 
     <div>
@@ -43,6 +62,78 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
+
+    <div class="main_content">
+
+    </div>
+
+    <footer>
+      <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <hr class="light">
+          <h5>Directories</h5>
+          <hr class="light">
+          <div class="lead">
+          <a class="footer_link" href="courses.html">Courses</a>
+          <br>
+          <a class="footer_link" href="newsandevents.html">News and Events</a>
+          <br>
+          <a class="footer_link" href="MV.html">Mission and Vision</a>
+          <br>
+          <a class="footer_link" href="chancellery.html">Chancellery</a>
+          <br>
+          <a class="footer_link" href="ContactUs.html">Contact Us</a>
+          </div>
+        </div>
+
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Services</h5>
+        <hr class="light">
+        <div class="lead">
+        <a class="footer_link" href="#">Course Counselling and Admission</a>
+        <br>
+        <a class="footer_link" href="#">Registry</a>
+        <br>
+        <a class="footer_link" href="#">CareerSense</a>
+        <br>
+        <a class="footer_link" href="#">Global Partner Universities</a>
+        <br>
+        <a class="footer_link" href="#">Learning Resource Center</a>
+        <br>
+        <a class="footer_link" href="#">Department of Student Affairs</a>
+        <br>
+        <a class="footer_link" href="#">HELP Corporate Office</a>
+        <br>
+        <a class="footer_link" href="#">Student Placement Center</a>
+        <br>
+        <a class="footer_link" href="#">International Student Department</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Campuses</h5>
+        <hr class="light">
+        <div class="lead">
+        <a class="footer_link" href="subang2.html">HELP Subang 2</a>
+        <br>
+        <a class="footer_link" href="damansara.html">HELP University</a>
+        <br>
+        <a class="footer_link" href="#">HELP Academy</a>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; MHS - MicroHousing System 2019</h5>
+      </div>
+
+    </div>
+    </div>
+    </footer>
+
 
   </body>
 </html>
