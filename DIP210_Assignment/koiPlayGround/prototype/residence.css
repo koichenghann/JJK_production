@@ -1,16 +1,14 @@
 .resNav{
-  height: 5vh;
-  background-color: black;
+  height: 0;
+  background-color: white;
 }
 
 .resForm{
   height: 95vh;
   background-color: gray;
-  padding: 2vh;
 }
 
 .resTable{
   height: 95vh;
   background-color: white;
-  padding: 2vh;
 }
