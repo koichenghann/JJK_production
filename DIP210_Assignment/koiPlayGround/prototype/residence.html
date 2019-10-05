@@ -61,7 +61,7 @@
         <div class="row resMain">
 
           <div class="col-lg-8 resLeftPane p-3">
-            <table class="table table-bordered table-dark table-hover" id="leftPane">
+            <table class="table table-bordered table-dark table-hover" id="residenceTable">
               <thead>
                 <tr>
                   <th id="residenceNo_th">No.</th>
@@ -75,8 +75,15 @@
               <tbody></tbody>
             </table>
             <div class="optionList">
-              <button onclick="hideCol(1);" class="btn btn-warning" type="button" name="button">toggle No visibility</button>
+              <button onclick="clearTable('residenceTable');" class="btn btn-danger" type="button" name="button">clearTable</button>
               <button onclick="showForm();" class="btn btn-info" type="button" name="button">New</button>
+
+              <br>
+              clear table button are meant for testing js function only, will not include on the product
+              <br>
+              add to table and array will be done tommorow
+              <br>
+              once all the data manipulation machanism are done, i can focus on graphic design
             </div>
           </div>
 
