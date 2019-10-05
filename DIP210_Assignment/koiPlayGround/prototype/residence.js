@@ -20,11 +20,6 @@ function populateTable(table){
 }
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 629fd3d3deb321c1c321473585933c82023db692
 function insertTableRow(item, dataSource){
   var table = document.getElementById("leftPane").getElementsByTagName("tbody")[0];
   var newRow = table.insertRow(table.length);
@@ -48,7 +43,6 @@ function insertTableRow(item, dataSource){
 }
 
 
-<<<<<<< HEAD
 function ffinsertNewRecord_for_reference_only(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
@@ -63,36 +57,6 @@ function ffinsertNewRecord_for_reference_only(data) {
     cell4 = newRow.insertCell(4);
     cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
                        <a onClick="onDelete(this)">Delete</a>`;
-=======
-function showForm(selectedRow){
-
-  document.getElementById("rightPane").innerHTML = `<form class="" action="index.html" method="post">
-                                                      <div class="form-group">
-                                                        <label for="residenceID_in">Residence ID</label>
-                                                        <input type="text" class="form-control" name="" id="residenceID_in" value="" placeholder="Enter Residence ID">
-                                                      </div>
-                                                      <div class="form-group">
-                                                        <label for="address_in">Address</label>
-                                                        <input type="text" class="form-control" name="" id="address_in" value="" placeholder="Enter Address">
-                                                      </div>
-                                                      <div class="form-group">
-                                                        <label for="units_in">Units</label>
-                                                        <input type="text" class="form-control" name="" id="units" value="" placeholder="Enter Units">
-                                                      </div>
-                                                      <div class="form-group">
-                                                        <label for="unitSize_in">Unit Size</label>
-                                                        <input type="text" class="form-control" name="" id="unitSize_in" value="" placeholder="Enter Unit Size  (square feet)">
-                                                      </div>
-                                                      <div class="form-group">
-                                                        <label for="monthlyRental_in">Monthly Rental</label>
-                                                        <input type="text" class="form-control" name="" id="monthlyRental_in" value="" placeholder="Enter Monthly Rental (MYR)">
-                                                      </div>
-                                                    </form>
-                                                    <b><p id="selectedUnit"></P></b>
-                                                    `;
-
-
->>>>>>> 629fd3d3deb321c1c321473585933c82023db692
 }
 
 
