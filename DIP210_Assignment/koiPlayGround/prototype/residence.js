@@ -7,12 +7,19 @@ var dummyResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung
                       {residenceID:"MPU4", address:"No.911, Jalan Jalan, Kampung madosa, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
                       {residenceID:"ELM2", address:"No.911, Jalan Jalan, Kampung madosa, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},];
 
+function hideCol(){
+  var tableHead = document.getElementById("leftPane")
+
+}
+
 
 function populateTable(table){
   for(var i=0; i<table.length; i++){
     insertTableRow(i, dummyResidence);
   }
 }
+
+
 
 
 function insertTableRow(item, dataSource){
@@ -38,27 +45,8 @@ function insertTableRow(item, dataSource){
 }
 
 
-function ffinsertNewRecord_for_reference_only(data) {
-    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.fullName;
-    cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.empCode;
-    cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.salary;
-    cell4 = newRow.insertCell(3);
-    cell4.innerHTML = data.city;
-    cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-                       <a onClick="onDelete(this)">Delete</a>`;
-}
+function showForm(selectedRow){
 
-
-function showForm(residenceSelection){
-  if (residenceSelection == null){
-
-  }
   document.getElementById("rightPane").innerHTML = `<form class="" action="index.html" method="post">
                                                       <div class="form-group">
                                                         <label for="residenceID_in">Residence ID</label>
@@ -83,5 +71,6 @@ function showForm(residenceSelection){
                                                     </form>
                                                     <b><p id="selectedUnit"></P></b>
                                                     `;
-  document.getElementById("selectedUnit").innerHTML = this.units;
+
+
 }
