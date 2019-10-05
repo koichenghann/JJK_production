@@ -12,3 +12,7 @@
   height: 95vh;
   background-color: white;
 }
+
+.optionList{
+  text-align: right;
+}
