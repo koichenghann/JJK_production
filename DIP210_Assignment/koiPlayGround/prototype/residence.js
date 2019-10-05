@@ -74,7 +74,7 @@ function deleteRow(table, row){
 function showForm(selectedRow){
    //element.setAttribute('style', element.getAttribute('style')+'; color: red');
 
-  document.getElementById("rightPane").innerHTML = `<form class="" action="index.html" method="post">
+  document.getElementById("rightPane").innerHTML = `<form class="pt-3 pr-3" action="index.html" method="post">
                                                       <div class="form-group">
                                                         <label for="residenceID_in">Residence ID</label>
                                                         <input type="text" class="form-control" name="" id="residenceID_in" value="" placeholder="Enter Residence ID">
@@ -124,6 +124,14 @@ function showForm(selectedRow){
       units             .setAttribute("readonly", null);
       unitSize          .setAttribute("readonly", null);
       monthlyRental     .setAttribute("readonly", null);
+
+      //residenceID       .setAttribute("class", "form-control-plaintext");
+      //address           .setAttribute("class", "form-control-plaintext");
+      //units             .setAttribute("class", "form-control-plaintext");
+      //unitSize          .setAttribute("class", "form-control-plaintext");
+      //monthlyRental     .setAttribute("class", "form-control-plaintext");
     }
+
+
 
 }
