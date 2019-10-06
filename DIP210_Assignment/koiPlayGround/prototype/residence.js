@@ -6,7 +6,10 @@ var dummyResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung
                       {residenceID:"B208", address:"No.001, Jalan left_, Kampung mamoru, 45774 poko", units:781, unitSize:8888, monthlyRental: 37347},
                       {residenceID:"MPU4", address:"No.003, Jalan right, Kampung kansai, 23423 piko", units:087, unitSize:6666, monthlyRental: 28884},
                       {residenceID:"ELM2", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", units:418, unitSize:1088, monthlyRental: 23574},];
+
+
 var disMode;
+var jeff = "notJeff";
 
 //incomplete
 function hideCol(){
@@ -37,18 +40,23 @@ function clearTable(table){
 }
 
  //nonGeneric for residence table only
-function insertRow(dataSource, item){
+function insertRow(dataSource, item, position){
+
   var table = document.getElementById("residenceTable").getElementsByTagName("tbody")[0];
-  var newRow = table.insertRow(table.length);
+  var selectedRow;
 
+  if(position == undefined)
+    selectedRow = table.insertRow(table.length);
+  else
+    selectedRow = position;
 
-  No            = newRow.insertCell(0);
-  residenceID   = newRow.insertCell(1);
-  address       = newRow.insertCell(2);
-  unitSize      = newRow.insertCell(3);
-  monthlyRental = newRow.insertCell(4);
-  units         = newRow.insertCell(5);
-                  newRow.setAttribute("onClick", "showForm(this)");
+  No                      = selectedRow.insertCell(0);
+  residenceID             = selectedRow.insertCell(1);
+  address                 = selectedRow.insertCell(2);
+  unitSize                = selectedRow.insertCell(3);
+  monthlyRental           = selectedRow.insertCell(4);
+  units                   = selectedRow.insertCell(5);
+                            selectedRow.setAttribute("onClick", "showForm(this)");
 
 
   No.innerHTML            = item;
@@ -73,8 +81,9 @@ function deleteRow(table, row){
 //but inteligent
 function showForm(selectedRow){
    //element.setAttribute('style', element.getAttribute('style')+'; color: red');
+   var testResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000}];
 
-  document.getElementById("rightPane").innerHTML = `<form class="pt-3 pr-3" action="index.html" method="post">
+   document.getElementById("rightPane").innerHTML = `<form class="pt-3 pr-3" action="index.html" method="post">
                                                       <div class="form-group">
                                                         <label for="residenceID_in">Residence ID</label>
                                                         <input type="text" class="form-control" name="" id="residenceID_in" value="" placeholder="Enter Residence ID">
@@ -95,43 +104,56 @@ function showForm(selectedRow){
                                                         <label for="monthlyRental_in">Monthly Rental</label>
                                                         <input type="text" class="form-control" name="" id="monthlyRental_in" value="" placeholder="Enter Monthly Rental (MYR)">
                                                       </div>
+                                                      <div id="formOptionList">
+                                                      </div>
                                                     </form>`;
 
 
 
+    var residenceID       = document.getElementById("residenceID_in");
+    var address           = document.getElementById("address_in");
+    var units             = document.getElementById("units_in");
+    var unitSize          = document.getElementById("unitSize_in");
+    var monthlyRental     = document.getElementById("monthlyRental_in");
 
+    var formData       = [{residenceID:residenceID.value, address:address.value, units:units.value, unitSize:unitSize.value, monthlyRental:monthlyRental.value}];
 
-    //document.getElementById("residenceID_in").value = selectedRow.cells[0].innerHTML;
-    var rowNo = selectedRow.cells[0].innerHTML;
-    var tempElement = document.getElementById("rightPane").getElementsByTagName("form")[0].getElementsByTagName("input")[2];
-
-
-    var residenceID     = document.getElementById("residenceID_in");
-    var address         = document.getElementById("address_in");
-    var units           = document.getElementById("units_in");
-    var unitSize        = document.getElementById("unitSize_in");
-    var monthlyRental   = document.getElementById("monthlyRental_in");
-
-    residenceID.value   = selectedRow.cells[1].innerHTML;
-    address.value       = selectedRow.cells[2].innerHTML;
-    units.value         = selectedRow.cells[3].innerHTML;
-    unitSize.value      = selectedRow.cells[4].innerHTML;
-    monthlyRental.value = selectedRow.cells[5].innerHTML;
-
-    if(selectedRow != null){
-      residenceID       .setAttribute("readonly", null);
-      address           .setAttribute("readonly", null);
-      units             .setAttribute("readonly", null);
-      unitSize          .setAttribute("readonly", null);
-      monthlyRental     .setAttribute("readonly", null);
-
-      //residenceID       .setAttribute("class", "form-control-plaintext");
-      //address           .setAttribute("class", "form-control-plaintext");
-      //units             .setAttribute("class", "form-control-plaintext");
-      //unitSize          .setAttribute("class", "form-control-plaintext");
-      //monthlyRental     .setAttribute("class", "form-control-plaintext");
+    if(selectedRow == undefined){
+      jeff = "jeffrey";
+      document.getElementById("formOptionList").innerHTML = ` <button onclick="testJeff(jeff);"class="btn btn-success" type="button" name="button">Add Residence</button>
+                                                              <button onclick="" class="btn" type="button" name="button">Cancel</button>`;
     }
+    else{
+      var rowNo           = selectedRow.cells[0].innerHTML;
+
+      residenceID.value   = selectedRow.cells[1].innerHTML;
+      address.value       = selectedRow.cells[2].innerHTML;
+      units.value         = selectedRow.cells[3].innerHTML;
+      unitSize.value      = selectedRow.cells[4].innerHTML;
+      monthlyRental.value = selectedRow.cells[5].innerHTML;
+
+      residenceID         .setAttribute("readonly", null);
+      address             .setAttribute("readonly", null);
+      units               .setAttribute("readonly", null);
+      unitSize            .setAttribute("readonly", null);
+      monthlyRental       .setAttribute("readonly", null);
+
+      //residenceID         .setAttribute("class", "form-control-plaintext");
+      //address             .setAttribute("class", "form-control-plaintext");
+      //units               .setAttribute("class", "form-control-plaintext");
+      //unitSize            .setAttribute("class", "form-control-plaintext");
+      //monthlyRental       .setAttribute("class", "form-control-plaintext");
 
 
+
+    }
+}
+
+
+function testJeff(formData){
+  document.getElementById("formOptionList").innerHTML = formData;
+}
+
+function resetForm(){
 
 }
