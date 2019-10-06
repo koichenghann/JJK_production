@@ -10,8 +10,18 @@ var dummyResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung
 
 var disMode;
 var jeff = "notJeff";
+var formData = new Array;
+var formElement = new Array;
+var genNo = 0;
+//var rowNo;
 
-//incomplete
+var residenceID       = document.getElementById("residenceID_in");
+var address           = document.getElementById("address_in");
+var units             = document.getElementById("units_in");
+var unitSize          = document.getElementById("unitSize_in");
+var monthlyRental     = document.getElementById("monthlyRental_in");
+
+//incomplete useless
 function hideCol(){
   if(disMode == "hidden")
     disMode = "";
@@ -26,6 +36,7 @@ function hideCol(){
 
 //generic
 function populateTable(dataSource){
+  genNo = 0;
   for(var i=0; i<dataSource.length; i++){
     insertRow(dataSource, i);
   }
@@ -34,21 +45,17 @@ function populateTable(dataSource){
 //generic
 function clearTable(table){
   var rowCount = document.getElementById(table).getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
-  for(var i=rowCount-1; i=>0; i--){
+  for(var i=rowCount-1; i>=0; i--){
     deleteRow(table, i);
   }
 }
 
  //nonGeneric for residence table only
 function insertRow(dataSource, item, position){
-
   var table = document.getElementById("residenceTable").getElementsByTagName("tbody")[0];
   var selectedRow;
 
-  if(position == undefined)
-    selectedRow = table.insertRow(table.length);
-  else
-    selectedRow = position;
+  selectedRow = table.insertRow(table.length);
 
   No                      = selectedRow.insertCell(0);
   residenceID             = selectedRow.insertCell(1);
@@ -59,7 +66,7 @@ function insertRow(dataSource, item, position){
                             selectedRow.setAttribute("onClick", "showForm(this)");
 
 
-  No.innerHTML            = item;
+  No.innerHTML            = genNo; genNo++;
   residenceID.innerHTML   = dataSource[item].residenceID;
   address.innerHTML       = dataSource[item].address;
   units.innerHTML         = dataSource[item].units;
@@ -81,7 +88,7 @@ function deleteRow(table, row){
 //but inteligent
 function showForm(selectedRow){
    //element.setAttribute('style', element.getAttribute('style')+'; color: red');
-   var testResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000}];
+   //var testResidence = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000}];
 
    document.getElementById("rightPane").innerHTML = `<form class="pt-3 pr-3" action="index.html" method="post">
                                                       <div class="form-group">
@@ -116,21 +123,22 @@ function showForm(selectedRow){
     var unitSize          = document.getElementById("unitSize_in");
     var monthlyRental     = document.getElementById("monthlyRental_in");
 
-    var formData       = [{residenceID:residenceID.value, address:address.value, units:units.value, unitSize:unitSize.value, monthlyRental:monthlyRental.value}];
+    formElement       = {residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental};
+    //formData       = [{residenceID:residenceID.value, address:address.value, units:units.value, unitSize:unitSize.value, monthlyRental:monthlyRental.value}];
 
     if(selectedRow == undefined){
-      jeff = "jeffrey";
-      document.getElementById("formOptionList").innerHTML = ` <button onclick="testJeff(jeff);"class="btn btn-success" type="button" name="button">Add Residence</button>
-                                                              <button onclick="" class="btn" type="button" name="button">Cancel</button>`;
+      //jeff = "jeffrey";
+      document.getElementById("formOptionList").innerHTML = ` <button onclick="addFormDataToArray();" class="btn btn-success" type="button" name="button">Add Residence</button>
+                                                              <button onclick="resetForm();" class="btn" type="button" name="button">Cancel</button>`;
     }
     else{
-      var rowNo           = selectedRow.cells[0].innerHTML;
+      rowNo               = selectedRow.cells[0].innerHTML;
 
       residenceID.value   = selectedRow.cells[1].innerHTML;
       address.value       = selectedRow.cells[2].innerHTML;
-      units.value         = selectedRow.cells[3].innerHTML;
-      unitSize.value      = selectedRow.cells[4].innerHTML;
-      monthlyRental.value = selectedRow.cells[5].innerHTML;
+      unitSize.value      = selectedRow.cells[3].innerHTML;
+      monthlyRental.value = selectedRow.cells[4].innerHTML;
+      units.value         = selectedRow.cells[5].innerHTML;
 
       residenceID         .setAttribute("readonly", null);
       address             .setAttribute("readonly", null);
@@ -144,16 +152,85 @@ function showForm(selectedRow){
       //unitSize            .setAttribute("class", "form-control-plaintext");
       //monthlyRental       .setAttribute("class", "form-control-plaintext");
 
-
+      document.getElementById("formOptionList").innerHTML = ` <button onclick="modifyArray(rowNo);"class="btn btn-success" type="button" name="button">Edit</button>
+                                                              `;
 
     }
 }
 
 
-function testJeff(formData){
-  document.getElementById("formOptionList").innerHTML = formData;
+function modifyArray(rowNo){
+  if(confirm("Making changes to the table will affect all existing data related to Residence, Proceed?")){
+
+
+    //rowNo = inRowNo;
+    //selectedRow = inSelectedRow;
+
+    var residenceID       = document.getElementById("residenceID_in");
+    var address           = document.getElementById("address_in");
+    var units             = document.getElementById("units_in");
+    var unitSize          = document.getElementById("unitSize_in");
+    var monthlyRental     = document.getElementById("monthlyRental_in");
+
+    residenceID           .removeAttribute("readonly");
+    address               .removeAttribute("readonly");
+    units                 .removeAttribute("readonly");
+    unitSize              .removeAttribute("readonly");
+    monthlyRental         .removeAttribute("readonly");
+
+    document.getElementById("formOptionList").innerHTML = ` <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo])"class="btn btn-success" type="button" name="button">Save Changes</button>
+                                                            <button onclick="showForm(theRow);"class="btn" type="button" name="button">Cancel</button>`;
+  }
+}
+
+
+function addFormDataToArray(position){
+  var residenceID       = document.getElementById("residenceID_in").value;
+  var address           = document.getElementById("address_in").value;
+  var units             = document.getElementById("units_in").value;
+  var unitSize          = document.getElementById("unitSize_in").value;
+  var monthlyRental     = document.getElementById("monthlyRental_in").value;
+
+  formData = {residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental};
+
+  if(position == undefined){
+    dummyResidence.push(formData);
+  }
+  else{
+    dummyResidence[position] = formData;
+  }
+
+   resetForm();
+   clearTable('residenceTable');
+   populateTable(dummyResidence);
+
+}
+
+//currently unused
+function addFormDataToTable(){
+  var residenceID       = document.getElementById("residenceID_in").value;
+  var address           = document.getElementById("address_in").value;
+  var units             = document.getElementById("units_in").value;
+  var unitSize          = document.getElementById("unitSize_in").value;
+  var monthlyRental     = document.getElementById("monthlyRental_in").value;
+
+  formData = [{residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental}];
+  insertRow(formData, 0);
+  resetForm(formElement);
 }
 
 function resetForm(){
+  var residenceID       = document.getElementById("residenceID_in");
+  var address           = document.getElementById("address_in");
+  var units             = document.getElementById("units_in");
+  var unitSize          = document.getElementById("unitSize_in");
+  var monthlyRental     = document.getElementById("monthlyRental_in");
 
+  //var formElement       = {residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental};
+
+  residenceID.value     = null;
+  address.value         = null;
+  units.value           = null;
+  unitSize.value        = null;
+  monthlyRental.value   = null;
 }
