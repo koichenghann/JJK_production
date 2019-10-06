@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>template</title>
+    <title>MicroHousing - Home (Guest)</title>
 
     <!--Link to css file-->
-    <link rel="stylesheet" href="user_homepage.css"/>
+    <link rel="stylesheet" href="guest_Template.css"/>
 
     <!--bootstrap front-end design framework-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -32,38 +32,80 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Setup New Residence</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">View Application</a>
+            <a class="nav-link" href="#">About Us</a>
           </li>
         </ul>
 
         <ul class="navbar-nav navbar-right">
           <li class="nav-item">
             <a href="#" class="nav-link font-weight-bold">
-            <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+            <i class="fas fa-address-card"></i></i></i></i> Register </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link font-weight-bold">
-            <i class="fas fa-sign-out-alt"></i> Logout </a>
+            <i class="fas fa-sign-in-alt"></i> Login </a>
           </li>
         </ul>
 
       </div>
-
-
     </nav>
 
-    <main>
-      <div class="mainContent container-fluid padding">
+    <div class="spaceBetweenNavAndMain"></div>
 
+    <main>
+      <div class="viewResidTitle text-center">
+        <h3>List of Residences</h3>
+      </div>
+      <div class="mainContent container-fluid padding">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div class="card" style="width: 18rem;">
+              <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+              <div class="card-body">
+                <h5 class="card-title">Name of Residence</h5>
+                <p class="card-text">ResidenceID:</p>
+                <p class="card-text">Location:</p>
+                <p class="card-text">Amenities:</p>
+                <p class="card-text">Monthly Rental:</p>
+                <p class="card-text">Unit Size:</p>
+                <p class="card-text">Available Units:</p>
+                <a href="#" class="btn btn-danger">View</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <!--Two Column Section-->
+            <div class="container-fluid padding">
+              <div class="row padding">
+                <div class="col-lg-3">
+                  <img src="pic/sample_housing.jpg" alt="sample_housing"
+                  class="img-fluid" height="360" width="480">
+                </div>
+
+                <div class="col-lg-9">
+                  <h4>Tolong Jaya Condominium</h4>
+                  <p>Residence ID: AKLD0027</p>
+                  <p>Location: Damansara Height</p>
+                  <p>Amenities: Walking distance to MRT</p>
+                  <p>Monthly Rental: RM850</p>
+                  <p>Unit Size: 735 Sqft</p>
+                  <p>Available Units: 99</p>
+                </div>
+
+
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h3>Item 3</h3>
+          </li>
+        </ul>
       </div>
     </main>
 
     <footer>
-      <div class="container col-12 bg-dark fixed-bottom shadow p-3 mt-5">
+      <div class="container col-12 bg-dark shadow p-3 mt-5">
           <h5 class="text-center text-light" >&copy; MHS - MicroHousing System 2019</h5>
       </div>
     </footer>
