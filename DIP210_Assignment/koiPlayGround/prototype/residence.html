@@ -19,7 +19,7 @@
   </head>
 
 
-  <body id="bd1" onload="populateTable(residenceList)">
+  <body id="bd1" onload="populateTable()">
     <!--navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed" style="background-color:#ffe6d9;">
       <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
@@ -73,7 +73,7 @@
               <tbody></tbody>
             </table>
             <div class="optionList">
-              <button onclick="clearTable('residenceTable');" class="btn btn-danger" type="button" name="button">clearTable</button>
+              <button onclick="clearLocalStorage();" class="btn btn-danger" type="button" name="button">clearTable</button>
               <button onclick="showForm();" class="btn btn-info" type="button" name="button">New</button>
 
               <br>

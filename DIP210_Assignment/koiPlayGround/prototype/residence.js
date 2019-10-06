@@ -1,4 +1,5 @@
-var residenceList = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
+
+var dummyList = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
                       {residenceID:"A002", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", units:320, unitSize:2400, monthlyRental: 14214},
                       {residenceID:"A003", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", units:761, unitSize:1500, monthlyRental: 23525},
                       {residenceID:"B210", address:"No.889, Jalan kiri_, Kampung gotaas, 23523 mama", units:561, unitSize:1111, monthlyRental: 34634},
@@ -6,23 +7,27 @@ var residenceList = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung 
                       {residenceID:"B208", address:"No.001, Jalan left_, Kampung mamoru, 45774 poko", units:781, unitSize:8888, monthlyRental: 37347},
                       {residenceID:"MPU4", address:"No.003, Jalan right, Kampung kansai, 23423 piko", units:087, unitSize:6666, monthlyRental: 28884},
                       {residenceID:"ELM2", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", units:418, unitSize:1088, monthlyRental: 23574},];
+var residenceList = [];
 
-
-if(localStorage.residence == null){
+readFromLocalStorage();
+if(residenceList==null){
   alert("localStorage is empty, populated with dummy data");
-  localStorage.residence = residenceList;
+  localStorage.residence = JSON.stringify(dummyList);
+  readFromLocalStorage();
 }
 
 //readFromLocalStorage();
 
 
 function writeToLocalStorage(){
-  localStorage.residence = residenceList;
+  localStorage.residence = JSON.stringify(residenceList);
 }
 function readFromLocalStorage(){
-  residenceList = localStorage.residence;
+  residenceList = JSON.parse(localStorage.residence);
 }
-
+function clearLocalStorage(){
+  localStorage.residence = "";
+}
 
 
 var disMode;
@@ -52,12 +57,13 @@ function hideCol(){
 
 
 //generic
-function populateTable(dataSource){
+function populateTable(){
   readFromLocalStorage();
+  //writeToLocalStorage();
   genNo = 0;
-  if(dataSource != null){
-    for(var i=0; i<dataSource.length; i++){
-      insertRow(dataSource, i);
+  if(residenceList!= null){
+    for(var i=0; i<residenceList.length; i++){
+      insertRow(residenceList, i);
     }
   }
 }
@@ -224,7 +230,7 @@ function addFormDataToArray(position){
 
    resetForm();
    clearTable('residenceTable');
-   populateTable(residenceList);
+   populateTable();
 
 }
 

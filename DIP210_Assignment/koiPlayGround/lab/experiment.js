@@ -33,4 +33,4 @@ localStorage.typeRanger = JSON.stringify(residenceList);
 //for(var i=0; i<residenceList.length; i++){
 
 //}
-result.innerHTML = JSON.parse(localStorage.typeRanger)[0].residenceID;
+result.innerHTML = JSON.parse(localStorage.residence).length;
