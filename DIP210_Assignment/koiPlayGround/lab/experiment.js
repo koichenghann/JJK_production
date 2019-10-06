@@ -1,5 +1,7 @@
-var list = [1, 2, 3, 4];
-
-list.splice(2,1);
-
-console.log(list);
+var emptylist = [];
+if(emptylist == null){
+  console.log("it's empty");
+}
+else{
+  console.log("hei");
+}
