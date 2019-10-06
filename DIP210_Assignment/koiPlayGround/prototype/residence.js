@@ -7,13 +7,22 @@ var dummyList = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gant
                       {residenceID:"B208", address:"No.001, Jalan left_, Kampung mamoru, 45774 poko", units:781, unitSize:8888, monthlyRental: 37347},
                       {residenceID:"MPU4", address:"No.003, Jalan right, Kampung kansai, 23423 piko", units:087, unitSize:6666, monthlyRental: 28884},
                       {residenceID:"ELM2", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", units:418, unitSize:1088, monthlyRental: 23574},];
-var residenceList = [];
+var residenceList = new Array;
 
-readFromLocalStorage();
-if(residenceList==null){
-  alert("localStorage is empty, populated with dummy data");
-  localStorage.residence = JSON.stringify(dummyList);
-  readFromLocalStorage();
+
+function loadDummyData(){
+  //readFromLocalStorage();
+  //alert(typeof residenceList);
+  //alert(localStorage.residence=="");
+  //residenceList = JSON.parse(localStorage.residence);
+  //alert("didnt run");
+  if(localStorage.residence==""){
+    alert("localStorage is empty, populated with dummy data");
+    console.log("its empty");
+    localStorage.residence = JSON.stringify(dummyList);
+    readFromLocalStorage();
+  }
+
 }
 
 //readFromLocalStorage();
@@ -26,7 +35,9 @@ function readFromLocalStorage(){
   residenceList = JSON.parse(localStorage.residence);
 }
 function clearLocalStorage(){
+  document.getElementById("rightPane").innerHTML = (residenceList == "");
   localStorage.residence = "";
+
 }
 
 
