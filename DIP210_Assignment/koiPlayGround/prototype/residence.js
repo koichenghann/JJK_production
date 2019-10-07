@@ -158,6 +158,12 @@ function showForm(selectedRow){
                                                       </div>
                                                       <div id="formOptionList">
                                                       </div>
+                                                      <div>
+                                                        <input type="hidden" id="amenities" value=""></input>
+                                                        <input type="hidden" id="items" value=""></input>
+                                                        <input type="hidden" id="officerID" value=""></input>
+                                                      </div>
+
                                                     </form>`;
 
 
@@ -237,10 +243,15 @@ function addFormDataToArray(position){
   var unitSize          = document.getElementById("unitSize_in").value;
   var monthlyRental     = document.getElementById("monthlyRental_in").value;
 
-  formData = {residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental};
+  //var amenities
+  //var unit = generateUnit(residenceList[position])
+  //var officerID         = //add from the localstorage staffID;
+
+  formData = {residenceID:residenceID, address:address, units:units, unitSize:unitSize, monthlyRental:monthlyRental, amenities:new Array, unit:new Array, officerID:null};
 
   if(position == undefined){
     residenceList.push(formData);
+
   }
   else{
     residenceList[position] = formData;
@@ -297,5 +308,7 @@ function resetForm(){
 
 //document.getElementById("bd1").addEventListerner("load", populateTable(residenceList));
 function generateUnit(item){
-  //residenceList[item].
+  //consider item to be reference to array item
+
+
 }
