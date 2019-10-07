@@ -19,12 +19,62 @@
   </head>
 
 
-  <body>
+  <body id="bd1" onload="loadDummyData(); populateTable()">
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed" style="background-color:#ffe6d9;">
+      <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Setup New Residence</a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="#">View Application</a>
+          </li>
+        </ul>
 
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-
+    <div class="container">
+      <h2>My Applications</h2>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Application Date</th>
+            <th>Status</th>
+            <th>Delete Application</th>
+            <th>Application Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6/10/2019</td>
+            <td>pending</td>
+            <td><a href="#">delete</a></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Optional JavaScript -->
     <script src="residence.js"></script>
