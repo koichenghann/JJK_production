@@ -298,6 +298,6 @@ function resetForm(){
 }
 
 //document.getElementById("bd1").addEventListerner("load", populateTable(residenceList));
-function generateUnit(){
-  
+function generateUnit(item){
+  residenceList[item].
 }
