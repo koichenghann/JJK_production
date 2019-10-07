@@ -262,8 +262,6 @@ function deleteRowFromArray(position){
   resetForm();
   clearTable("residenceTable");
   populateTable();
-
-
   alert("deleted");
 }
 
@@ -299,5 +297,5 @@ function resetForm(){
 
 //document.getElementById("bd1").addEventListerner("load", populateTable(residenceList));
 function generateUnit(item){
-  residenceList[item].
+  //residenceList[item].
 }
