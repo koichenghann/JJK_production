@@ -1,0 +1,22 @@
+.nav-item{
+  border-bottom: 1.5px solid #ffffff;
+}
+
+.nav-item:hover{
+  border-bottom: 1.5px solid #7200ff;
+}
+
+nav{
+  height: 8vh;
+}
+
+.carousel{
+  margin-top: 8vh;
+}
+.spaceBetweenNavAndMain{
+  height:6vh;
+}
+
+.title_main{
+  height:120vh;
+}

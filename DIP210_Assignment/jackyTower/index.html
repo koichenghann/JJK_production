@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MicroHousing - Home</title>
+
+    <!--Link to css file-->
+    <link rel="stylesheet" href="home.css"/>
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top bg-light">
+      <a class="navbar-brand" href="#"><strong>MHS</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">About Us</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="register.html " class="nav-link font-weight-bold">
+            <i class="fas fa-address-card"></i> Register </a>
+          </li>
+          <li class="nav-item">
+            <a href="login.html" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-in-alt"></i> Login </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!--
+    <div class="spaceBetweenNavAndMain"></div>
+    -->
+
+    <main>
+    <!--Carousel Slider-->
+    <div class="carousel slide" id="imgSlides" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#imgSlides" data-slide-to="0" class="active"></li>
+        <li data-target="#imgSlides" data-slide-to="1"></li>
+        <li data-target="#imgSlides" data-slide-to="2"></li>
+      </ul>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="pic/KLCC.jpg" alt="titlePic1" class="img-fluid">
+          <div class="carousel-caption">
+            <h1 class="display-2"> MicroHousing </h1>
+            <h4> To Live like No One Else </h4>
+            <!--
+            <button type="button" name="button" class="btn btn-primary btn-lg">
+              Get Started
+            </button>
+            -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img class="img-fluid" src="pic/KLCC.jpg" alt="titlePic2">
+        </div>
+
+        <div class="carousel-item">
+          <img class="img-fluid" src="pic/KLCC.jpg" alt="titlePic3">
+        </div>
+      </div>
+    </div>
+
+    <!--Description with Jumbotron-->
+    <div class="container-fluid">
+      <div class="row jumbotron">
+        <div class="col-12">
+          <h4>Why MHS?</h4>
+          <p class="lead text-justify">Big cities are always expensive to live in, but even more so for young people who have to live independently, whether they are college students, fresh graduates or job seekers.</p>
+          <p class="lead text-justify">Youths in Kuala Lumpur also face similar problems. Therefore, the Kuala Lumpur City Hall (DBKL) has proposed a scheme to help youths to rent accommodation at affordable prices</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Search-->
+    <div class="container-fluid bg-dark p-4">
+      <div class="container m-2">
+        <h4 class="text-light">Search your ideal housing here:</h4>
+      </div>
+
+      <form class="" action="index.html" method="post">
+      <div class="container-fluid m-2">
+      <div class="input-group md-form form-sm form-2 pl-0">
+
+          <input class="form-control my-0 py-1 red-border" type="text" placeholder="Example: Taman Tolong" aria-label="Search">
+          <div class="input-group-append">
+            <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                aria-hidden="true"></i></span>
+          </div>
+
+      </div>
+      </div>
+      </form>
+
+      <!--
+      <form class="" action="index.html" method="post">
+        <div class="row">
+          <div class="container-fluid">
+            <label for="inputArea"></label>
+
+
+            <table class="searchBox table-responsive">
+              <tr>
+              <td>
+              <select class="form-control" id="inputArea">
+                <option>Damansara</option>
+                <option>Seputeh</option>
+                <option>Segambut</option>
+                <option>Kepong</option>
+                <option>KL City Centre</option>
+                <option>Setiawangsa</option>
+                <option>Bandar Tun Razak</option>
+                <option>Sungai Besi</option>
+              </select>
+              </td>
+              <td>
+              <button type="submit" class="btn btn-primary" id="inputArea">Search</button>
+            </td>
+            </tr>
+            </table>
+          </div>
+        </div>
+      </form>
+    -->
+    </div>
+
+
+    <!--View Result in a list of residences-->
+    <div class="container-fluid">
+      <div class="viewResidTitle text-center">
+        <h3>List of Residences</h3>
+      </div>
+
+      <div class="row padding">
+
+      <div class="col-lg-3 container-fluid">
+      <div class="card" style="width: 18rem;">
+        <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+        <div class="card-body">
+          <h5 class="card-title">Name of Residence</h5>
+          <p class="card-text">ResidenceID:</p>
+          <p class="card-text">Location:</p>
+          <p class="card-text">Amenities:</p>
+          <p class="card-text">Monthly Rental:</p>
+          <p class="card-text">Unit Size:</p>
+          <p class="card-text">Available Units:</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-3 container">
+      <div class="card" style="width: 18rem;">
+        <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+        <div class="card-body">
+          <h5 class="card-title">Name of Residence</h5>
+          <p class="card-text">ResidenceID:</p>
+          <p class="card-text">Location:</p>
+          <p class="card-text">Amenities:</p>
+          <p class="card-text">Monthly Rental:</p>
+          <p class="card-text">Unit Size:</p>
+          <p class="card-text">Available Units:</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-3 container">
+      <div class="card" style="width: 18rem;">
+        <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+        <div class="card-body">
+          <h5 class="card-title">Name of Residence</h5>
+          <p class="card-text">ResidenceID:</p>
+          <p class="card-text">Location:</p>
+          <p class="card-text">Amenities:</p>
+          <p class="card-text">Monthly Rental:</p>
+          <p class="card-text">Unit Size:</p>
+          <p class="card-text">Available Units:</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-lg-3 container">
+      <div class="card" style="width: 18rem;">
+        <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+        <div class="card-body">
+          <h5 class="card-title">Name of Residence</h5>
+          <p class="card-text">ResidenceID:</p>
+          <p class="card-text">Location:</p>
+          <p class="card-text">Amenities:</p>
+          <p class="card-text">Monthly Rental:</p>
+          <p class="card-text">Unit Size:</p>
+          <p class="card-text">Available Units:</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+      <div class="mainContent container-fluid padding">
+        <ul class="list-group">
+          <li class="list-group-item">
+
+
+          </li>
+
+          <li class="list-group-item">
+            <!--Two Column Section-->
+            <div class="container-fluid padding">
+              <div class="row padding">
+                <div class="col-lg-3">
+                  <img src="pic/sample_housing.jpg" alt="sample_housing"
+                  class="img-fluid" height="360" width="480">
+                </div>
+
+                <div class="col-lg-7">
+                  <h4>Tolong Jaya Condominium</h4>
+                  <p>Residence ID: AKLD0027</p>
+                  <p>Location: Damansara Height</p>
+                  <p>Amenities: Walking distance to MRT</p>
+                  <p>Monthly Rental: RM850</p>
+                  <p>Unit Size: 735 Sqft</p>
+                  <p>Available Units: 99</p>
+
+                </div>
+
+                <div class="col-lg-2">
+                  <a href="#" class="btn btn-danger">View</a>
+                </div>
+
+
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h3>Item 3</h3>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer id="footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+          <small>Privacy Statement | Terms of Use | &copy; 2019 SAS (Student Application System). All Rights Reserved.</small>
+        </div>
+    </footer>
+
+
+  </body>
+</html>
