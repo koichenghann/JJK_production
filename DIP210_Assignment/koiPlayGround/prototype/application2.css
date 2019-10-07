@@ -10,7 +10,10 @@
 }
 
 .statusNew{
-  color: grey;
+  color: #fa0068;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: sans-serif;
 }
 
 #applicationListTable{
@@ -31,6 +34,10 @@
 #applicationListTable tr td div, #applicationListTable tr td, #applicationListTable tr{
   margin: 0 !important;
   padding: 0 !important;
+}
+#applicationListTable tr td div:nth-child(2){
+  font-size: 12px;
+  color: #85857e;
 }
 #applicationListTable tbody tr td:nth-child(3){
   /*height: 0vh !important;*/
