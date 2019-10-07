@@ -1,5 +1,13 @@
+var dummyList2 = [     {residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"A002", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", units:320, unitSize:2400, monthlyRental: 14214, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"A003", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", units:761, unitSize:1500, monthlyRental: 23525, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"B210", address:"No.889, Jalan kiri_, Kampung gotaas, 23523 mama", units:561, unitSize:1111, monthlyRental: 34634, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"B201", address:"No.770, Jalan kanan, Kampung baboru, 23523 papa", units:791, unitSize:8787, monthlyRental: 12444, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"B208", address:"No.001, Jalan left_, Kampung mamoru, 45774 poko", units:781, unitSize:8888, monthlyRental: 37347, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"MPU4", address:"No.003, Jalan right, Kampung kansai, 23423 piko", units:087, unitSize:6666, monthlyRental: 28884, amenities: new Array, unit: new Array, officerID: "KOI001"},
+                      {residenceID:"ELM2", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", units:418, unitSize:1088, monthlyRental: 23574, amenities: new Array, unit: new Array, officerID: "KOI001"}];
 
-var dummyList = [{residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
+var dummyList = [     {residenceID:"A001", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", units:100, unitSize:3000, monthlyRental: 12000},
                       {residenceID:"A002", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", units:320, unitSize:2400, monthlyRental: 14214},
                       {residenceID:"A003", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", units:761, unitSize:1500, monthlyRental: 23525},
                       {residenceID:"B210", address:"No.889, Jalan kiri_, Kampung gotaas, 23523 mama", units:561, unitSize:1111, monthlyRental: 34634},
@@ -19,7 +27,7 @@ function loadDummyData(){
   if(localStorage.residence==""){
     alert("localStorage is empty, populated with dummy data");
     console.log("its empty");
-    localStorage.residence = JSON.stringify(dummyList);
+    localStorage.residence = JSON.stringify(dummyList2);
     readFromLocalStorage();
   }
 
@@ -290,11 +298,6 @@ function resetForm(){
 }
 
 //document.getElementById("bd1").addEventListerner("load", populateTable(residenceList));
-
-/*
-funtion generateUnit(unitCount){
-  for(var i=0; i<unitCount; i++){
-
-  }
+function generateUnit(){
+  
 }
-*/

@@ -23,7 +23,8 @@ var dummyApplicant   = [{applicantID:3, username:"jeff", td:0},
                         {applicantID:1, username:"koi", td:0}];
 
 var applicationList  = dummyApplication;
-var applicantList = dummyApplicant;
+var applicantList     = dummyApplicant;
+
 var residenceList    = JSON.parse(localStorage.residence);
 
 
