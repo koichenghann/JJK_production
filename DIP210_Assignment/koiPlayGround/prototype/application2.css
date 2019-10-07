@@ -1,0 +1,44 @@
+.leftPane{
+  height: 88vh;
+  max-height: 88vh;
+  background-color: grey;
+
+}
+
+.hidden{
+  display: none;
+}
+
+.statusNew{
+  color: grey;
+}
+
+#applicationListTable{
+  max-height: inherit;
+}
+#applicationListTable th:nth-child(1), #applicationListTable tr td:nth-child(2) {
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+  color: grey;
+}
+#applicationListTable tr td:nth-child(4){
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 5% 0 0 !important;
+}
+#applicationListTable tr td div, #applicationListTable tr td, #applicationListTable tr{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#applicationListTable tbody tr td:nth-child(3){
+  /*height: 0vh !important;*/
+  padding: 1% 1% 1% 1% !important;
+  text-align: justify;
+}
+#applicationListTable tr{
+  max-height: 5vh !important;
+  height: 0vh;
+
+}

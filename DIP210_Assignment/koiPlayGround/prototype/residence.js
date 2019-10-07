@@ -42,7 +42,7 @@ function clearLocalStorage(){
 
 
 var disMode;
-var jeff = "notJeff";
+//var jeff = "notJeff";
 var formData = new Array;
 var formElement = new Array;
 var genNo = 0;
@@ -215,8 +215,9 @@ function modifyArray(rowNo){
     unitSize              .removeAttribute("readonly");
     monthlyRental         .removeAttribute("readonly");
 
-    document.getElementById("formOptionList").innerHTML = ` <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo])"class="btn btn-success" type="button" name="button">Save Changes</button>
-                                                            <button onclick="showForm(theRow);"class="btn" type="button" name="button">Cancel</button>`;
+    document.getElementById("formOptionList").innerHTML = ` <button onclick="deleteRowFromArray(rowNo); showForm();"class="btn btn-danger" type="button" name="button">Del</button>
+                                                            <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn btn-success" type="button" name="button">Save Changes</button>
+                                                            <button onclick="showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn" type="button" name="button">Cancel</button>`;
   }
 }
 
@@ -244,6 +245,20 @@ function addFormDataToArray(position){
    populateTable();
 
 }
+
+
+function deleteRowFromArray(position){
+
+  residenceList.splice(position, 1);
+  writeToLocalStorage();
+  resetForm();
+  clearTable("residenceTable");
+  populateTable();
+
+
+  alert("deleted");
+}
+
 
 //currently unused
 function addFormDataToTable(){
@@ -275,3 +290,11 @@ function resetForm(){
 }
 
 //document.getElementById("bd1").addEventListerner("load", populateTable(residenceList));
+
+/*
+funtion generateUnit(unitCount){
+  for(var i=0; i<unitCount; i++){
+
+  }
+}
+*/
