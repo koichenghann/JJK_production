@@ -1,3 +1,31 @@
+body {
+  background-color: #545454;
+}
+
+#formPane{
+  background-color: white;
+  margin: 1vh 1vh 1vh 1vh;
+  min-height: 86vh;
+  max-height: 86vh;
+}
+#documentPane{
+  background-color: yellow;
+  margin: 1vh 1vh 1vh 0vh;
+  padding: 0 !important;
+  min-height: 86vh;
+  max-height: 86vh;
+  min-width: inherit !important;
+}
+embed{
+  min-width: 30vh !important;
+  width: inherit !important;
+  min-height: inherit;
+  margin: 0 0 0 0 !important;
+}
+.btn-rounded{
+  border-radius: 40px;
+
+}
 .inLine{
   display: inline;
   width: 50%:
@@ -9,7 +37,14 @@
   background-color: grey;
 
 }
-
+.rightPane{
+  padding: 0 0 0 0;
+}
+.documentPane{
+  padding: 0 !important;
+  min-width: inherit;
+  background-color: green;
+}
 .hidden{
   display: none;
 }

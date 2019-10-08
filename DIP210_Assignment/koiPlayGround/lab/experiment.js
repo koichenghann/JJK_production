@@ -16,6 +16,11 @@ console.log(theThing.items[0].status);
 console.log(array1[0].items[0].status);
 */
 
+/*
 var jeff = "12d";
 
 console.log(!isNaN(jeff));
+*/
+
+var jeff = new Date("January");
+console.log(jeff.getMonth());
