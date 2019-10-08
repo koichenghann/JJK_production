@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MHS | Residence</title>
+
+    <!--Link to css file-->
+    <link rel="stylesheet" href="home.css"/>
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+
+
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
+      <a class="navbar-brand" href="#"><strong>MHS</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">About Us</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="register.html " class="nav-link font-weight-bold">
+            <i class="fas fa-address-card"></i> Register </a>
+          </li>
+          <li class="nav-item">
+            <a href="login.html" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-in-alt"></i> Login </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!--Search-->
+    <div class="container-fluid bg-dark p-4 shadow mb-4">
+      <div class="container m-2">
+
+      </div>
+
+      <form class="" action="index.html" method="post">
+      <div class="container-fluid p-1">
+
+      <div class="row">
+        <div class="col-lg-1 col-ms-1 col-xs-12 p-2">
+
+        </div>
+
+        <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">City:</h5>
+          <select class="form-control" id="inputCity">
+            <option>Kuala Lumpur</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">Districts Area:</h5>
+          <select class="form-control" id="inputArea">
+            <option>Damansara</option>
+            <option>Seputeh</option>
+            <option>Segambut</option>
+            <option>Kepong</option>
+            <option>KL City Centre</option>
+            <option>Setiawangsa</option>
+            <option>Bandar Tun Razak</option>
+            <option>Sungai Besi</option>
+          </select>
+        </div>
+
+        <div class="col-4 col-ms-4 col-xs-12 p-2">
+          <h5 class="lead text-white">Search:</h5>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i></button>
+               </div>
+              </div>
+        </div>
+
+
+      </div>
+      </div>
+      </form>
+    </div>
+
+
+    <main>
+    <div class="viewHousingList container rounded p-3">
+          <!--Two Column Section-->
+          <div class="container-fluid padding">
+            <div class="row padding">
+              <div class="col-lg-3">
+                <img src="pic/sample_housing.jpg" alt="sample_housing"
+                class="img-fluid" height="360" width="480">
+              </div>
+
+              <div class="col-lg-7">
+                <h4>Tolong Jaya Condominium</h4>
+                <table>
+                  <tr>
+                    <th><p>Residence ID:</p></th>
+                    <td><p> AKLD0027</p></td>
+                    <th><p>Location:</p></th>
+                    <td><p> Damansara Height</p></td>
+                  </tr>
+
+
+
+                </table>
+
+
+
+
+                <p>Amenities: Walking distance to MRT</p>
+                <p>Monthly Rental: RM850</p>
+                <p>Unit Size: 735 Sqft</p>
+                <p>Available Units: 99</p>
+              </div>
+
+              <div class="col-lg-2">
+                <a href="#" class="btn btn-danger">View</a>
+              </div>
+
+
+            </div>
+          </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom">
+      <div class="container text-center">
+        <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
+      </div>
+  </footer>
+
+  </body>
+</html>

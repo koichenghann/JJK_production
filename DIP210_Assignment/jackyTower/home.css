@@ -1,17 +1,5 @@
-.nav-item{
-  border-bottom: 1.5px solid #ffffff;
-}
-
-.nav-item:hover{
-  border-bottom: 1.5px solid #7200ff;
-}
-
-nav{
-  height: 8vh;
-}
-
 .carousel{
-  margin-top: 8vh;
+  margin-top: 6vh;
 }
 
 .carousel-inner img{
@@ -51,8 +39,9 @@ nav{
   height:6vh;
 }
 
-.title_main{
-  height:120vh;
+
+.newResidenceList{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .fa-search{
@@ -65,3 +54,48 @@ nav{
     border-top-left-radius:0!important;
     border-bottom-left-radius:0!important;
    }
+
+.viewHousingList{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card{
+  min-height: 100%;
+  border:none!important;
+}
+
+.box_shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.card a:hover{
+  text-decoration: none!important;
+}
+
+
+.social a{
+  font-size: 4rem;
+  padding: 1em;
+}
+.fa-facebook{
+  transition:0.4s;
+  transition-timing-function:ease;
+  color: #3b5998;
+}
+.fa-twitter{
+  transition:0.4s;
+  transition-timing-function:ease;
+  color: #00aced;
+}
+.fa-instagram{
+  transition:0.5s;
+  transition-timing-function:ease;
+  color: #517fa4;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover{
+  color: #d5d5d5;
+  font-size: 4.5rem;
+
+}
