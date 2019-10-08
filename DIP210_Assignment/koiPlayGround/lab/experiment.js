@@ -1,4 +1,4 @@
-var array1 = [{id:1, items:[{itemNo:1, status:"good"},
+/*var array1 = [{id:1, items:[{itemNo:1, status:"good"},
                             {itemNo:1, status:"good"},
                             {itemNo:1, status:"good"}]},
               {id:2, items:[{itemNo:1, status:"bad"},
@@ -14,3 +14,8 @@ theThing.items[0].status = "nice";
 console.log(theThing.items[0].status);
 
 console.log(array1[0].items[0].status);
+*/
+
+var jeff = "12d";
+
+console.log(!isNaN(jeff));
