@@ -32,7 +32,7 @@ for(var i=0; i<residenceList.length; i++){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var searchCriteria;
-searchCriteria = "USj21";
+searchCriteria = "USj21"; //<--enter search criteria here!!!
 
 var result = new Array;
 for(var i=1; i<searchTable.length; i++){

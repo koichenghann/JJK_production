@@ -1,3 +1,8 @@
+.inLine{
+  display: inline;
+  width: 50%:
+}
+
 .leftPane{
   height: 88vh;
   max-height: 88vh;
