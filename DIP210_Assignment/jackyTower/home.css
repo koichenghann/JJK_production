@@ -48,12 +48,16 @@
   font-size: 20px;
 }
 .btn-default{
-    background: #ff7700!important;
+    background: #ffbb33!important;
     width: 100px;
     padding: 12.5px;
     border-top-left-radius:0!important;
     border-bottom-left-radius:0!important;
    }
+
+.btn-default:hover{
+  background: #ff8800!important;
+}
 
 .viewHousingList{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

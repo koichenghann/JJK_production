@@ -1,0 +1,15 @@
+.list_border{
+  border-color: transparent;
+}
+
+.btn-default{
+    background: #ffbb33!important;
+    width: 100px;
+    padding: 12.5px;
+    border-top-left-radius:0!important;
+    border-bottom-left-radius:0!important;
+   }
+
+   .btn-default:hover{
+     background: #ff8800!important;
+   }

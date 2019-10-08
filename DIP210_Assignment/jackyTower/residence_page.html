@@ -5,7 +5,7 @@
     <title>MHS | Residence</title>
 
     <!--Link to css file-->
-    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="residence_page.css"/>
 
     <!--bootstrap front-end design framework-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -106,8 +106,12 @@
 
 
     <main>
+    <!--
     <div class="viewHousingList container rounded p-3">
+    -->
           <!--Two Column Section-->
+
+          <!--
           <div class="container-fluid padding">
             <div class="row padding">
               <div class="col-lg-3">
@@ -155,30 +159,91 @@
           </div>
 
 
+
+    </div>
+  -->
+    <div class="container mt-3 mb-3">
+      <div class="text-left">
+        <h5>Available Housing:</h5>
+      </div>
+
+      <ul class="list-group list_border">
+      <li class="list-group-item">
+      <div class="row box_shadow">
+        <div class="col-5 p-4">
+          <img src="pic/sample_housing.jpg" alt="sample_housing"
+          class="img-fluid">
+        </div>
+        <div class="col-7 p-3">
+          <h5 class="lead font-weight-bold">Tolong Jaya Condominium</h5>
           <table>
-          <tr>
-          <div class="row box_shadow">
-    				<div class="col-5 p-4">
-              <img src="pic/sample_housing.jpg" alt="sample_housing"
-              class="img-fluid">
-    				</div>
-    				<div class="col-7 p-3">
-    					<h5>Tolong Jaya Condominium</h5>
-    		      <p class=""><i class="fas fa-map-marker-alt"></i> No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur</p>
-              <p class='text-justify'><div class="font-weight-bold">Unit Size:</div> 735 Sqft</p>
-              <p class='text-justify'><div class="font-weight-bold">Amenities:</div> Walking distance to MRT</p>
-              <p class='text-justify'><div class="font-weight-bold">Available Units:</div> 99</p>
-              <p class='text-justify'><div class="font-weight-bold">Monthly Rental:</div>
-              <p class="font-weight-bold text-danger">RM 850</p></p>
-
-    					<div class="text-right">
-    						<a href="#" class="btn btn-warning">View</a>
-    		 			</div>
-
-    				</div>
-    			</div>
-          </tr>
+            <tr>
+                <p class="">
+                  <i class="fas fa-map-marker-alt"></i> No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Unit Size:</div>
+              <p class='text-justify'> 735 Sqft</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Amenities:</div>
+              <p class='text-justify'>Walking distance to MRT</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Available Units:</div>
+              <p class='text-justify'>99</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Monthly Rental:</div>
+              <p class="font-weight-bold text-danger">RM 850</p>
+            </tr>
           </table>
+          <div class="text-right">
+            <a href="#" class="btn btn-warning">Apply</a>
+          </div>
+
+        </div>
+      </div>
+    </li>
+
+        <li class="list-group-item">
+        <div class="row box_shadow">
+          <div class="col-5 p-4">
+            <img src="pic/sample_housing.jpg" alt="sample_housing"
+            class="img-fluid">
+          </div>
+          <div class="col-7 p-3">
+            <h5 class="lead font-weight-bold">Tolong Jaya Condominium</h5>
+            <table>
+              <tr>
+                  <p class="">
+                    <i class="fas fa-map-marker-alt"></i> No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Unit Size:</div>
+                <p class='text-justify'> 735 Sqft</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Amenities:</div>
+                <p class='text-justify'>Walking distance to MRT</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Available Units:</div>
+                <p class='text-justify'>99</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Monthly Rental:</div>
+                <p class="font-weight-bold text-danger">RM 850</p>
+              </tr>
+            </table>
+            <div class="text-right">
+              <a href="#" class="btn btn-warning">Apply</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+    </ul>
     </div>
 
 
@@ -186,7 +251,7 @@
 
   </main>
 
-  <footer id="footer" class="py-4 bg-dark text-white-50 >
+  <footer id="footer" class="py-4 bg-dark text-white-50" >
       <div class="container text-center">
         <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
       </div>
