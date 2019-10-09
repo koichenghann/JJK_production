@@ -32,6 +32,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Home</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="aboutUs.html">About Us</a>
           </li>
@@ -42,7 +43,7 @@
             <a href="register.html " class="nav-link font-weight-bold">
             <i class="fas fa-address-card"></i> Register </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="login" onClick="xx()">
             <a href="login.html" class="nav-link font-weight-bold">
             <i class="fas fa-sign-in-alt"></i> Login </a>
           </li>
@@ -107,7 +108,7 @@
 
       </div>
 
-      <form class="" action="index.html" method="post">
+      <form class="" action="residence_page.html" method="post">
       <div class="container-fluid p-1">
 
       <div class="row">
@@ -118,33 +119,33 @@
         <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
           <h5 class="lead text-white">City:</h5>
           <select class="form-control" id="inputCity">
-            <option>Kuala Lumpur</option>
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
           </select>
         </div>
 
         <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
           <h5 class="lead text-white">Districts Area:</h5>
           <select class="form-control" id="inputArea">
-            <option>Damansara</option>
-            <option>Seputeh</option>
-            <option>Segambut</option>
-            <option>Kepong</option>
-            <option>KL City Centre</option>
-            <option>Setiawangsa</option>
-            <option>Bandar Tun Razak</option>
-            <option>Sungai Besi</option>
+            <option value="Damansara">Damansara</option>
+            <option value="Seputeh">Seputeh</option>
+            <option value="Segambut">Segambut</option>
+            <option value="Kepong">Kepong</option>
+            <option value="KLCC">KL City Centre</option>
+            <option value="Setiawangsa">Setiawangsa</option>
+            <option value="Bandar Tun Razak">Bandar Tun Razak</option>
+            <option value="Sungai Besi">Sungai Besi</option>
           </select>
         </div>
 
         <div class="col-4 col-ms-4 col-xs-12 p-2">
           <h5 class="lead text-white">Search:</h5>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search">
+              <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search" id="inputSearch">
               <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
+                <button class="btn btn-default" type="submit" id="btnSearch" onclick="searchResidence()">
                 <i class="fas fa-search"></i></button>
-               </div>
               </div>
+            </div>
         </div>
 
 
