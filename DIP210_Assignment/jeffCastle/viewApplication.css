@@ -1,0 +1,57 @@
+body{background-image:url("picture/mhs1.jpg");
+  background-size: cover;}
+
+.my_Application{color:white;
+font-family: serif;
+font-size: 70px;
+font-weight: bold;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("picture/contactUs.jpg");
+
+  /* Set a specific height */
+  min-height: 200px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.myApplication1{padding:200px;
+color:white;
+font-size: 80px;}
+
+.container{padding-top: 100px;
+padding-bottom: 100px;}
+
+
+.container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color:white;
+}
+
+.centerApply{top: 50%;
+left:50%;
+position:center;}
+
+.btnDash{margin-bottom: 30px;}
+
+.textNeedHelp{padding-top: 50px;}
+
+.btnContact{margin-left: 800px;}
+
+footer{background-color: #3f3f3f;
+color:#d5d5d5;
+padding: 2rem;}
