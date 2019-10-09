@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!--fontawesome icon-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="applicant_ViewApplication.css">
+    <title>Applicant View Application</title>
+  </head>
+
+
+  <body id="bd1" onload="loadDummyData(); populateTable()">
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed" style="background-color:#ffe6d9;">
+      <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Setup New Residence</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">View Application</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <h2 class="my_Application">My Applications</h2>
+      <table class="table table-bordered table-hover table-dark">
+        <thead class="thead-light">
+          <tr>
+            <th>Residence ID </th>
+            <th>Units</th>
+            <th>Monthly Rental</th>
+            <th>Status</th>
+            <th>Application Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>200Sqft</td>
+            <td>RM2000</td>
+            <td><button type="button" class="btn btn-success">Approve</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><a href="applicant_AppealRej.html"><button type="button" class="btn btn-danger">Rejected</button></a></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr><a href="#"></a>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-success">Approve</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-success">Approve</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-success">Approve</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>100Sqft</td>
+            <td>RM3000</td>
+            <td><button type="button" class="btn btn-success">Approve</button></td>
+            <td><a href="#">view application</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class= "btn btn-danger btnDash btn-Block">Back to applicant dashboard</button>
+    </div>
+
+
+
+    <div class="container-fluid parallax ">
+      <h2 class="text-center textNeedHelp">Need HELP? Let Us Know!</h2>
+      <div class="text-center">
+        <button type="button" class="btn btn-danger btnContact">Contact Us</button>
+      </div>
+    </div>
+
+
+
+
+    <!--<div class="parallax">
+      <h2 class="text-center">Need HELP? Let Us Know!
+        <br><button type="button" class="btn btn-danger" >Contact Us</button></h2>-->
+
+    </div>
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <hr class="light">
+            <p>666-666-666</p>
+            <p>mhs@microhouse.gov.my</p>
+            <p>101 Street Name </p>
+            <p>City,State,0000</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light">
+              <h5>Our hours</h5>
+              <p>Monday: 9am - 5pm</p>
+              <p>Tuesday: 9am - 5pm</p>
+              <p>Wednesday: 9am - 5pm</p>
+              <p>Thursday: 9am - 5pm</p>
+              <p>Friday: 9am - 5pm</p>
+              <p>Saturday: 10am - 4pm</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light">
+              <h5>Service Area</h5>
+              <p>Kuala Lumpur</p>
+              <p>Petaling Jaya</p>
+              <p>Subang</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <script src="applicant.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>
