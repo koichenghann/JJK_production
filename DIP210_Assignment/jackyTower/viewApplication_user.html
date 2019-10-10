@@ -42,7 +42,11 @@
 
     <!--Applicant View Application Table-->
     <div class="container">
-      <h5 class="display-4 lead text-center mb-4">Application Status</h5>
+
+      <div class="container mt-5 mb-5">
+        <h1 class="display-4 lead text-center mb-4">Application Status</h1>
+      </div>
+
     <table class="table table-hover">
     	<thead>
     		<tr>
@@ -103,21 +107,26 @@
           <div class="modal-body">
             <div class="form-box">
             <form class="" action="" method="post">
-                <h5 class="lead">Please submit "Additional Documents", or revised income for reconsideration.</h5>
-                <h6 class="font-weight-italic">Note: Please note that Applicant can make 'Appeal' only ONCE!</h6>
+              <h3 class="lead">Submit your "Additional Documents", or revised income for reconsideration.</h3>
+
                 <div class="container">
                 <div class="row">
 
-                <div class="container col-lg-3 col-ms-3 col-xs-12 p-2">
+                  <div class="container col-lg-5 col-ms-5 col-xs-12 p-2">
                   <div class="form-group">
-                    <label for="inputIncomePayslip" class="lead">Income Payslip:</label>
+                    <label for="inputIncome" class="display-5 font-weight-bold" >Revised Monthly Income:</label>
+                    <input type="text" class="form-control" id="inputIncome" value="" placeholder="'Monthly Income'">
+                  </div>
+                  </div>
+
+                <div class="container col-lg-5 col-ms-5 col-xs-12 p-2">
+                  <div class="form-group">
+                    <label for="inputIncomePayslip" class="display-5 font-weight-bold">Income Payslip:</label>
                     <input type="file" class="form-control-file" id="inputIncomePayslip" required>
                   </div>
                 </div>
-
-                <div class="container col-lg-3 col-ms-3 col-xs-12 p-2">
-                  
-                </div>
+              <br>
+              <p class="text-secondary">**Please kindly take note that appeal rejection can be made only ONCE.</p>
               </div>
               </div>
               <h6 class="text-danger text-center"><!--Validation--></h6>
