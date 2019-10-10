@@ -1,0 +1,84 @@
+html, body{
+  height: 100%;
+  max-height: 100vh !important;
+}
+.container-fluid{
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+}
+.box-top{}
+.box-mid{
+  background-color: #ededeb;
+  flex:1;
+
+  display: flex;
+  flex-direction: column;
+}
+.box-bot{
+  background-color: #363636;
+}
+
+.mainContent .row{
+  height: inherit;
+  background-color: yellow;
+}
+
+#leftPane{
+  background-color: green;
+  height: 100%;
+  min-height: 100%;
+}
+#centerPane{
+  background-color: orange;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#rightPane{
+  background-color: blue;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+#residenceTable{
+  flex:1;
+}
+#unitTable{
+  display: block;
+  height: 40vh;
+  max-height: inherit;
+  overflow-y: auto;
+  background-color: red;
+}
+#unitTable tbody tr{
+  background-color: cyan;
+
+}
+.table-container{
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+table .active, .table-hover tbody tr:hover td{
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.row-muted{
+  background-color: #262626;
+  color: #5c5c5c;
+}
+
+.table-hover tbody tr.row-muted:hover td{
+  background-color: #262626;
+  color: #5c5c5c;
+}

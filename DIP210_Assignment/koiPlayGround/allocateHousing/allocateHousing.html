@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="allocateHousing.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+
+    <div id="container" class="container-fluid panel" >
+      <!--header-->
+      <div id="row-top" class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow fixed" style="background-color:#000000;">
+          <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarListInfo">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Setup New Residence</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">View Application</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav navbar-right">
+              <li class="nav-item">
+                <a href="#" class="nav-link font-weight-bold">
+                <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link font-weight-bold">
+                <i class="fas fa-sign-out-alt"></i> Logout </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- main content-->
+      <div id="row-mid" class="row fill">
+        <div id="container2" class="container-fluid">
+          <div class="row">
+            <div id="leftPane"class="col-lg-3 p-0 m-0">
+              <div id="residenceTable"class="">
+                <table class="table table-dark table-hover">
+                  <tbody>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="residenceSearch" class="">
+                insert search bar here
+              </div>
+            </div>
+
+            <div id="cenPane"class="col-lg-2 p-0 m-0">
+              <div id="unitTable" class="">
+                <table class="table table-dark table-hover">
+                  <tbody>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                    <tr><td>1</td></tr><tr><td>1</td></tr><tr><td>1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="unitSearch" class="">
+                insert search bar here
+              </div>
+            </div>
+
+            <div class="col-lg-7 p-0 m-0">
+              <!-- allocation form-->
+              <div id="allocationForm" class="allocationForm">
+                <form class="" action="index.html" method="post">
+                  <div class="row">
+                    <div class="col-lg-1 p-0 m-0 pr-0 mr-0">
+                      <label for="form_resindenceID" class="">ResID</label>
+                      <input id="form_resindenceID" class=" form-control form-control-sm pt-0 mt-0" type="text" name="" value="A1103">
+                    </div>
+                    <div class="col-lg-3 pl-0 ml-1 mr-0 pr-0">
+                      <label for="form_resindenceID" class="">Residence Name</label>
+                      <input id="form_resindenceName" class=" form-control form-control-sm pt-0 mt-0" type="text" name="" value="jeffurly hill">
+                    </div>
+                    <div class="col-lg-1 ml-0 ">
+                      <label for="form_resindenceID" class="">Unit</label>
+                      <input id="form_units" class=" form-control form-control-sm pt-0 mt-0" type="text" name="" value="2">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!--allocation list-->
+              <div class="allocationlist p-3">
+                <div id="allocationlist" class="">
+                  <div id="t-top">
+                    <table class=" table table-light table-sm">
+                      <thead class="bg-primary">
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Duration</th>
+                        <th>Applicant</th>
+                        <th>Application</th>
+                      </thead>
+                    </table>
+                  </div>
+                  <div id="t-bot">
+                    <table class=" table table-light table-sm">
+                      <tbody>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                        <tr><td>01 january 2019</td><td>01 December 3019</td><td>18 Month</td><td>Jeff Yeoh</td><td>001</td></tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div id="row-bot" class="row">
+        insert footer here
+      </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="allocateHousing.js">
+
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

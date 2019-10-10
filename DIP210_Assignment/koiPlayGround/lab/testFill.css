@@ -1,0 +1,72 @@
+html, body{
+	padding: 0!important;
+	margin: 0!important;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+		padding: 0!important;
+		margin: 0!important;
+}
+
+.panel{
+  display: table;
+}
+
+.panel>div{
+  display: table-row;
+  height: 0;
+}
+
+.panel>div.fill{
+  height: auto;
+}
+
+#row-top{
+ background-color: gray;
+}
+#row-mid{
+background-color: yellow;
+}
+#row-bot{
+  background-color: gray;
+}
+
+#container2{
+  height: 100%;
+  overflow-y: scroll;
+}
+#container2 .row{
+  height: 100%;
+  overflow-y: scroll;
+}
+#container2 .row div{
+  height: 100%;
+  overflow-y: scroll;
+  border-right: 2px solid black;
+}
+#residenceTable{
+  background-color: blue;
+  height: 94%;
+  max-height: 94%;
+  overflow-y: scroll;
+}
+#residenceSearch{
+  background-color: teal;
+  height: 6%;
+  max-height: 6%;
+  overflow-y: scroll;
+}
+#unitTable{
+  background-color: green;
+  height: 94%;
+  max-height: 94%;
+  overflow-y: scroll;
+}
+#unitSearch{
+  background-color: teal;
+  height: 6%;
+  max-height: 6%;
+  overflow-y: scroll;
+}

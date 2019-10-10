@@ -1,0 +1,124 @@
+/*.row-top{
+	height: 10vh;
+	min-height: 10vh;
+	max-width: 10vh;
+	background-color: gray;
+	padding: 0;
+	margin: 0;
+
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.row-bot{
+		position: absolute;
+		height: auto;
+
+
+		width: 100%;
+		border: 3px solid #8AC007;
+		margin: 0;
+		padding: 0;
+}
+
+.row-mid{
+	height: auto;
+	background-color: yellow;
+}
+
+
+
+
+html,body {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom:0;
+  margin: auto;
+  font-family: "Alef";
+  background: #767E58;
+  background-size: contain;
+  background-image: url("../img/back1024.jpg");
+  overflow-y: auto;
+  overflow: auto;
+}
+.container {
+  height: 100%;
+  width: 900px;
+  background-color: #000;
+  /* overflow: auto; *//*
+}
+*/
+html, body{
+	padding: 0!important;
+	margin: 0!important;
+}
+#container{
+    width: 100vw;
+    height: 100vh;
+		padding: 0!important;
+		margin: 0!important;
+}
+
+.panel {
+    display: table;
+}
+.panel > div{
+    display: table-row;
+    height: 0;
+}
+.panel > div.fill{
+    height: auto;
+}
+
+
+/* Unimportant styles just to make the demo looks better */
+#container {
+    border: 3px solid magenta;
+}
+#cell1 {
+		height: 10vh;
+    background: lightblue;
+}
+#cell2 {
+    background: lightyellow;
+}
+#cell3{
+	height: 10vh;
+    background: lightgreen;
+}
+body {
+    margin: 20px;
+    font-family: sans-serif;
+}
+/*
+#container{
+	height: 30vh;
+	min-height: 30vh;
+	max-height: 30vh;
+	border: solid green;
+}
+.container-fluid{
+	display: table;
+}
+.container-fluid > div{
+	display: table-row;
+	height: 0;
+}
+.container-fluid > div.fill{
+	height: auto;
+}
+
+#topb{
+	background-color: red;
+}
+
+#midb{
+	background-color: green;
+}
+
+#botb{
+	background-color: blue;
+}
