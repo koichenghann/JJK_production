@@ -10,8 +10,17 @@ for(var i=0; i<splitedAddress.length; i++){
 
 console.log(searchTable);
 */
-
+/*
 var jeff = "JeFf";
 var jacky = "jeff";
 
 console.log(jacky == jeff.toLowerCase());
+*/
+
+outputDate = ("00".substring(0, (""+allocation.endDate.getDate()).length) + allocation.endDate.getDate());
+
+
+var jeff = "1234";
+
+var jacky = ("00".substring(0, jeff));
+console.log(jacky);

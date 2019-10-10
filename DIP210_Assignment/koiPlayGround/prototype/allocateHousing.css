@@ -113,15 +113,37 @@ html, body{
 
 .row-option{
 
-  height: 6vh;
+  height: auto;
 
 }
-.row-option button{
-  width: 6vw;
-}
+
 
 
 /*overwrite all border collor*/
 .border{
   border-color: silver  ;
+}
+
+
+
+
+
+tr {
+table-layout: fixed;
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+table{
+table-layout: fixed;
+ height:300px;              // <-- Select the height of the table
+ display: -moz-groupbox;    // Firefox Bad Effect
+ padding-bottom: 
+}
+tbody{
+	table-layout: fixed;
+  overflow-y: scroll;
+  height: 200px;            //  <-- Select the height of the body
+  width: 100%;
+  position: absolute;
 }

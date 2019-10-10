@@ -148,21 +148,19 @@ form_duration_radio_2.addEventListener("click", function(){
   calDate();
 });
 
+
 function calDate(){
   if(allocation.startDate != undefined && allocation.duration!=undefined){
     allocation.endDate = new Date(allocation.startDate);//allocation.startDate.getMonth() + allocation.duration);
     allocation.endDate.setMonth(allocation.endDate.getMonth() + parseInt(allocation.duration, 10));
 
-    var str = "" + 1
-    var pad = "0000"
-    var ans = pad.substring(0, pad.length - str.length) + str
-    outputMonth = ("00".substring(0, (""+allocation.endDate.getMonth()).length) + allocation.endDate.getMonth());
-    outputDate = ("00".substring(0, (""+allocation.endDate.getDate()).length) + allocation.endDate.getDate());
+    //var str = "" + 1
+    //var pad = "0000"
+    //var ans = pad.substring(0, pad.length - str.length) + str
 
-    console.log(allocation.startDate + " ||| " + allocation.duration + " ||| " + allocation.endDate);
 
     //form_endDate.value =
-    console.log(allocation.endDate.getFullYear() + "-" + ("00".substring(0, (""+allocation.endDate.getMonth()).length) + allocation.endDate.getMonth()) + "-" + ("00".substring(0, allocation.endDate.getDate().toString(10).length) + allocation.endDate.getDate()));
+    form_endDate.value = allocation.endDate.getFullYear() + "-" + pad(allocation.endDate.getMonth(),2) + "-" + pad(allocation.endDate.getDate(),2);
 
 
   }
@@ -173,7 +171,10 @@ form_unit.addEventListener("change", function(){
 });
 
 
-
+function pad(string, size){
+  while(string.toString(10).length<size){string="0"+string;}
+  return string;
+}
 
 //application, applicant, reisdence-unit, allocation
 //4 button
