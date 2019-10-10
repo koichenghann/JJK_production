@@ -23,7 +23,7 @@
   <body>
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
-      <a class="navbar-brand" href="index.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+      <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,16 +31,21 @@
       <div class="collapse navbar-collapse" id="navbarListInfo">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="user_homepage.html">Home</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs.html">About Us</a>
+            <a class="nav-link" href="residence_page.html">Find MHS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="viewApplication_user.html">Application Status</a>
           </li>
         </ul>
 
         <ul class="navbar-nav navbar-right">
           <li class="nav-item">
-            <a href="index.html" class="nav-link font-weight-bold">
+            <a href="login.html" class="nav-link font-weight-bold">
             <i class="fas fa-sign-out-alt"></i> Logout </a>
           </li>
         </ul>
@@ -48,60 +53,72 @@
       </div>
     </nav>
 
-    <!--Search-->
+
+    <!--title bar with pic-->
+    <div class="page-header">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-caption">
+                  <h1 class="page-title">View Residence</h1>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!--Search Box-->
     <div class="container-fluid bg-dark p-4 shadow mb-4">
       <div class="container m-2">
 
       </div>
 
-      <form class="" action="index.html" method="post">
-      <div class="container-fluid p-1">
+      <form class="" action="residence_page.html" method="post">
+      <div class="container p-1">
 
       <div class="row">
-        <div class="col-lg-1 col-ms-1 col-xs-12 p-2">
-
-        </div>
-
-        <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
           <h5 class="lead text-white">City:</h5>
           <select class="form-control" id="inputCity">
             <option value="Kuala Lumpur">Kuala Lumpur</option>
           </select>
         </div>
 
-        <div class="col-lg-3 col-ms-3 col-xs-12 p-2">
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
           <h5 class="lead text-white">Districts Area:</h5>
           <select class="form-control" id="inputArea">
             <option value="Damansara">Damansara</option>
             <option value="Seputeh">Seputeh</option>
             <option value="Segambut">Segambut</option>
             <option value="Kepong">Kepong</option>
-            <option value="KL City Centre">KL City Centre</option>
+            <option value="KLCC">KL City Centre</option>
             <option value="Setiawangsa">Setiawangsa</option>
             <option value="Bandar Tun Razak">Bandar Tun Razak</option>
             <option value="Sungai Besi">Sungai Besi</option>
           </select>
         </div>
 
-        <div class="col-4 col-ms-12 col-xs-12 p-2">
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
           <h5 class="lead text-white">Search:</h5>
-            <div class="input-group col-xs-12">
-              <input type="text" class="form-control" placeholder="Example: Taman Tolong" id="inputSearch">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search" id="inputSearch">
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit" id="btnSearch" onclick="searchResidence()">
                 <i class="fas fa-search"></i></button>
-               </div>
             </div>
+          </div>
         </div>
-
-
       </div>
       </div>
       </form>
     </div>
+
+
+
+
     <main>
 
-    <div class="container mt-3 mb-3 bg-light">
+    <div class="container mt-3 mb-3">
       <div class="text-left">
         <h5>Available Housing:</h5>
       </div>
@@ -147,7 +164,7 @@
             </tr>
           </table>
           <div class="text-right">
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence();">
+            <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence();">
               Apply
             </button>
           </div>
@@ -191,7 +208,7 @@
               </tr>
             </table>
             <div class="text-right">
-              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence1();">
+              <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence1();">
                 Apply
               </button>
             </div>
@@ -225,10 +242,10 @@
                 <div class="container col-lg-3 col-ms-3 col-xs-12 p-2">
                   <h6 class="">Month:</h6>
                   <select class="form-control" id="inputMonth">
-                    <option value="">January</option>
-                    <option value="">February</option>
-                    <option value="">March</option>
-                    <option value="">April</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
                     <option value="May">May</option>
                     <option value="June">June</option>
                     <option value="July">July</option>

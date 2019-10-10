@@ -21,7 +21,7 @@
   <body>
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
-      <a class="navbar-brand" href="index.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+      <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,16 +29,21 @@
       <div class="collapse navbar-collapse" id="navbarListInfo">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="user_homepage.html">Home</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs.html">About Us</a>
+            <a class="nav-link" href="residence_page.html">Find MHS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="viewApplication_user.html">Application Status</a>
           </li>
         </ul>
 
         <ul class="navbar-nav navbar-right">
           <li class="nav-item">
-            <a href="index.html" class="nav-link font-weight-bold">
+            <a href="login.html" class="nav-link font-weight-bold">
             <i class="fas fa-sign-out-alt"></i> Logout </a>
           </li>
         </ul>
@@ -63,7 +68,7 @@
   <main>
     <hr>
     <div class="container mb-5 p-4 box_shadow rounded">
-      <form>
+      <form class="application_form" action="viewApplication_user.html" method="post">
       <div class="container-fiuld">
         <h4>Personal Details</h4>
         <hr>
