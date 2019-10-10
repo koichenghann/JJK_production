@@ -1,0 +1,127 @@
+html, body{
+	padding: 0!important;
+	margin: 0!important;
+}
+#container{
+    width: 100vw;
+    height: 100vh;
+		padding: 0!important;
+		margin: 0!important;
+}
+.panel{
+  display: table;
+}
+.panel>div{
+  display: table-row;
+  height: 0;
+}
+.panel>div.fill{
+  height: auto;
+}
+
+
+
+.hidden{
+  color: green;
+}
+
+
+
+
+
+.form-application{
+
+
+}
+.form-application div label{
+
+  display: block;
+  text-align: left;
+  min-width: 40%;
+  max-width: 40%;
+}
+.form-application div input, .form-application div select{
+
+  min-width: 55%;
+  max-width: 55%;
+}
+.form-application .form-group{
+  margin: 2%!important;
+}
+
+.align-top{
+
+}
+.container{
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+.row-table{
+
+  overflow-y: scroll;
+}
+
+#thead-explicit{
+  height: 100%;
+}
+#tbody-explicit{
+  height: 100%;
+
+}
+
+#thead-explixit thead tr th:nth-child(1),
+#thead-explixit thead tr th:nth-child(2),
+#thead-explixit thead tr th:nth-child(3),
+#thead-explixit thead tr th:nth-child(4),
+#thead-explixit thead tr th:nth-child(5),
+#tbody-explixit tbody tr td:nth-child(1),
+#tbody-explixit tbody tr td:nth-child(2),
+#tbody-explixit tbody tr td:nth-child(3),
+#tbody-explixit tbody tr td:nth-child(4),
+#tbody-explixit tbody tr td:nth-child(5){
+  width: 12%;
+  text-align: center;
+  overflow-x: scroll;
+  background-color: #00d9ff;
+  border: 1px solid red;
+}
+#thead-explixit thead tr th:nth-child(6),
+#thead-explixit thead tr th:nth-child(7),
+#tbody-explixit tbody tr td:nth-child(6),
+#tbody-explixit tbody tr td:nth-child(7){
+  width: 20%;
+  text-align: center;
+  overflow-x: scroll;
+  background-color: orange;
+  border: 1px solid purple;
+}
+#tbody-explixit tbody tr{
+
+}
+
+.thead-explicit{
+  height: 4vh;
+}
+.tbody-explicit{
+  height: 30vh;
+  overflow-y: scroll;
+}
+
+
+
+
+.row-option{
+
+  height: 6vh;
+
+}
+.row-option button{
+  width: 6vw;
+}
+
+
+/*overwrite all border collor*/
+.border{
+  border-color: silver  ;
+}

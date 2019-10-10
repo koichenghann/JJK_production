@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!--fontawesome icon-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="allocateHousing.css">
+    <title>Residence</title>
+  </head>
+
+
+  <body id="bd1">
+
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed" style="background-color:#ffe6d9;">
+      <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Setup New Residence</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">View Application</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-user"></i></i></i> MHSAdmin </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row row-form">
+        <div class="col-lg-12 ">
+          <form class="" action="index.html" method="post">
+            <div class="row">
+
+              <div class="col-lg-4">
+                <fieldset class="border p-2 form-application h-100 mt-4">
+                  <legend class="w-auto">Application</legend>
+                  <div class="form-group form-inline ">
+                    <label for="form-applicationID">Application</label>
+                    <input disabled id="form-applicationID" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-username">Applicant</label>
+                    <input disabled id="form-username" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-monthlyIncome">Income</label>
+                    <input disabled id="form-monthlyIncome" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-residenceID">Residence</label>
+                    <input disabled id="form-residenceID" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-requiredMonth">Required Month</label>
+                    <input disabled id="form-requiredMonth" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-requiredYear">Required Year</label>
+                    <input disabled id="form-requiredYear" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="col-lg-4">
+                <fieldset class="border p-2 form-application h-100 mt-4">
+                  <legend class="w-auto">Residence</legend>
+                  <div class="form-group form-inline ">
+                    <label for="form-residenceID-in">Residence ID</label>
+                    <select id="form-residenceID-in"class="form-control form-control-sm ml-2" name=""></select>
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-unitAvailable">Unit Available</label>
+                    <input disabled id="form-unitAvailable" class="form-control form-control-sm ml-2"type="text" name="" value="001">
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-unit">Unit</label>
+                    <select  disabled id="form-unit" class="form-control form-control-sm ml-2" name=""></select>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="col-lg-4">
+                <fieldset class="border p-2 form-application h-100 mt-4">
+                  <legend class="w-auto">Allocation</legend>
+                  <div class="form-group form-inline ">
+                    <label for="form-startDate">Start Date</label>
+                    <input id="form-startDate" class="form-control form-control-sm ml-2"type="date" name="" value="">
+                  </div>
+                  <div class="form-group form-inline align-top">
+                    <label for="form-duration">Duration</label>
+                    <div id="form-duration" class="ml-2">
+                      <input  id="form-duration-radio-1" type="radio" name="duration" value="12"> &nbsp; 12 Month<br>
+                      <input  id="form-duration-radio-2" type="radio" name="duration" value="18"> &nbsp; 18 Month
+                    </div>
+
+                  </div>
+                  <div class="form-group form-inline">
+                    <label for="form-unit">End Date</label>
+                    <input disabled id="form-endDate"type="date" class="form-control form-control-sm ml-2"name="" value="">
+                  </div>
+                </fieldset>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row row-table mt-5">
+        <div class="col-lg-12">
+          <div class="thead-explicit">
+            <table class="table table-sm mb-0" id="thead-explixit">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>residenceID</th>
+                  <th>UnitID</th>
+                  <th>ApplicationID</th>
+                  <th>Applicant</th>
+                  <th>From Date</th>
+                  <th>To Date</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbody-explicit">
+            <table class="table table-sm mt-0" id="tbody-explixit">
+              <tbody>
+                <tr>
+                  <td>001</td>
+                  <td>A001</td>
+                  <td>001</td>
+                  <td>001</td>
+                  <td>Jeff</td>
+                  <td>10 October 2019</td>
+                  <td>11 October 2020</td>
+                </tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+                <tr><td>001</td><td>A001</td><td>001</td><td>001</td><td>Jeff</td><td>10 October 2019</td><td>11 October 2020</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row row-option border m-0 mt-4 p-2">
+        <div class="col-lg-4 col-md-0 col-sm-0"></div>
+        <div class="col-lg-1 col-md-12 col-sm-12">
+          <button class="btn btn-primary btn-sm" type="button" name="button">Allocate</button>
+        </div>
+        <div class="col-lg-1 col-md-6 col-sm-6">
+          <button class="btn btn-danger btn-sm" type="button" name="button">Reject</button>
+        </div>
+        <div class="col-lg-1 col-md-6 col-sm-6">
+          <button class="btn btn-danger btn-sm" type="button" name="button">RejectAll</button>
+        </div>
+        <div class="col-lg-1 col-md-12 col-sm-12">
+          <button class="btn btn-light btn-sm" type="button" name="button">Cancel</button>
+        </div>
+        <div class="col-lg-4 col-md-0 col-sm-0"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="allocateHousing.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
