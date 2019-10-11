@@ -20,7 +20,7 @@
   </head>
 
 
-  <body>
+  <body onload="searchResidence()">
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
       <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
@@ -103,7 +103,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search" id="inputSearch">
             <div class="input-group-append">
-              <button class="btn btn-default" type="submit" id="btnSearch" onclick="searchResidence();">
+              <button class="btn btn-default" type="button" id="btnSearch" onclick="searchResidence();">
                 <i class="fas fa-search"></i></button>
             </div>
           </div>
@@ -123,8 +123,9 @@
         <h5>Available Housing:</h5>
       </div>
 
-      <ul class="list-group list_border">
-
+      <ul id="result-container" class="list-group list_border">
+      <!-- this segment of code has been placed into js loop-->
+      <!--
       <li class="list-group-item">
       <div class="row box_shadow">
 
@@ -214,7 +215,7 @@
 
           </div>
         </div>
-      </li>
+      </li>-->
     </ul>
     </div>
 
