@@ -1,7 +1,7 @@
 var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullName:"jeffa marumaya", email:"", monthlyIncome:"999999", attachment: new Array},
                         {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", email:"", monthlyIncome:"666666", attachment: new Array},
-                        {applicantID:4, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", email:"", monthlyIncome:"12345678", attachment: new Array},
-                        {applicantID:3, username:"koi", password:"koi", fullName:"just koi . because reason", email:"", monthlyIncome:"infinite", attachment: new Array}];
+                        {applicantID:3, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", email:"", monthlyIncome:"12345678", attachment: new Array},
+                        {applicantID:4, username:"koi", password:"koi", fullName:"just koi . because reason", email:"", monthlyIncome:"infinite", attachment: new Array}];
 console.log(localStorage.applicant);
 //populate local storage with dummyApplicant fi localStorage applicant is empty
 //localStorage.applicant = '';
@@ -41,15 +41,17 @@ form_submit.addEventListener("click", function(){
 
   if(validateRegister(inUsername, inPassword, inRePassword, inFirstName, inLastName, inEmail, inMonthlyIncome)){
     form_submit.setAttribute("type", "button");
-
+    applicantList = JSON.parse(localStorage.applicant);
+    var nextApplicantID = applicantList[applicantList.length-1].applicantID+1;
     var newApplicant = {applicantID:undefined, username:undefined, password:undefined, fullName:undefined, email:undefined, monthlyIncome:undefined, attachment:undefined};
+    newApplicant.applicantID    = nextApplicantID;
     newApplicant.username       = inUsername;
     newApplicant.password       = inPassword;
     newApplicant.fullName       = inLastName + " " + inFirstName;
     newApplicant.email          = inEmail;
     newApplicant.monthlyIncome  = inMonthlyIncome;
 
-    applicantList = JSON.parse(localStorage.applicant);
+
     //console.log("start");
     applicantList.push(newApplicant);
     //console.log(applicantList);

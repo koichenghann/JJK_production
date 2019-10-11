@@ -29,8 +29,9 @@ var dummyApplication  =[{applicationID:1, applicantID:1, residenceID:"A001", app
                         {applicationID:2, applicantID:3, residenceID:"A003", applicationDate:new Date("22 October 2092"), requiredMonth: "Febuary", requiredYear: "1991", status: "rejected", attachment:new Array},
                         {applicationID:4, applicantID:1, residenceID:"A002", applicationDate:new Date("23 October 1993"), requiredMonth: "March", requiredYear: "3092", status: "appeal", attachment:new Array}];
 
+//localStorage.application = ``;
 if(localStorage.application==""||localStorage.application==undefined){localStorage.application=JSON.stringify(dummyApplication);console.log("applicationList empty: populated with dummy data");}
-if(localStorage.application!=""||localStorage.application!=undefined){
+if(localStorage.application!=""&&localStorage.application!=undefined){
   var applicationList    = JSON.parse(localStorage.application);
   var nextApplicationID  = applicationList[applicationList.length-1].applicationID + 1;
 }
@@ -40,22 +41,20 @@ else {
 }
 
 console.log(applicationList);
+console.log(nextApplicationID);
+console.log(JSON.parse(localStorage.currentUser));
 
 
 var currentUser        = JSON.parse(localStorage.currentUser);
+console.log(currentUser);
 var selectedResidence  = JSON.parse(localStorage.selectedResidence);
 //user's profile details
 document.getElementById("inputFullName")      .value = currentUser.fullName;
 document.getElementById("inputEmail")         .value = currentUser.email;
 document.getElementById("inputIncome")        .value = currentUser.monthlyIncome;
 document.getElementById("inputIncome").addEventListener("change", function(){
-  currentUser.monthlyIncome = document.getElementById("inputIncome").value;
-  for (var i = 0; i < applicantList.length; i++) {
-    if(applicantList[i].applicantID == currentUser.applicantID){
-      applicantList[i] = currentUser;
-    }
-  }
-  localStorage.applicantList = JSON.stringify(applicantList);
+currentUser.monthlyIncome = document.getElementById("inputIncome").value;
+
 });
 
 //var residenceName = localStorage.residenceName;
@@ -67,10 +66,13 @@ document.getElementById("inputUnitSize")      .value = selectedResidence.unitSiz
 document.getElementById("inputMonthlyRental") .value = selectedResidence.monthlyRental;
 
 //Required Month and Year info
-document.getElementById("inputYear")          .value = localStorage.requiredYear;
-document.getElementById("inputMonth")         .value = localStorage.requiredMonth;
+var requiredYear = document.getElementById("inputYear");
+var requiredMonth = document.getElementById("inputMonth");
+requiredYear          .value = localStorage.requiredYear;
+requiredMonth         .value = localStorage.requiredMonth;
 
 //create new application object
+/*
 var newApplication     = {applicationID:"nextApplicationID",
                           applicantID:"currentUser.applicantID",
                           residenceID:selectedResidence.residenceID,
@@ -79,10 +81,14 @@ var newApplication     = {applicationID:"nextApplicationID",
                           requiredYear:localStorage.requiredYear,
                           status:"new",
                           attachment:new Array};
+                          */
+var applicantID = currentUser.applicantID;
 
+var newApplication = {applicationID:nextApplicationID, applicantID:currentUser.applicantID, residenceID:selectedResidence.residenceID, applicationDate:new Date(), requiredMonth:requiredMonth, requiredYear:requiredYear, status: "new", attachment:new Array};
 function submitApplication(){
   applicationList.push(newApplication);
   localStorage.application = JSON.stringify(applicationList);
+  window.location.href = "viewApplication_user.html";
 }
 
 //Cancel Button onclick action

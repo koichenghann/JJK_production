@@ -8,7 +8,8 @@ var dummyOfficer     = [{staffID:1, username:"admin", password:"admin", fullName
 
 //console.log(localStorage.applicant);
 //this combined the dummyApplicant/dummyOfficer array with localStorage array
-var applicantList, officerList;
+var applicantList;
+var officerList;
 applicantList = JSON.parse(localStorage.applicant);//dummyApplicant.concat(function(){if(localStorage.applicant!=undefined){return JSON.parse(localStorage.applicant)}else{return [];}});
 officerList   = dummyOfficer;//dummyOfficer.concat(function(){if(localStorage.officer!=undefined){return JSON.parse(localStorage.officer);}else{return[]}});
 console.log(applicantList);
@@ -35,6 +36,8 @@ form_submit.addEventListener("click", function(){
       localStorage.currentUser = JSON.stringify(applicantList[i]);
       //remove this alert before submision
       alert("user found: " + JSON.parse(localStorage.currentUser).fullName);
+      //console.log(JSON.parse(localStorage.currentUser));
+      //console.log(applicantList[i]);
       window.location.href = "user_homepage.html";
       break;
     }
