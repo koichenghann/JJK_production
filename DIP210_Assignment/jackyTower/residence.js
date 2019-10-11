@@ -8,6 +8,13 @@ var dummyList2 = [    {residenceID:"A001", residenceName:"Twins Residence", addr
                       {residenceID:"B201", residenceName:"empty", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", unitCount:418, unitSize:1088, monthlyRental: 23574.00, amenities: "ew Array", units: new Array, staffID: "KOI001"},
                       {residenceID:"K00B339", residenceName:"Tolong Jaya Condominium", address:"No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur,", unitCount:99, unitSize:735, monthlyRental: 850.00, amenities: "Walking distance to MRT", units: new Array, staffID: "KOI001"},
                       {residenceID:"A00B176", residenceName:"Bunga Jaya Apartment", address:"58, Jalan Kepong, Pekan Kepong, 52000 Kuala Lumpur,", unitCount:215, unitSize:505, monthlyRental: 680.00, amenities: "Walking distance to KTM", units: new Array, staffID: "KOI001"},];
+
+//localStorage.residence = "";
+if(localStorage.residence==""||localStorage.residence==undefined){
+  localStorage.residence = JSON.stringify(dummyList2);
+  //console.log("start 1 : "+localStorage.residence);
+}
+
 //Jaya Apartment
 //Dummy data of residence object
 var dummyResidence = [{residenceName:"Bunga Jaya Apartment", residenceID:"A00B176", address:"58, Jalan Kepong, Pekan Kepong, 52000 Kuala Lumpur,", unitSize:"505 Sqft", amenities:"Walking distance to KTM", UnitCount:"215", monthlyRental:"RM 680"},
@@ -15,7 +22,7 @@ var dummyResidence = [{residenceName:"Bunga Jaya Apartment", residenceID:"A00B17
 
 //Array to store a collection of residence object
 //ar residenceList =[residence1,residence2];
-var residenceList = dummyList2;
+var residenceList = JSON.parse(localStorage.residence);
 
 
 //paste search value into the input box
@@ -35,16 +42,30 @@ function searchResidence() {
     var searchCity = document.getElementById("inputCity").value;
     localStorage.searchCity = searchCity;
 
-
-
+    console.log("search criteria");
+    console.log("val: " + searchVal);
+    console.log("Area: " + searchArea);
+    console.log("City: " + searchCity);
     var searchResult = searchEngine(residenceList,searchVal,searchArea,searchCity);
-    console.log(searchResult);
-    var residenceResult = new Array;
-    for (var i = 0; i < residenceList.length; i++) {
-      if(searchResult.includes(residenceList[i].residenceID)){
-        residenceResult.push(residenceList[i]);
+    //console.log(searchResult);
+    //console.log("here");
+    var residenceResult = [];
+    for (var i = 0; i < searchResult.length; i++) {
+      for (var x = 0; x < residenceList.length; x++) {
+        console.log(searchResult[i]==residenceList[x].residenceID);
+        if (searchResult[i]==residenceList[x].residenceID) {
+          console.log(residenceList[x].residenceID);
+          residenceResult.push(residenceList[x]);
+        }
       }
     }
+    console.log(residenceResult);
+
+    //console.log("result:" + searchResult);
+    for (var i = 0; i < residenceResult.length; i++) {
+      console.log(residenceResult[i]);
+    }
+    //console.log("result:" + residenceResult);
     generateView(residenceResult);
 
 }
@@ -64,8 +85,8 @@ function selectedResidence(view){
     }
   }
 
-  console.log(view.parentElement.parentElement.getElementsByTagName("p")[0].innerHTML);
-  console.log(localStorage.selectedResidence);
+  //console.log(view.parentElement.parentElement.getElementsByTagName("p")[0].innerHTML);
+  //console.log(localStorage.selectedResidence);
 }
 
 
@@ -163,6 +184,7 @@ function requiredDateAndYear(){
 //         \__\/         \__\/         \__\/         \__\/         \__\/         \__\/
 //magical custom search engine from Koi OPENSOURCE_COPYRIGHT@KOI2019
 function searchEngine(source,criteria1,criteria2,criteria3){
+  //console.log(source);
   var ignoreKey = ["jalan", "Jalan", "Bandar", "bandar", "Sungai", "sungai", "Kuala", "kuala"];
   var searchTable = [{index:null, location:""}];
 
@@ -181,8 +203,20 @@ function searchEngine(source,criteria1,criteria2,criteria3){
         }
       }
     }
+    //var splitedResidenceName2 = new Array;
+    var splitedResidenceName = source[i].residenceName.split(", ");
+    for(var x=0; x<splitedResidenceName.length; x++){
+      searchTable.push({key:splitedResidenceName[x], residenceID:source[i].residenceID});
+
+      splitedResidenceName2 = splitedResidenceName[x].split(" ");
+      for(var y=0; y<splitedResidenceName2.length; y++){
+        if(!ignoreKey.includes(splitedResidenceName2[y])){
+          searchTable.push({key:splitedResidenceName2[y], residenceID:source[i].residenceID});
+        }
+      }
+    }
   }
-  //console.log(searchTable);
+  console.log(searchTable);
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var searchCriteria;
@@ -197,6 +231,7 @@ function searchEngine(source,criteria1,criteria2,criteria3){
       }
     }
   }
+  console.log(result);
   if(result.length>0){
     var refinedResult = [result[0].residenceID];
     var lastItem = result[0].residenceID;
@@ -206,8 +241,9 @@ function searchEngine(source,criteria1,criteria2,criteria3){
         refinedResult.push(result[i].residenceID);
       }
     }
-    console.log("SEARCH ENGINE - result[" + result.length + "]: " + result);;
-    console.log("SEARCH ENGINE - refined result: " +refinedResult);
+    //console.log("SEARCH ENGINE - result[" + result.length + "]: " + result);;
+    //console.log("SEARCH ENGINE - refined result: " +refinedResult);
+    console.log(refinedResult);
     return(refinedResult);
   }
   console.log("SEARCH ENGINE - result[" + result.length + "]: empty");

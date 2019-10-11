@@ -2,6 +2,7 @@ var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullNa
                         {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", email:"", monthlyIncome:"666666", attachment: new Array},
                         {applicantID:3, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", email:"", monthlyIncome:"12345678", attachment: new Array},
                         {applicantID:4, username:"koi", password:"koi", fullName:"just koi . because reason", email:"", monthlyIncome:"infinite", attachment: new Array}];
+
 console.log(localStorage.applicant);
 //populate local storage with dummyApplicant fi localStorage applicant is empty
 //localStorage.applicant = '';
