@@ -3,34 +3,37 @@ html {
 }
 
 
-.my-custom-scrollbar {
-position: relative;
-overflow: auto;
-}
 .table-wrapper-scroll-y {
 display: block;
 }
 
-.tableFixHead          {
-	overflow-y: auto; }
+.tableFixHead {
+  overflow-y: auto;
+}
 
 .tableFixHead thead th {
-	position:
-	sticky; top: 0; }
+  top: 0;
+	position:sticky;
+}
 
 .table_height{
 	max-height: 100%;
 }
 
 table  {
-	border-collapse: collapse;
 	max-width: 100%!important;
 	height: 32em!important;
-
 }
-th, td { padding: 8px 16px; }
-th     { background:#eee; }
+
+th     {
+  background:#eee;
+}
+
+
+thead{
+  border-color: #eee!important;
+}
 
 .box_shadow{
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 18px 0 rgba(0, 0, 0, 0.19);
 }
