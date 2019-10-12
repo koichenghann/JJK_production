@@ -4,8 +4,8 @@ var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullNa
                         {applicantID:4, username:"koi", password:"koi", fullName:"just koi . because reason", email:"koi@mail.com", monthlyIncome:"infinite", attachment: new Array}];
 
 console.log(localStorage.applicant);
-populate local storage with dummyApplicant fi localStorage applicant is empty
-localStorage.applicant = '';
+//populate local storage with dummyApplicant fi localStorage applicant is empty
+//localStorage.applicant = '';
 if(localStorage.applicant=="" || localStorage.applicant==undefined){localStorage.applicant=JSON.stringify(dummyApplicant);console.log(localStorage.applicant);}
 
 

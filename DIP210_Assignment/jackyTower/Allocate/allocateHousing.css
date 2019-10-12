@@ -37,3 +37,7 @@ thead{
 .box_shadow{
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 18px 0 rgba(0, 0, 0, 0.19);
 }
+
+.ff{
+  height: 100vh;
+}
