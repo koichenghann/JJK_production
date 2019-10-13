@@ -1,0 +1,48 @@
+.admin_icon i{
+  font-size: 5em;
+  /*color:#7200ff;*/
+}
+
+.page-header {
+  background-image:url("pic/KLtower_bla.jpg");
+	background-repeat:no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position:50% 30%;
+}
+.page-caption {
+  padding-top: 8vh;
+  padding-bottom: 11vh;
+}
+.page-title { font-size: 3.5em;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 320;
+  text-align: center;
+}
+
+.left_bar{
+  min-height: 100%;
+}
+
+.bg_color{
+  background-color:
+}
+
+.box_shadow{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.font_grey{
+  color: #808080;
+}
+
+.font_shadow{
+  text-shadow: 0.5px 1px #808080;
+}
+.mainContain{
+  background-color: #8a8a8a;
+}
+.task_zone{
+  height: 20em;
+}
