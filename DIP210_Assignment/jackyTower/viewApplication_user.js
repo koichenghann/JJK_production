@@ -77,6 +77,7 @@ function insertRowToTable(i){
       cell6.innerHTML = `<div class="text-danger">rejected</div>`;
       break;
     case "new":
+    case "waitlist":
       cell6.innerHTML = `<div class="">new</div>`;
       break;
     case "closed":

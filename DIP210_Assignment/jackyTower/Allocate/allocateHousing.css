@@ -23,6 +23,7 @@ display: block;
 }
 
 table  {
+  width: 100em !important;
 	max-width: 100%!important;
 	height: 35.5em!important;
 }
@@ -30,7 +31,13 @@ table  {
 th     {
   background:#eee;
 }
+th:nth-child(6),th:nth-child(7){
+  width: 100em !important;
 
+}
+td:nth-child(6),td:nth-child(7){
+  width: 100em !important;
+}
 
 thead{
   border-color: #eee!important;
@@ -51,11 +58,13 @@ thead{
 }
 
 .bottom_pane{
-  background-color: #b0b0b0;
+  background-color: #8a8a8a;/*#b0b0b0;*/
   min-height: 100vh !important;
   height: auto;
 }
-
+.btn-disabled2{
+  background-color: #a3781a !important:
+}
 
 @media screen and (max-height: 800px) {
   body {
