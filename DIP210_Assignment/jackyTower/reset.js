@@ -34,7 +34,7 @@ reset.addEventListener("click", function(){
 
 
 
-  var dummyResidence = [  {residenceID:"A001", residenceName:"Twins Residence", address:"2, Jalan Damanlela, Pusat Bandar Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur", unitCount:10, unitSize:3000, monthlyRental: 12000.00, amenities: undefined, units: new Array, staffID: "KOI001"},
+  var dummyResidence = [  {residenceID:"A001", residenceName:"Twins Residence", address:"2, Jalan Damanlela, Pusat Bandar Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur", unitCount:10, unitSize:3000, monthlyRental: 12000.00, amenities: "walking distance to HELP ELM", units: new Array, staffID: "KOI001"},
                           {residenceID:"A002", residenceName:"jeff Penthouse", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", unitCount:30, unitSize:2400, monthlyRental: 14214.00, amenities: "new Array", units: new Array, staffID: "KOI001"},
                           {residenceID:"A003", residenceName:"Koi Resort", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", unitCount:70, unitSize:1500, monthlyRental: 23525.00, amenities: "new Array", units: new Array, staffID: "JEFF001"},
                           {residenceID:"A004", residenceName:"BRP Villa", address:"No.889, Jalan kiri_, Kampung gotaas, 23523 mama", unitCount:50, unitSize:1111, monthlyRental: 34634.00, amenities: "new Array", units: new Array, staffID: "JEFF001"},

@@ -70,7 +70,8 @@ if (localStorage.allocation == "" || localStorage.allocation == undefined) {loca
 
 var allocationList            = JSON.parse(localStorage.allocation);
 var allocationOfSelectedUnit  = new Array;
-var  applicationID             = 12;
+var currentApplication        = JSON.parse(localStorage.selectedApplication);
+var applicationID             = parseInt(currentApplication.applicationID,10);
 var allocation                = {allocationID:undefined, applicationID:applicationID, residenceID:undefined, unitID:undefined, fromDate:undefined, duration:undefined, endDate:undefined};
 
 allocation.allocationID = allocationList[allocationList.length-1].allocationID+1;
@@ -346,12 +347,14 @@ form_btn_addToWaitlist.addEventListener("click", function(){
         application.status = "new";
         localStorage.application = JSON.stringify(applicationList);
       }
-      else {
+      else if(applicationList[i].status == "new"){
         applicationList[i].status = "waitlist";
         application.status = "waitlist";
         localStorage.application = JSON.stringify(applicationList);
         // note
         //window.location.href = "https://www.google.com";
+      }else {
+        alert("Appeal pending for current application, can't add to wishlist.")
       }
       checkWitList();
       break;
@@ -364,12 +367,14 @@ form_btn_reject.addEventListener("click", function(){
     if(applicationList[i].applicationID == application.applicationID){
       applicationList[i].status = "rejected";
       localStorage.application = JSON.stringify(applicationList);
-      // note
-      window.location.href = "https://www.google.com";
+      window.history.back();
       break;
     }
   }
 });
+
+
+
 
 form_btn_allocate.addEventListener("click", function(){
   if (allocatable == true) {
@@ -381,7 +386,7 @@ form_btn_allocate.addEventListener("click", function(){
         applicationList[i].status = "accepted";
         localStorage.application = JSON.stringify(applicationList);
         // note
-        window.location.href = "https://www.google.com";
+        window.history.back();
         break;
       }
     }

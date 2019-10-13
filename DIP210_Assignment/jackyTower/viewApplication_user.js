@@ -1,6 +1,6 @@
 console.log(localStorage.check);
 
-
+/*
 var dummyApplication  =[{applicationID:1, applicantID:1, residenceID:"A001", applicationDate:new Date("21 October 1997"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
                         {applicationID:2, applicantID:1, residenceID:"A002", applicationDate:new Date("21 October 1991"), requiredMonth: "January", requiredYear: "2090", status: "rejected", attachment:new Array},
                         {applicationID:3, applicantID:1, residenceID:"A003", applicationDate:new Date("22 October 2092"), requiredMonth: "Febuary", requiredYear: "1991", status: "rejected", attachment:new Array},
@@ -11,7 +11,7 @@ var dummyApplication  =[{applicationID:1, applicantID:1, residenceID:"A001", app
 
 //  localStorage.application = ``; //to reset localStorage.application
 if(localStorage.application==""||localStorage.application==undefined){localStorage.application=JSON.stringify(dummyApplication);console.log("applicationList empty: populated with dummy data");}
-
+*/
 
 var currentUser = JSON.parse(localStorage.currentUser);
 var residenceList = JSON.parse(localStorage.residence);
