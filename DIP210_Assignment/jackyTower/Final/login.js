@@ -55,7 +55,7 @@ form_submit.addEventListener("click", function(){
         localStorage.currentUser = JSON.stringify(officerList[i]);
         //remove this alert before submision
         alert("officer found: " + JSON.parse(localStorage.currentUser).fullName);
-        window.location.href = "officer_viewApplication/viewApplication_officer.html";
+        window.location.href = "officer_homepage.html";
         break;
       }
     }

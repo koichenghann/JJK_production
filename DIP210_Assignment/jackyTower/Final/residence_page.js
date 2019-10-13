@@ -136,7 +136,7 @@ function generateView(source){
                             </table>
                             <div class="text-right">
                               <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence(this);">
-                                Apply
+                                <i class="fas fa-angle-right"></i> Apply 
                               </button>
                             </div>
                           </div>
