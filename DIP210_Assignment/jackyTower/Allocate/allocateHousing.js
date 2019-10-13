@@ -142,6 +142,7 @@ form_requiredYear.value=application.requiredYear;
 form_unitAvailable.value = residence.unitCount;
 
 checkAllocate();
+checkWitList();
 
 //load all residence into select residence field
 form_residenceID_in.innerHTML = ``;
@@ -327,13 +328,32 @@ var form_btn_allocate     = document.getElementById("form_btn_allocate");
 
 
 //waitlist
+function checkWitList(){
+  if(application.status == "waitlist"){
+    form_btn_addToWaitlist.innerHTML = `waitlist <i class="fas fa-toggle-on"></i>`;
+    form_btn_addToWaitlist.setAttribute("class", "btn btn-primary btn-sm mt-2 mb-2 font-weight-bold")
+  }
+  else if (application.status == "new"){
+    form_btn_addToWaitlist.innerHTML = `waitlist <i class="fas fa-toggle-off"></i>`;
+    form_btn_addToWaitlist.setAttribute("class", "btn btn-secondary btn-sm mt-2 mb-2 font-weight-bold")
+  }
+}
 form_btn_addToWaitlist.addEventListener("click", function(){
   for (var i = 0; i < applicationList.length; i++) {
     if(applicationList[i].applicationID == application.applicationID){
-      applicationList[i].status = "waitlist";
-      localStorage.application = JSON.stringify(applicationList);
-      // note
-      window.location.href = "https://www.google.com";
+      if (applicationList[i].status=="waitlist") {
+        applicationList[i].status = "new";
+        application.status = "new";
+        localStorage.application = JSON.stringify(applicationList);
+      }
+      else {
+        applicationList[i].status = "waitlist";
+        application.status = "waitlist";
+        localStorage.application = JSON.stringify(applicationList);
+        // note
+        //window.location.href = "https://www.google.com";
+      }
+      checkWitList();
       break;
     }
   }
