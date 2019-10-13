@@ -1,27 +1,19 @@
-var dummyList2 = [    {residenceID:"A001", residenceName:"jacky Villa", address:"No.911, Jalan Jalan, Kampung gantut, 54321 sini", unitCount:100, unitSize:3000, monthlyRental: 12000, amenities: undefined, units: new Array, staffID: "KOI001"},
-                      {residenceID:"A002", residenceName:"jeff Penthouse", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", unitCount:320, unitSize:2400, monthlyRental: 14214, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"A003", residenceName:"Koi Resort", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", unitCount:761, unitSize:1500, monthlyRental: 23525, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"B210", residenceName:"no name", address:"No.889, Jalan kiri_, Kampung gotaas, 23523 mama", unitCount:561, unitSize:1111, monthlyRental: 34634, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"B201", residenceName:"undefined", address:"No.770, Jalan kanan, Kampung baboru, 23523 papa", unitCount:791, unitSize:8787, monthlyRental: 12444, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"B208", residenceName:"null", address:"No.001, Jalan left_, Kampung mamoru, 45774 poko", unitCount:781, unitSize:8888, monthlyRental: 37347, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"MPU4", residenceName:"not error", address:"No.003, Jalan right, Kampung kansai, 23423 piko", unitCount:087, unitSize:6666, monthlyRental: 28884, amenities: new Array, units: new Array, staffID: "KOI001"},
-                      {residenceID:"ELM2", residenceName:"empty", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", unitCount:418, unitSize:1088, monthlyRental: 23574, amenities: new Array, units: new Array, staffID: "KOI001"}];
-var residence, inRow;
+function scrollToMain(){
+  document.getElementById("rightPane").scrollIntoView();
+  console.log("ran");
+}
 
 residenceList = new Array;
-//residenceList = dummyList2;
-responsibleOfficer = {staffID:"KOI001", fullName:"koiKoi"};
 
-/*
-function loadDummyData(){
-  if(localStorage.residence==""){
-    alert("localStorage is empty, populated with dummy data");
-    console.log("its empty");
-    localStorage.residence = JSON.stringify(dummyList2);
-    readFromLocalStorage();
-  }
-}
-*/
+responsibleOfficer = JSON.parse(localStorage.currentUser);
+
+
+displayForm();
+
+
+
+
+
 function writeToLocalStorage(){
   localStorage.residence = JSON.stringify(residenceList);
 }
@@ -77,6 +69,8 @@ function resetTable(){
 
 
 function displayForm(inRow){
+
+
   //console.log("display form");
   formStyle1 = `<form class="pt-3 pr-3" action="index.html" method="post">
                                                      <div class="form-group">
@@ -119,7 +113,7 @@ function displayForm(inRow){
                                                        <input type="hidden" id="unit_in" value=""></input>
                                                      </div>
                                                    </form>`;
-  document.getElementById("rightPane").innerHTML = `<form class="pt-3 pr-3" action="index.html" method="post">
+  document.getElementById("rightPane").innerHTML = `<form id="mainForm" class="pt-3 pr-3" action="index.html" method="post">
                                                      <div class="row pb-3">
                                                       <div class="col-4">
                                                        <label for="residenceID_in">Residence ID</label>
@@ -222,12 +216,13 @@ function displayForm(inRow){
     form_amenities           .setAttribute("readonly", null);
     form_staffID             .setAttribute("readonly", null);
 
-    formOptionList.innerHTML = `<button onclick="modifyArray(residence);"class="btn btn-success" type="button" name="button">Edit</button>`;
+    formOptionList.innerHTML = `<button onclick="modifyArray(residence); scrollToMain();"class="btn btn-success" type="button" name="button">Edit</button>`;
 
     afterEnableEdit = `<button onclick="deleteRowFromArray(rowNo); showForm();"class="btn btn-danger" type="button" name="button">Del</button>
                                 <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn btn-success" type="button" name="button">Save Changes</button>
                                 <button onclick="showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn" type="button" name="button">Cancel</button>`;
   }
+  document.getElementById("mainForm").scrollIntoView();
 }
 
 

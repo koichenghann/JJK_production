@@ -13,7 +13,7 @@ if(localStorage.application==""||localStorage.application==undefined){localStora
 */
 
 
-var currentOfficer = {staffID:"KOI001", username:"koich", password:"koich"};
+var currentOfficer = JSON.parse(localStorage.currentUser);
 //var currentUser = JSON.parse(localStorage.currentUser);
 var residenceList = JSON.parse(localStorage.residence);
 

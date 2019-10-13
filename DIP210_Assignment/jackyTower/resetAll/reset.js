@@ -86,10 +86,22 @@ reset.addEventListener("click", function(){
     }
   }
   if (localStorage.allocation == "" || localStorage.allocation == undefined) {localStorage.allocation = JSON.stringify(dummyAllocation);console.log("allocationList empty: populated with dummy data");}
+
+  //var dummyOfficer = [{username:"koich", password:"koich", fullName:"Koi CH", staffID:"KOI001"}];
+
+  var dummyOfficer = [{username:"koich", password:"koich", fullName:"Koi CH", staffID:"KOI001"},
+                      {username:"jeffyyz", password:"jeffyyz", fullName:"Jeff YYZ", staffID:"JEFF001"},
+                      {username:"jackyvts", password:"jackyvts", fullName:"Jacky VTS", staffID:"JACKY001"},
+                      {username:"admin", password:"admin", fullName:"Administrator", staffID:"KOI001"},
+                      {username:"officer", password:"officer", fullName:"Officer", staffID:"KOI001"}];
+  if (localStorage.officer == "" | localStorage.officer==undefined) {localStorage.officer = JSON.stringify(dummyOfficer);}
+
+
+
   //console.log(localStorage.residence);
   //console.log(localStorage.applicant);
-  console.log(localStorage.application);
-  //console.log(localStorage.officer);
+  //console.log(localStorage.application);
+  console.log(localStorage.officer);
 
 
 

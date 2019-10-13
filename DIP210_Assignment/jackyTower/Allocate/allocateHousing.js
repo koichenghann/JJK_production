@@ -1,3 +1,4 @@
+/*
 var dummyApplication  = [{applicationID:1, applicantID:1, residenceID:"A001", applicationDate:new Date("21 October 1997"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
                         {applicationID:3, applicantID:2, residenceID:"A002", applicationDate:new Date("21 October 1991"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
                         {applicationID:2, applicantID:3, residenceID:"A003", applicationDate:new Date("22 October 2092"), requiredMonth: "Febuary", requiredYear: "1991", status: "rejected", attachment:new Array},
@@ -29,9 +30,9 @@ var dummyApplicant      = [{applicantID:1, username:"jeff", password:"jeff", ful
                         {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", monthlyIncome:"666666", attachment: new Array},
                         {applicantID:4, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", monthlyIncome:"12345678", attachment: new Array},
                         {applicantID:3, username:"koi", password:"koi", fullName:"just koi . because reason", monthlyIncome:"infinite", attachment: new Array}];
-
+*/
 //will add current officer later
-var currentOfficer    = {staffID:"KOI001", username:"koich", password:"koich"};
+var currentOfficer    = JSON.parse(localStorage.currentUser);
 
 //will move to php in assignment 2
 //list will be store locally for assignment 1
@@ -365,7 +366,12 @@ form_btn_addToWaitlist.addEventListener("click", function(){
 form_btn_reject.addEventListener("click", function(){
   for (var i = 0; i < applicationList.length; i++) {
     if(applicationList[i].applicationID == application.applicationID){
-      applicationList[i].status = "rejected";
+      if(applicationList[i].status == "appealed"){
+        applicationList[i].status = "closed";
+      }
+      else {
+        applicationList[i].status = "rejected";
+      }
       localStorage.application = JSON.stringify(applicationList);
       window.history.back();
       break;
@@ -374,6 +380,20 @@ form_btn_reject.addEventListener("click", function(){
 });
 
 
+function rejectAll(){
+  applicationList = JSON.parse(localStorage.application)
+  for (var i = 0; i < applicationList.length; i++) {
+    if(applicationList[i].applicantID.toString() == applicant.applicantID.toString() && ["new", "appealed", "rejected", "waitlist"].includes(applicationList[i].status.toLowerCase())){
+      applicationList[i].status = "closed";
+    }
+  }
+  localStorage.application = JSON.stringify(applicationList);
+  window.history.back();
+}
+
+form_btn_rejectAll.addEventListener("click", function(){
+  rejectAll();
+})
 
 
 form_btn_allocate.addEventListener("click", function(){
@@ -385,9 +405,7 @@ form_btn_allocate.addEventListener("click", function(){
       if(applicationList[i].applicationID == application.applicationID){
         applicationList[i].status = "accepted";
         localStorage.application = JSON.stringify(applicationList);
-        // note
-        window.history.back();
-        break;
+        rejectAll();
       }
     }
   }

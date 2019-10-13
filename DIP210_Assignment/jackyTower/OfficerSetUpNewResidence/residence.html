@@ -22,9 +22,9 @@
   </head>
 
 
-  <body id="bd1" onload="populateTable()">
+  <body id="bd1" onload="populateTable();">
     <!--navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed bg_dark_black">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed w-100 mt-0 mb-5 bg_dark_black">
       <a class="navbar-brand" href="#"><strong>MicroHousing System</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -58,49 +58,56 @@
     </nav>
 
     <!--Page Title-->
-    <div class="container mt-4">
-      <h3 class="text-center display-4">Set Up New Residence</h3>
+    <div class="container mt-0 pt-0 pb-3 ">
+      <h3 class="text-center display-4 mt-5 mb-5 pt-5 pb-5 space1">Set Up New Residence</h3>
     </div>
 
-      <div class="mainContent container-fluid">
-        <div class="row resMain">
+      <div id="mainContent" class="mainContent container-fluid mb-0 pb-0">
+        <div id="space3"class="row resMain ">
 
-          <div class="col-lg-8 resLeftPane pl-3 pr-3">
+          <div class="col-lg-8 resLeftPane pl-3 pr-3 pb-0 mb-0">
 
-            <div class="container-fluid box_shadow pt-3 pb-3 mt-1 mb-4 ">
+            <div class="container-fluid box_shadow pt-3 pb-3 mt-1 mb-4 table_container">
               <div class="container">
                 <h3 class="lead">MHS Residences</h3>
               </div>
-            <table class="table table-bordered table-hover table-fixed" id="residenceTable">
-              <thead>
-                <tr>
-                  <th class="hidden" id="residenceNo_th">No.</th>
-                  <th>Residence ID</th>
-                  <th>residence Name</th>
-                  <th>Monthly Rental</th>
-                  <th>Units</th>
-                  <th>Officer</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-            <div class="optionList">
-              <button onclick="clearLocalStorage();" class="btn btn-danger" type="button" name="button">clearTable</button>
-              <button onclick="displayForm();" class="btn btn-warning" type="button" name="button">New</button>
 
-              <br>
-              clear table button are meant for testing js function only, will not be included in the product
+              <table class="table table-hover table-wrapper-scroll-y scrollbar tableFixHead" id="residenceTable">
+                <thead>
+                  <tr>
+                    <th class="hidden" id="residenceNo_th">No.</th>
+                    <th>Residence ID</th>
+                    <th>residence Name</th>
+                    <th>Monthly Rental</th>
+                    <th>Units</th>
+                    <th>Officer</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+
+              <!--<div class="optionList">
+
+                <button onclick="displayForm();" class="btn btn-warning" type="button" name="button">New</button>
+
+                <br>
+
+              </div>-->
+
             </div>
-
-          </div>
           </div>
 
-          <div class="col-lg-4 resForm" id="rightPane">
+          <div class="col-lg-4 resForm mt-0" id="rightPane">
 
           </div>
         </div>
-      </div>
 
+      </div>
+      <footer id="footer" class="py-3 bg-dark text-white-50 shadow fixed w-100 p-0 m-0">
+          <div class="container text-center">
+            <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
+          </div>
+      </footer>
 
 
 

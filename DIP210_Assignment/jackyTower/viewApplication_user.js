@@ -81,7 +81,7 @@ function insertRowToTable(i){
       cell6.innerHTML = `<div class="">new</div>`;
       break;
     case "closed":
-      cell6.innerHTML = `<div class="text-muted">closed</div>`;
+      cell6.innerHTML = `<div class="text-muted">rejected</div>`;
       break;
     case "accepted":
       cell6.innerHTML = `<div class="text-success">Accepted</div>`;

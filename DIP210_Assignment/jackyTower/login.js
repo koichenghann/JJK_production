@@ -11,7 +11,7 @@ var dummyOfficer     = [{staffID:1, username:"admin", password:"admin", fullName
 var applicantList;
 var officerList;
 applicantList = JSON.parse(localStorage.applicant);//dummyApplicant.concat(function(){if(localStorage.applicant!=undefined){return JSON.parse(localStorage.applicant)}else{return [];}});
-officerList   = dummyOfficer;//dummyOfficer.concat(function(){if(localStorage.officer!=undefined){return JSON.parse(localStorage.officer);}else{return[]}});
+officerList   = JSON.parse(localStorage.officer);//dummyOfficer.concat(function(){if(localStorage.officer!=undefined){return JSON.parse(localStorage.officer);}else{return[]}});
 console.log(applicantList);
 
 //declaring variable for html element
@@ -55,7 +55,7 @@ form_submit.addEventListener("click", function(){
         localStorage.currentUser = JSON.stringify(officerList[i]);
         //remove this alert before submision
         alert("officer found: " + JSON.parse(localStorage.currentUser).fullName);
-        window.location.href = "../koiPlayGround/prototype/application2.html";
+        window.location.href = "officer_viewApplication/viewApplication_officer.html";
         break;
       }
     }
