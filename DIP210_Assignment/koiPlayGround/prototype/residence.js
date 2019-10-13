@@ -7,7 +7,7 @@ var dummyList2 = [    {residenceID:"A001", residenceName:"jacky Villa", address:
                       {residenceID:"MPU4", residenceName:"not error", address:"No.003, Jalan right, Kampung kansai, 23423 piko", unitCount:087, unitSize:6666, monthlyRental: 28884, amenities: new Array, units: new Array, staffID: "KOI001"},
                       {residenceID:"ELM2", residenceName:"empty", address:"No.023, Jalan mati_, Kampung kyoton, 74574 nono", unitCount:418, unitSize:1088, monthlyRental: 23574, amenities: new Array, units: new Array, staffID: "KOI001"}];
 var residence, inRow;
-
+if(localStorage.residence==""){localStorage.residence = JSON.stringify(dummyList2);}
 residenceList = new Array;
 //residenceList = dummyList2;
 responsibleOfficer = {staffID:"KOI001", fullName:"koiKoi"};

@@ -1,7 +1,7 @@
-var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullName:"jeffa marumaya", email:"", monthlyIncome:"999999", attachment: new Array},
-                        {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", email:"", monthlyIncome:"666666", attachment: new Array},
-                        {applicantID:3, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", email:"", monthlyIncome:"12345678", attachment: new Array},
-                        {applicantID:4, username:"koi", password:"koi", fullName:"just koi . because reason", email:"", monthlyIncome:"infinite", attachment: new Array}];
+var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullName:"jeffa marumaya", email:"jeff@mail.com", monthlyIncome:"999999", attachment: new Array},
+                        {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", email:"jacky@mail.com", monthlyIncome:"666666", attachment: new Array},
+                        {applicantID:3, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", email:"jackyjacky@mail.com", monthlyIncome:"12345678", attachment: new Array},
+                        {applicantID:4, username:"koi", password:"koi", fullName:"just koi . because reason", email:"koi@mail.com", monthlyIncome:"infinite", attachment: new Array}];
 
 console.log(localStorage.applicant);
 //populate local storage with dummyApplicant fi localStorage applicant is empty
@@ -46,10 +46,10 @@ form_submit.addEventListener("click", function(){
     var nextApplicantID = applicantList[applicantList.length-1].applicantID+1;
     var newApplicant = {applicantID:undefined, username:undefined, password:undefined, fullName:undefined, email:undefined, monthlyIncome:undefined, attachment:undefined};
     newApplicant.applicantID    = nextApplicantID;
-    newApplicant.username       = inUsername;
-    newApplicant.password       = inPassword;
-    newApplicant.fullName       = inLastName + " " + inFirstName;
-    newApplicant.email          = inEmail;
+    newApplicant.username       = inUsername.trim();
+    newApplicant.password       = inPassword.trim();
+    newApplicant.fullName       = inLastName.trim() + " " + inFirstName.trim();
+    newApplicant.email          = inEmail.trim();
     newApplicant.monthlyIncome  = inMonthlyIncome;
 
 

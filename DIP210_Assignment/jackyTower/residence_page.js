@@ -182,9 +182,16 @@ function requiredDateAndYear(){
 //       \__\/ /:/     \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \  \:\
 //         /__/:/       \  \::/       \  \:\        \  \:\        \  \::/       \  \:\
 //         \__\/         \__\/         \__\/         \__\/         \__\/         \__\/
-//magical custom search engine from Koi OPENSOURCE_COPYRIGHT@KOI2019
+//
 function searchEngine(source,criteria1,criteria2,criteria3){
-  //console.log(source);
+  //return all residence in source if user enter all
+  if (criteria1.toLowerCase()=="all") {
+    var all = new Array;
+    for (var i = 0; i < source.length; i++) {
+      all.push(source[i].residenceID);
+    }
+    return all;
+  }
   var ignoreKey = ["jalan", "Jalan", "Bandar", "bandar", "Sungai", "sungai", "Kuala", "kuala"];
   var searchTable = [{index:null, location:""}];
 

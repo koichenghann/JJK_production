@@ -17,6 +17,7 @@ var jacky = "jeff";
 console.log(jacky == jeff.toLowerCase());
 */
 
+/*
 outputDate = ("00".substring(0, (""+allocation.endDate.getDate()).length) + allocation.endDate.getDate());
 
 
@@ -24,3 +25,14 @@ var jeff = "1234";
 
 var jacky = ("00".substring(0, jeff));
 console.log(jacky);
+*/
+
+console.log(["me", "you"].includes("me"));
+
+console.log(pad("5",6));
+
+function pad(source, amount){
+  var newSource = source;
+  for (var i = 0; i < amount-source.length; i++) {newSource = "0"+newSource;}
+  return newSource;
+}
