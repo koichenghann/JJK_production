@@ -367,12 +367,14 @@ form_btn_reject.addEventListener("click", function(){
     if(applicationList[i].applicationID == application.applicationID){
       applicationList[i].status = "rejected";
       localStorage.application = JSON.stringify(applicationList);
-      // note
-      window.location.href = "https://www.google.com";
+      window.history.back();
       break;
     }
   }
 });
+
+
+
 
 form_btn_allocate.addEventListener("click", function(){
   if (allocatable == true) {
@@ -384,7 +386,7 @@ form_btn_allocate.addEventListener("click", function(){
         applicationList[i].status = "accepted";
         localStorage.application = JSON.stringify(applicationList);
         // note
-        window.location.href = "https://www.google.com";
+        window.history.back();
         break;
       }
     }
