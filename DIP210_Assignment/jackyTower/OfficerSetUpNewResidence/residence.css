@@ -1,0 +1,47 @@
+/*body{
+  background-color: #343333;
+  Bootstrap dark:#343a40
+  Dark black#343333
+}*/
+
+.bg_dark_black{
+
+  background-color: #343333;
+}
+
+.table-dark{
+  background-color: #343333!important;
+}
+
+.box_shadow{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 18px 0 rgba(0, 0, 0, 0.19);
+}
+
+.resNav{
+  height: 0;
+  background-color: white;
+}
+
+.resForm{
+  height: 90vh;
+  background-color: inherit;
+}
+
+.resTable{
+  height: 90vh;
+  background-color: white;
+}
+
+.optionList{
+  text-align: right;
+}
+
+.hidden{
+  display: none;
+}
+
+.residenceTable{
+  height: 60vh;
+  max-height: 60vh;
+  min-height: 60vh;
+}
