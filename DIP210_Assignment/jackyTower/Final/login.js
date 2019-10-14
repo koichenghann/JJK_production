@@ -1,6 +1,5 @@
 logOut();
 
-alert("sample account:\n<<<applicant>>>\nusername: jeff\npassword: jeff\n\n<<<officer>>>\nusernme: officer\npassword: officer");
 
 
 var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullName:"jeffa marumaya", email:"", monthlyIncome:"999999", attachment: new Array},
@@ -70,3 +69,8 @@ form_submit.addEventListener("click", function(){
     alert("invalid username and password combination");
   }
 });
+
+function showTips(){
+  alert("sample account:\n<<<applicant>>>\nusername: jeff\npassword: jeff\n\n<<<officer>>>\nusernme: officer\npassword: officer");
+
+}
