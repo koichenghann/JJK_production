@@ -1,4 +1,4 @@
-validateUser("applicant");
+//validateUser("applicant");
 /*
 function xx(){
   document.getElementById("login").innerHTML= ` <a href="login.html" class="nav-link font-weight-bold">
