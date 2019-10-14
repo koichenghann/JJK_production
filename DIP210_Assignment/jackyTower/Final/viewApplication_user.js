@@ -1,3 +1,6 @@
+validateUser("applicant");
+
+
 console.log(localStorage.check);
 
 /*

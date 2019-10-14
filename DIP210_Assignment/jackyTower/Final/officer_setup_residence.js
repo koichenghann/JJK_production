@@ -1,4 +1,6 @@
-function scrollToMain(){
+validateUser("officer");
+
+function scrollToMain2(){
   document.getElementById("rightPane").scrollIntoView();
   console.log("ran");
 }
@@ -221,8 +223,9 @@ function displayForm(inRow){
     afterEnableEdit = `<button onclick="deleteRowFromArray(rowNo); showForm();"class="btn btn-danger" type="button" name="button">Del</button>
                                 <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn btn-success" type="button" name="button">Save Changes</button>
                                 <button onclick="showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn" type="button" name="button">Cancel</button>`;
+    document.getElementById("mainForm").scrollIntoView();
   }
-  document.getElementById("mainForm").scrollIntoView();
+  //document.getElementById("mainForm").scrollIntoView();
 }
 
 

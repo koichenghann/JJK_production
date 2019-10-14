@@ -1,3 +1,7 @@
+logOut();
+
+
+
 var dummyApplicant   = [{applicantID:1, username:"jeff", password:"jeff", fullName:"jeffa marumaya", email:"", monthlyIncome:"999999", attachment: new Array},
                         {applicantID:2, username:"jacky", password:"jacky", fullName:"jackyru kurohime", monthlyIncome:"666666", attachment: new Array},
                         {applicantID:4, username:"jackyjacky", password:"jackyjacky", fullName:"black pepper bbq jacky", monthlyIncome:"12345678", attachment: new Array},
@@ -35,7 +39,7 @@ form_submit.addEventListener("click", function(){
       localStorage.currentUser, localStorage.currentUserType = "";
       localStorage.currentUser = JSON.stringify(applicantList[i]);
       //remove this alert before submision
-      alert("user found: " + JSON.parse(localStorage.currentUser).fullName);
+      //alert("user found: " + JSON.parse(localStorage.currentUser).fullName);
       //console.log(JSON.parse(localStorage.currentUser));
       //console.log(applicantList[i]);
       window.location.href = "user_homepage.html";
@@ -54,7 +58,7 @@ form_submit.addEventListener("click", function(){
         localStorage.currentUser, localStorage.currentUserType = "";
         localStorage.currentUser = JSON.stringify(officerList[i]);
         //remove this alert before submision
-        alert("officer found: " + JSON.parse(localStorage.currentUser).fullName);
+        //alert("officer found: " + JSON.parse(localStorage.currentUser).fullName);
         window.location.href = "officer_homepage.html";
         break;
       }

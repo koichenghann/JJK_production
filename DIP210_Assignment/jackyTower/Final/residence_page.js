@@ -1,3 +1,5 @@
+validateUser("applicant");
+
 var dummyList2 = [    {residenceID:"A001", residenceName:"Twins Residence", address:"2, Jalan Damanlela, Pusat Bandar Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur", unitCount:100, unitSize:3000, monthlyRental: 12000.00, amenities: undefined, units: new Array, staffID: "KOI001"},
                       {residenceID:"A002", residenceName:"jeff Penthouse", address:"No.912, Jalan roads, Kampung madosa, 12312 sana", unitCount:320, unitSize:2400, monthlyRental: 14214.00, amenities: "new Array", units: new Array, staffID: "KOI001"},
                       {residenceID:"A003", residenceName:"Koi Resort", address:"No.817, Jalan nanan, Kampung sentos, 23552 mana", unitCount:761, unitSize:1500, monthlyRental: 23525.00, amenities: "new Array", units: new Array, staffID: "KOI001"},
@@ -136,7 +138,7 @@ function generateView(source){
                             </table>
                             <div class="text-right">
                               <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence(this);">
-                                <i class="fas fa-angle-right"></i> Apply 
+                                <i class="fas fa-angle-right"></i> Apply
                               </button>
                             </div>
                           </div>

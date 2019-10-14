@@ -1,4 +1,4 @@
-
+validateUser("officer");
 /*
 var dummyApplication  =[{applicationID:1, applicantID:1, residenceID:"A001", applicationDate:new Date("21 October 1997"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
                         {applicationID:2, applicantID:1, residenceID:"A002", applicationDate:new Date("21 October 1991"), requiredMonth: "January", requiredYear: "2090", status: "rejected", attachment:new Array},
@@ -145,7 +145,7 @@ function selectApplication(selectedRow){
     if (applicationList[i].applicationID.toString() == selectedApplicationID.toString()) {
       localStorage.selectedApplication = JSON.stringify(applicationList[i]);
       console.log(localStorage.selectedApplication);
-      window.location.href = "../Allocate/allocateHousing.html"
+      window.location.href = "officer_allocateHousing.html"
       break;
     }
   }

@@ -4,7 +4,8 @@
 }
 
 .page-header {
-  background-image:url("pic/KLtower_bla.jpg");
+  /*background-image:url("pic/KLtower_bla.jpg");*/
+
 	background-repeat:no-repeat;
   position: relative;
   background-size: cover;
@@ -45,4 +46,8 @@
 }
 .task_zone{
   height: 25em;
+}
+
+html{
+  scroll-behavior: smooth !important;
 }

@@ -1,3 +1,6 @@
+validateUser();
+
+
 /*
 var dummyApplication  = [{applicationID:1, applicantID:1, residenceID:"A001", applicationDate:new Date("21 October 1997"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
                         {applicationID:3, applicantID:2, residenceID:"A002", applicationDate:new Date("21 October 1991"), requiredMonth: "January", requiredYear: "2090", status: "new", attachment:new Array},
@@ -373,7 +376,7 @@ form_btn_reject.addEventListener("click", function(){
         applicationList[i].status = "rejected";
       }
       localStorage.application = JSON.stringify(applicationList);
-      window.history.back();
+      window.location.href = "officer_viewApplication.html";
       break;
     }
   }
@@ -388,7 +391,7 @@ function rejectAll(){
     }
   }
   localStorage.application = JSON.stringify(applicationList);
-  window.history.back();
+  window.location.href = "officer_viewApplication.html";
 }
 
 form_btn_rejectAll.addEventListener("click", function(){

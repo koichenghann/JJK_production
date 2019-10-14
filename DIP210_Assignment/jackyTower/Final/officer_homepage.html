@@ -15,7 +15,7 @@
 
     <!--MHS Favicon-->
     <link rel = "icon" type = "image/png" href = "pic/icon/home-solid.png">
-    
+
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -38,7 +38,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="viewApplication_officer.html">View Application</a>
+            <a class="nav-link" href="officer_viewApplication.html">View Application</a>
           </li>
         </ul>
 
@@ -56,12 +56,14 @@
     </nav>
 
     <!--title bar with pic-->
-    <div class="page-header">
-      <div class="container-fluid">
+    <div id="form_header"class="page-header ">
+      <div class="container">
           <div class="row">
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="page-caption">
-                  <h1 class="page-title text-center">WELCOME BACK OFFICER!</h1>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5 ">
+                <div class="page-caption pt-5 mt-5 mb-5">
+                  <h1 class=" text-center">WELCOME BACK OFFICER!</h1>
+                  <p class="text-center m-0 p-0">Good morning, Klang Valley! Micro HS team is waiting to serve you</p>
+                  <p class="text-center m-0 p-0">with the latest service updates.</p>
                 </div>
               </div>
           </div>
@@ -82,92 +84,86 @@
 
 
 
-      <div class="container-fluid pt-3 mainContain pb-4">
+      <div id="form_main"class="container pt-3  pb-4">
         <div class="row">
 
-        <div class="col-lg-2 col-md-12 col-xs-12 left_bar">
-
-      	<div class="card mb-3 ml-2 pt-4 box_shadow">
-      		<div class="text-center admin_icon">
-      			<i class="fas fa-user-circle"></i>
-          </div>
-          <div class="card-body">
-            <hr>
-            <h5 class="card-title text-center">
-              <!--Username-->
-      				<strong>Koi Dai Go</strong></h5>
-            <p class="card-subtitle text-center">Staff ID: KDG0001</p>
-        </div>
-        </div>
-
-        <div class="card mb-3 ml-2 box_shadow">
-      			<div class="card-body">
-      				<h5 class="card-title">Features</h5>
-      				<hr>
-      				<a href="officer_setup_residence.html" class="card-subtitle">
-      				<i class="fas fa-plus-square"></i> Add New Residence</a>
-      				<br>
-      				<a href="viewApplication_officer.html" class="card-subtitle">
-      					<i class="far fa-sticky-note"></i> View Application</a>
-      			</div>
-        </div>
-        </div>
-
-
-        <div class="col-lg-10 col-md-12 col-xs-12">
-        <div class="row">
-
-
-          <div class="container-fluid col-lg-6 col-md-12 col-xs-12">
-
-            <div class="card col-lg-12 col-md-12 col-xs-12 p-2 mb-3 shadow task_zone">
-              <div class="card-body">
-                <h4 class="card-title">Tasks Panel:</h4>
-                <hr>
-                <ul>
-                  <li class="m-2"><h6 class="card-subtitle">19/10/2019 - MHS Board Meeting</h6></li>
-                  <li class="m-2"><h6 class="card-subtitle">20/10/2019 - Annual Dinner</h6></li>
-                </ul>
-
-
-              </div>
+        <div class="col-lg-2 col-md-12 col-xs-12 left_bar pb-3">
+          <!-- left top -->
+        	<div class="card mb-3 ml-2 pt-4 box_shadow " style="height:55%;">
+        		<div class="text-center admin_icon">
+        			<i class="fas fa-user-circle"></i>
             </div>
-          </div>
-
-        <div class="container-fluid col-lg-6 col-md-12 col-xs-12">
-          <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 shadow">
-            <h4 class="text-left text-white font_shadow lead"><i class="fas fa-users"></i> Registered Applicants</h4>
             <div class="card-body">
-              <h5 class="card-subtitle text-light">Total:</h5>
+              <hr>
+              <h5 class="card-title text-center">
+                <!--Username-->
+        				<strong id="form_username">Koi Dai Go</strong></h5>
+              <p id="form_staffID"class="card-subtitle text-center">Staff ID: KDG0001</p>
             </div>
           </div>
 
-            <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 shadow">
-              <h4 class="text-left text-white font_shadow lead"><i class="far fa-copy"></i> MicroHousing Applications</h4>
-              <div class="card-body">
-
-                <h6 class="card-subtitle text-white">Total:</h6>
-              </div>
-              <a href="viewApplication_officer.html" class="btn btn-warning font-weight-bold"><i class="far fa-sticky-note"></i>  View Application</a>
-
-            </div>
-
-            <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 shadow">
-              <h4 class="text-left text-light font_shadow lead"><i class="fas fa-home"></i> MicroHousing Residences</h4>
-              <div class="card-body">
-
-                <h6 class="card-subtitle text-white">Total:</h6>
-              </div>
-
-              <a href="officer_setup_residence.html" class="btn btn-warning font-weight-bold"><i class="fas fa-plus-square"></i>  Add New Residence</a>
-            </div>
-
-
-
+          <!-- left bottom -->
+          <div class="card mb-0 ml-2 box_shadow" style="height:41%;">
+        			<div class="card-body">
+        				<h5 class="card-title">Features</h5>
+        				<hr>
+        				<a href="officer_setup_residence.html" class="card-subtitle">
+        				<i class="fas fa-plus-square"></i> Setup Residence</a>
+        				<br>
+        				<a href="officer_viewApplication.html" class="card-subtitle">
+        					<i class="far fa-sticky-note"></i> View Application</a>
+        			</div>
           </div>
-
 
         </div>
+
+
+        <div class="col-lg-10 col-md-12 col-xs-12 ">
+          <div class="row">
+
+            <!-- center -->
+            <div class="container-fluid col-lg-6 col-md-12 col-xs-12  pb-3">
+              <div class="card col-lg-12 col-md-12 col-xs-12 p-2 mb-3 box_shadow task_zone h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Tasks Panel:</h5>
+                  <hr>
+                  <ul>
+                    <li class="m-2"><h6 class="card-subtitle">19/10/2019 - MHS Board Meeting</h6></li>
+                    <li class="m-2"><h6 class="card-subtitle">20/10/2019 - Annual Dinner</h6></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- right top -->
+            <div class="container-fluid col-lg-6 col-md-12 col-xs-12">
+              <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 box_shadow">
+                <h4 class="text-left text-white font_shadow lead"><i class="fas fa-users"></i> Registered Applicants</h4>
+                <div class="card-body">
+                  <h5 id="form_totalApplicant"class="card-subtitle text-light">Total:</h5>
+                </div>
+              </div>
+
+              <!-- right middle -->
+              <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 box_shadow">
+                <h4 class="text-left text-white font_shadow lead"><i class="far fa-copy"></i> MicroHousing Applications</h4>
+                <div class="card-body">
+                  <h6 id="form_totalApplication"class="card-subtitle text-white">Total:</h6>
+                </div>
+                <a href="officer_viewApplication.html" class="btn btn-warning font-weight-bold"><i class="far fa-sticky-note"></i>  View Application</a>
+              </div>
+
+              <!-- right bottom -->
+              <div class="card bg-dark col-lg-12 col-md-12 col-xs-12 mr-2 mb-3 p-3 box_shadow">
+                <h4 class="text-left text-light font_shadow lead"><i class="fas fa-home"></i> MicroHousing Residences</h4>
+                <div class="card-body">
+                  <h6 id="form_totalResidence"class="card-subtitle text-white">Total:</h6>
+                </div>
+                <a href="officer_setup_residence.html" class="btn btn-warning font-weight-bold"><i class="fas fa-plus-square"></i>  Add New Residence</a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -181,5 +177,9 @@
         </div>
     </footer>
 
+    <script src="core.js"></script>
+    <script src="officer_homepage.js">
+
+    </script>
   </body>
 </html>
