@@ -24,6 +24,7 @@ console.log(currentUser);
 var selectedResidence  = JSON.parse(localStorage.selectedResidence);
 //user's profile details
 document.getElementById("inputFullName")      .value = currentUser.fullName;
+console.log("here " + currentUser.email);
 document.getElementById("inputEmail")         .value = currentUser.email;
 document.getElementById("inputIncome")        .value = currentUser.monthlyIncome;
 document.getElementById("inputIncome").addEventListener("change", function(){
@@ -58,7 +59,7 @@ var newApplication     = {applicationID:"nextApplicationID",
                           */
 var applicantID = currentUser.applicantID;
 
-var newApplication = {applicationID:nextApplicationID, applicantID:currentUser.applicantID, residenceID:selectedResidence.residenceID, applicationDate:new Date(), requiredMonth:requiredMonth, requiredYear:requiredYear, status: "new", attachment:new Array};
+var newApplication = {applicationID:nextApplicationID, applicantID:currentUser.applicantID, residenceID:selectedResidence.residenceID, applicationDate:new Date(), requiredMonth:requiredMonth.value, requiredYear:requiredYear.value, status: "new", attachment:new Array};
 function submitApplication(){
   applicationList.push(newApplication);
   localStorage.application = JSON.stringify(applicationList);

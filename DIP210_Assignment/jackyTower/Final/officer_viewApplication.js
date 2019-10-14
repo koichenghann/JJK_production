@@ -38,7 +38,7 @@ check_waitlist.addEventListener("click", function(){loadApplication();});
 check_appeal.addEventListener("click", function(){loadApplication();});
 check_rejected.addEventListener("click", function(){loadApplication();});
 check_accepted.addEventListener("click", function(){loadApplication();});
-
+check_closed.addEventListener("click", function(){loadApplication();});
 var displayCritiria = new Array;
 
 
@@ -55,6 +55,7 @@ function loadApplication(){
   if (check_appeal.checked==true) {displayCritiria.push("appealed");}
   if (check_rejected.checked==true) {displayCritiria.push("rejected");}
   if (check_accepted.checked==true) {displayCritiria.push("accepted");}
+  if (check_closed.checked==true) {displayCritiria.push("closed");}
 
   //console.log(displayCritiria);
   applicationList = new Array;
@@ -125,6 +126,7 @@ function insertRowToTable(i){
   cell5.innerHTML = applicant.username;
   cell6.innerHTML = residence.amenities;
   cell7.innerHTML = applicant.monthlyIncome;
+  console.log(applicationList[i].requiredMonth);
   cell8.innerHTML = applicationList[i].requiredMonth;
   cell9.innerHTML = applicationList[i].requiredYear;
   cell10.innerHTML = applicationList[i].status;
