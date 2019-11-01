@@ -1,8 +1,17 @@
-#form{background-color: grey;
+body{background-image:url("picture/mobile_banner2.jpg");
+  background-size: cover;}
+
+#form{background-color:#F0E68C;
 min-height:600px;
 }
 
 .applicantion{font-size: 40px;
 font-weight: 700;
 font-family: Agency FB;
-border-bottom-style:ridge; }
+border-bottom-style:ridge;
+}
+
+
+footer{background-color: #3f3f3f;
+color:#d5d5d5;
+padding: 2rem;}
