@@ -81,11 +81,3 @@ CREATE TABLE Allocation (
     duration int,
     endDate date
 );
-
-
-
-
-DROP database MHSMYSql;
-    
-    
-    
