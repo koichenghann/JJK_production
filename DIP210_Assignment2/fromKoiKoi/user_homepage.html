@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MHS | Home</title>
+
+    <!--Link to css file-->
+    <link rel="stylesheet" href="home.css"/>
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top bg-light">
+      <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="user_homepage.html">Home</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="residence_page.html">Find MHS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="viewApplication_user.html">Application Status</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!--
+    <div class="spaceBetweenNavAndMain"></div>
+    -->
+
+  <main>
+    <!--Carousel Slider-->
+    <div class="carousel slide" id="imgSlides" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#imgSlides" data-slide-to="0" class="active"></li>
+        <li data-target="#imgSlides" data-slide-to="1"></li>
+        <li data-target="#imgSlides" data-slide-to="2"></li>
+      </ul>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="pic/KLCC18_9_bla.jpg" alt="titlePic1" class="img-fluid">
+          <div class="carousel-caption">
+            <h1 class="display-2"> MicroHousing </h1>
+            <h3> To Live like No One Else </h3>
+            <!--
+            <button type="button" name="button" class="btn btn-primary btn-lg">
+              Get Started
+            </button>
+            -->
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img class="img-fluid" src="pic/DBKL_black18_9.jpg" alt="titlePic2">
+          <div class="carousel-caption">
+            <h2>DBKL MicroHousing Plan 2019</h2>
+            <h3>New Housing Available</h3>
+            <a href="register.html">
+              <button type="button" class="btn btn-outline-warning btn-lg font-weight-bold btn_title">
+                REGISTER NOW
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img class="img-fluid" src="pic/KLtower_black18_9.jpg" alt="titlePic3">
+          <div class="carousel-caption">
+            <h2>- One City One Heart -</h2>
+            <h3>We are KL City</h3>
+            <a href="aboutUs.html" class="btn btn-warning btn-lg font-weight-bold btn_title" role="button">
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Description with Jumbotron-->
+    <!--
+    <div class="container-fluid">
+      <div class="row jumbotron">
+        <div class="col-12">
+          <h4>Why MHS?</h4>
+          <p class="lead text-justify">Big cities are always expensive to live in, but even more so for young people who have to live independently, whether they are college students, fresh graduates or job seekers.</p>
+          <p class="lead text-justify">Youths in Kuala Lumpur also face similar problems. Therefore, the Kuala Lumpur City Hall (DBKL) has proposed a scheme to help youths to rent accommodation at affordable prices</p>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <!--Search-->
+    <div class="container-fluid bg-dark p-4 shadow mb-4">
+      <div class="container m-2">
+
+      </div>
+
+      <form class="" action="residence_page.html" method="post">
+      <div class="container p-1">
+
+      <div class="row">
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">City:</h5>
+          <select class="form-control" id="inputCity">
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
+          </select>
+        </div>
+
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">Districts Area:</h5>
+          <select class="form-control" id="inputArea">
+            <option value="Damansara">Damansara</option>
+            <option value="Seputeh">Seputeh</option>
+            <option value="Segambut">Segambut</option>
+            <option value="Kepong">Kepong</option>
+            <option value="KLCC">KL City Centre</option>
+            <option value="Setiawangsa">Setiawangsa</option>
+            <option value="Bandar Tun Razak">Bandar Tun Razak</option>
+            <option value="Sungai Besi">Sungai Besi</option>
+          </select>
+        </div>
+
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">Search:</h5>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search" id="inputSearch">
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit" id="btnSearch" onclick="searchResidence()">
+                <i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      </div>
+      </form>
+    </div>
+
+
+    <div class="container padding mb-5">
+
+  <h4 class="text-dark">Featured New Residences</h4>
+  <hr class="hr_underline">
+
+  <div class="container">
+  <div class="row padding">
+    <div class="col-lg-4">
+    <div class="card box_shadow">
+      <img class="card-img-top" src="pic/sample_housing.jpg" alt="house1">
+      <div class="card-body">
+        <h5 id="a1"class="card-title text-dark font-weight-bold">Tolong Jaya Condominium</h5>
+        <br>
+        <div class="card-text text-right">
+              <p id="a2"class="lead">Damansara Height</p>
+              <p id="a3"class="text-danger font-weight-bold lead">RM 850</p>
+
+        <a id="a4"href="#"  class="btn btn-outline-warning">View Now
+          <i class="fas fa-angle-right"></i></a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+    <div class="card box_shadow">
+      <img class="card-img-top" src="pic/sample_housing.jpg" alt="house2">
+      <div class="card-body">
+        <h5 id="b1"class="card-title text-dark">Tolong Jaya Condominium</h5>
+        <br>
+        <div class="card-text text-right">
+          <p id="b2"class="lead">Damansara Height</p>
+          <p id="b3"class="text-danger font-weight-bold lead">RM 850</p>
+
+        <a id="b4"href="#"  class="btn btn-outline-warning">View Now
+          <i class="fas fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-lg-4">
+    <div class="card box_shadow">
+      <img class="card-img-top" src="pic/sample_housing.jpg" alt="house3">
+
+
+
+      <div class="card-body">
+        <h5 id="c1"class="card-title text-dark">Tolong Jaya Condominium</h5>
+        <br>
+        <div class="card-text text-right">
+          <p id="c2"class="lead">Damansara Height</p>
+          <p id="c3"class="text-danger font-weight-bold lead">RM 850</p>
+        <a id="c4"href="#"  class="btn btn-outline-warning">View Now
+          <i class="fas fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <!--View Result in a list of residences-->
+    <!--
+    <div class="container text-left">
+      <h4 class="lead font-weight-bold">Featured New Residences</h4>
+    </div>
+    <div class="newResidenceList">
+
+      <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+          <img src="pic/sample_housing.jpg" class="card-img-left" alt="sampleHousing" height="230">
+          <div class="card-body">
+            <h5 class="card-title">Name of Residence</h5>
+            <p class="card-text">ResidenceID:</p>
+            <p class="card-text">Location:</p>
+            <p class="card-text">Amenities:</p>
+            <p class="card-text">Monthly Rental:</p>
+            <p class="card-text">Unit Size:</p>
+            <p class="card-text">Available Units:</p>
+            <a href="#" class="btn btn-danger">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  -->
+  </main>
+
+    <!--Follow us-->
+    <div class="container-fluid padding mt-5 mb-5">
+    <div class="row text-center padding">
+      <div class="col-12">
+        <h4 class="text-dark">Follow Us</h4>
+        <hr class="hr_underline">
+      </div>
+      <div class="col-12 social padding">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    </div>
+
+
+    <footer id="footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+          <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="core.js"></script>
+    <script src="searchResidence.js"></script>
+  </body>
+</html>

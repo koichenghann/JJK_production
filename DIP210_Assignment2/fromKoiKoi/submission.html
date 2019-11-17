@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> MHS | Submission</title>
+
+    <!--Link to css file-->
+    <link rel="stylesheet" href="submission.css"/>
+
+    <!--MHS Favicon-->
+    <link rel = "icon" type = "image/png" href = "pic/icon/home-solid.png">
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
+      <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="user_homepage.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="residence_page.html">Find MHS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="viewApplication_user.html">Application Status</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!--Header-->
+
+  <div class="page-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="page-caption">
+                <h1 class="page-title">MicroHousing Application</h1>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <main>
+    <hr>
+    <div class="container mb-5 p-4 box_shadow rounded">
+      <form class="application_form" action="viewApplication_user.html" method="post">
+      <div class="container-fiuld">
+        <h4>Personal Details</h4>
+        <hr>
+      </div>
+      <div class="form-group">
+        <label for="inputFullName" class="lead" >Full Name:</label>
+        <input type="text" class="form-control" id="inputFullName" value="" placeholder="Your Full Name">
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail" class="lead" >Email address:</label>
+        <input type="email" class="form-control" id="inputEmail"  value="" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="inputIncome" class="lead" >Monthly Income:</label>
+        <input type="text" class="form-control" id="inputIncome" value="RM 1000" placeholder="RM 1000">
+      </div>
+
+      <div class="form-group">
+        <label for="inputIncomePayslip" class="lead">Income Payslip:</label>
+        <input type="file" class="form-control-file" id="inputIncomePayslip" required>
+      </div>
+
+      <br>
+
+      <div class="container-fiuld">
+        <h4>MicroHousing Residence</h4>
+        <hr>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputResidenceID" class="col-2 col-form-label">Residence ID:</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputResidenceID" readonly>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputResidenceName" class="col-2 col-form-label">Residence Name:</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputResidenceName" readonly>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputAddress" class="col-2 col-form-label">Address:</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputAddress" readonly>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputAmenities" class="col-2 col-form-label">Amenities</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputAmenities" readonly>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputUnitSize" class="col-2 col-form-label">Size of Unit</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputUnitSize" readonly>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputMonthlyRental" class="col-2 col-form-label">Monthly Rental:</label>
+        <div class="col-10">
+          <input class="form-control" type="text" id="inputMonthlyRental" readonly>
+        </div>
+      </div>
+
+      <br>
+      <div class="container-fiuld">
+        <h4>Required Month and Year</h4>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="form-group container col-5">
+          <label for="inputYear">Month:</label>
+          <input class="form-control" type="text" id="inputMonth" readonly>
+        </div>
+
+        <div class="form-group container col-5">
+          <label for="inputYear">Year:</label>
+          <input class="form-control" type="text"  id="inputYear" readonly>
+        </div>
+      </div>
+
+      <br>
+      <div class="text-right">
+        <button type="button" class="btn btn-secondary font-weight-bold text-black" onclick="cancel();">Cancel</button>
+        <button type="button" class="btn btn-danger font-weight-bold text-black" onclick="submitApplication();"><i class="fas fa-chevron-circle-right"></i> Submit Application</button>
+      </div>
+    </form>
+
+    </div>
+  </main>
+
+
+  <footer id="footer" class="py-4 bg-dark text-white-50 mt-2 shadow" >
+      <div class="container text-center">
+        <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
+      </div>
+  </footer>
+
+  <script src="core.js"></script>
+  <script src="submission.js">
+
+  </script>
+</body>
+</html>

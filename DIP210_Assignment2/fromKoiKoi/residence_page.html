@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MHS | Residence</title>
+
+    <!--MHS Favicon-->
+    <link rel = "icon" type = "image/png" href = "pic/icon/home-solid.png">
+    <!--Link to css file-->
+    <link rel="stylesheet" href="residence_page.css"/>
+
+    <!--bootstrap front-end design framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!--fontawesome-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+
+
+  <body onload="searchResidence()">
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed bg-light">
+      <a class="navbar-brand" href="user_homepage.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarListInfo" aria-controls="navbarListInfo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarListInfo">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="user_homepage.html">Home</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="residence_page.html">Find MHS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="viewApplication_user.html">Application Status</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link font-weight-bold">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+
+    <!--title bar with pic-->
+    <div class="page-header">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-caption">
+                  <h1 class="page-title">View Residence</h1>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!--Search Box-->
+    <div class="container-fluid bg-dark p-4 shadow mb-4">
+      <div class="container m-2">
+
+      </div>
+
+      <form class="" action="residence_page.html" method="post">
+      <div class="container p-1">
+
+      <div class="row">
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">City:</h5>
+          <select class="form-control" id="inputCity">
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
+          </select>
+        </div>
+
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">Districts Area:</h5>
+          <select class="form-control" id="inputArea">
+            <option value="Damansara">Damansara</option>
+            <option value="Seputeh">Seputeh</option>
+            <option value="Segambut">Segambut</option>
+            <option value="Kepong">Kepong</option>
+            <option value="KLCC">KL City Centre</option>
+            <option value="Setiawangsa">Setiawangsa</option>
+            <option value="Bandar Tun Razak">Bandar Tun Razak</option>
+            <option value="Sungai Besi">Sungai Besi</option>
+          </select>
+        </div>
+
+        <div class="col-lg-4 col-ms-3 col-xs-12 p-2">
+          <h5 class="lead text-white">Search:</h5>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Example: Taman Tolong" name="search" id="inputSearch">
+            <div class="input-group-append">
+              <button class="btn btn-default" type="button" id="btnSearch" onclick="searchResidence();">
+                <i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </form>
+    </div>
+
+
+
+
+    <main>
+
+    <div class="container mt-3 mb-3">
+      <div class="text-left">
+        <h5>Available Housing:</h5>
+      </div>
+
+      <ul id="result-container" class="list-group list_border">
+      <!-- this segment of code has been placed into js loop-->
+      <!--
+      <li class="list-group-item">
+      <div class="row box_shadow">
+
+
+        <div class="col-5 p-4">
+          <img src="pic/sample_housing.jpg" alt="sample_housing"
+          class="img-fluid rounded">
+        </div>
+
+
+        <div class="col-7 p-3">
+          <h4 class="font-weight-bold" id="residenceName">Bunga Jaya Apartment</h4>
+          <table>
+            <tr>
+              <div class="font-weight-bold">Residence ID:</div>
+              <p class="text-justify" id="residenceID">A00B176</p>
+            </tr>
+            <tr>
+                <div class="font-weight-bold">Address:</div>
+                <p id="address">58, Jalan Kepong, Pekan Kepong, 52000 Kuala Lumpur, Selangor</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Unit Size:</div>
+              <p class="text-justify" id="unitSize">505 Sqft</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold" >Amenities:</div>
+              <p class="text-justify" id="amenities">Walking distance to KTM</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Available Units:</div>
+              <p class="text-justify" id="availableUnit">215</p>
+            </tr>
+            <tr>
+              <div class="font-weight-bold">Monthly Rental:</div>
+              <p class="font-weight-bold text-danger" id="monthlyRental">RM 680</p>
+            </tr>
+          </table>
+          <div class="text-right">
+            <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence();">
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+
+        <li class="list-group-item">
+        <div class="row box_shadow">
+          <div class="col-5 p-4">
+            <img src="pic/sample_housing.jpg" alt="sample_housing"
+            class="img-fluid rounded">
+          </div>
+          <div class="col-7 p-3">
+            <h4 class="font-weight-bold" id="residenceName1">Tolong Jaya Condominium</h4>
+            <table>
+              <tr>
+                <div class="font-weight-bold">Residence ID:</div>
+                <p class="text-justify" id="residenceID1">K00B339</p>
+              </tr>
+              <tr>
+                    <div class="font-weight-bold">Address:</div>
+                    <p id="address1">No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Unit Size:</div>
+                <p class="text-justify" id="unitSize1">735 Sqft</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Amenities:</div>
+                <p class="text-justify" id="amenities1">Walking distance to MRT</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Available Units:</div>
+                <p class="text-justify" id="availableUnit1">99</p>
+              </tr>
+              <tr>
+                <div class="font-weight-bold">Monthly Rental:</div>
+                <p class="font-weight-bold text-danger" id="monthlyRental1">RM 850</p>
+              </tr>
+            </table>
+            <div class="text-right">
+              <button type="button" class="btn btn-warning font-weight-bold" data-toggle="modal" data-target="#apply_MH" onclick="selectedResidence1();">
+                Apply
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </li>-->
+    </ul>
+    </div>
+
+    <!--Application Form with Modal-->
+    <div class="modal fade bd-example-modal-lg" id="apply_MH" tabindex="-1" role="dialog" aria-labelledby="form_applyMH" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="form_applyMH">MicroHousing Application</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="form-box">
+            <form class="" action="submission.html" method="post">
+                <h5 class="lead">Please select the required month and year for this unit.</h5>
+                <div class="container">
+                <div class="row">
+
+                <div class="container col-lg-3 col-ms-3 col-xs-12 p-2">
+                  <h6 class="">Month:</h6>
+                  <select class="form-control" id="inputMonth">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+
+                <div class="container col-lg-3 col-ms-3 col-xs-12 p-2">
+                  <h6 class="">Year:</h6>
+                  <select class="form-control" id="inputYear">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+
+
+              <h6 class="text-danger text-center"><!--Validation--></h6>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <!--
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          -->
+            <button type="submit" class="btn btn-warning font-weight-bold text-black" onclick="requiredDateAndYear();"><i class="fas fa-angle-right"></i> Confirm</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+  <br><br><br><br>
+  <footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom" >
+      <div class="container text-center">
+        <small>Privacy Statement | Terms of Use | &copy; 2019 MHS (MicroHousing System). All Rights Reserved.</small>
+      </div>
+  </footer>
+
+  <script src="core.js"></script>
+  <script src="residence_page.js"></script>
+
+  </body>
+</html>
