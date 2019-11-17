@@ -21,7 +21,7 @@ if ($username!="" && $password!=""){
   if($result = $conn->query($query1)){
     //if only 1 entry is found based on entered username and password
     if($result->num_rows == 1){
-      $_SESSION['currentUser'] = $result->fetch_assoc();
+      $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
       $_SESSION['currentUserType'] = "applicant";
 
       echo 'success-applicant';
@@ -32,7 +32,7 @@ if ($username!="" && $password!=""){
       //query on HousingOfficer table
       if($result = $conn->query($query2)){
         if($result->num_rows == 1){
-          $_SESSION['currentUser'] = $result->fetch_assoc();
+          $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
           $_SESSION['currentUserType'] = "housingOfficer";
           echo 'success-housingOfficer';
         }

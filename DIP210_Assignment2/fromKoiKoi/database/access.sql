@@ -17,3 +17,8 @@ INSERT INTO Applicant VALUES (1, "username", "password", "fullName", "email", 10
 UPDATE Applicant SET applicantID=0, username="", password="", fullName="", email="", monthlyIncome="";
 #delete
 DELETE FROM Applicant WHERE applicantID=0;
+
+SELECT username FROM HousingOfficer
+UNION
+SELECT username FROM Applicant;
+

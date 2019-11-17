@@ -85,10 +85,6 @@ CREATE TABLE Allocation (
 
 
 
-
-
-
-
 DROP database MHSMYSql;
     
     

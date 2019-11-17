@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MHS | Sign Up</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="register.css"/>
+
+	<!--MHS Favicon-->
+	<link rel = "icon" type = "image/png" href = "pic/icon/home-solid.png">
+
+	<!--bootstrap front-end design framework-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!--fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<style media="screen">
+	.errorMessage{
+		color: red !important;
+		height: 1vh !important;
+		size: 80% !important;
+		font-size: 90% !important;
+		font-weight:normal !important;
+		padding-left: 7% !important;
+
+	
+		margin-top: -3% !important;
+	}
+
+	</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <div class="container">
+			<a class="navbar-brand" href="index.html"><i class="fas fa-home"></i><strong> MHS </strong></a>
+			<!--
+	    <a  href="index.html"><img class="MHSLogo" src="pic/SAS_logo.png" alt="MHSLogo" width="131"
+		  height="50"></a>
+		-->
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarResponsive">
+	      <ul class="navbar-nav ml-auto">
+	        <li class="nav-item">
+						<a class="nav-link" href="index.html">Home
+	            <span class="sr-only">(current)</span>
+	          </a>
+	        </li>
+	        <li class="nav-item active">
+						<a class="nav-link" href="register.html">Register</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="login.html">Login</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+</header>
+
+<div class="form-box">
+<form action="" method="post" class="registerForm">
+<table class="inputTtb">
+	<tr>
+		<th><h1>Registration</h1></th>
+	</tr>
+	<tr>
+		<th>
+			<p class="lead">Welcome to MicroHousing System (MHS)!</p>
+		</th>
+	</tr>
+</table>
+<table class="inputTtb">
+	<tr>
+		<th class="textbox">
+			<i class="far fa-user" aria-hidden="true"></i>
+			<input id="inUsername" type="text" placeholder="Username" size="47" required></input>
+		</th>
+	</tr>
+	<tr><th><div class="errorMessage" id="usernameError"></div></th></tr>
+</table>
+
+<table class="inputTtb">
+	<tr>
+		<th class="textbox">
+			<i class="fa fa-lock" aria-hidden="true"></i>
+			<input id="inPassword" type="password" placeholder="Password" size="20" minlength="8" required></input>
+		</th>
+		<th class="textbox">
+			<input id="inRePassword" type="password" placeholder="Re-Password" size="20" minlength="8" required></input>
+		</th>
+	</tr>
+	<tr><th><div class="errorMessage" id="passwordError"></div></th></tr>
+</table>
+
+<table class="inputTtb">
+	<tr>
+		<th class="textbox">
+			<i class="far fa-address-card" aria-hidden="true"></i>
+			<input id="inFirstName" type="text" placeholder="First Name" size="20" required></input>
+		</th>
+		<th class="textbox">
+
+			<input id="inLastName" type="text" placeholder="Last Name" size="20" required></input>
+		</th>
+	</tr>
+	<tr><th><div class="errorMessage" id="fullnameError"></div></th></tr>
+</table>
+<table class="inputTtb">
+	<tr>
+		<th class="textbox">
+			<i class="far fa-envelope" aria-hidden="true"></i>
+			<input id="inEmail" type="email" placeholder="Email" size="47" required></input>
+
+		</th>
+	</tr>
+	<tr><th><div class="errorMessage" id="emailError"></div></th></tr>
+</table>
+
+<table class="inputTtb">
+	<tr>
+		<th class="textbox">
+			<i class="fas fa-dollar-sign"></i>
+			<input id="inMonthlyIncome" type="text" placeholder="Monthly Income (MYR)" size="47" required></input>
+
+		</th>
+	</tr>
+	<tr><th><div class="errorMessage" id="monthlyincomeError"></div></th></tr>
+</table>
+
+<table class="inputTtb">
+	<tr>
+		<th class="textbox" >
+			<p class="italic-font">Already a registered user? <a href="login.html"> Login Now! </a></p>
+		</th>
+	</tr>
+</table>
+
+	<button id="form_submit" class="btn" name="Sign up" type="submit">Sign up</button>
+	<!--<button class="btn" name="Sign up" type="submit" onclick="registerInput()";>Sign up</button>-->
+	<h6 class="text-danger text-center"><!--Validation--></h6>
+</form>
+</div>
+
+
+<script src="register.js"></script>
+</body>
+<footer id="footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Privacy Statement | Terms of Use | &copy; 2019 SAS (Student Application System). All Rights Reserved.</small>
+    </div>
+</footer>
+</html>
