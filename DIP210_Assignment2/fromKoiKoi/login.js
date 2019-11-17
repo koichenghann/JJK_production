@@ -1,5 +1,7 @@
 var xmlhttp = new XMLHttpRequest();
-
+xmlhttp.open("POST", "login.php");
+xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xmlhttp.send();
 //declaring variable for html element
 var form_username = document.getElementById("form_username");
 var form_password = document.getElementById("form_password");

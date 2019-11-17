@@ -28,9 +28,10 @@ CREATE TABLE HousingOfficer (
 
 #populate HousingOfficer table with dummy data (
 INSERT INTO HousingOfficer VALUES
-	("admin", "admin", "Administrator", "admin001"),
-    ("officer", "officer", "Housing Officer", "officer001");
+	("admin", "admin", "Administrator", "admin"),
+    ("officer", "officer", "Housing Officer", "officer");
 
+DROP TABLE HousingOfficer;
 CREATE TABLE ApplicantAttachment (
 	attachmentID int,
     applicantID int,
@@ -47,7 +48,6 @@ CREATE TABLE Residence (
     montlyRental double,
     staffID varchar(20)
 );
-
 
 CREATE TABLE Unit (
 	unitID int,

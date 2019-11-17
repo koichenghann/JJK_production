@@ -1,18 +1,47 @@
 <?php
-
 session_start();
-$_SESSION['currentUser'] = "";
-$_SESSION['currentUserType'] = "";
+$currentUser = "";
+$currentUserType = "";
+if(isset($_SESSION['currentUser']))     {$currentUser     = $_SESSION['currentUser'];}else{echo "";}
+if(isset($_SESSION['currentUserType'])) {$currentUserType = $_SESSION['currentUserType'];}else{echo "";}
 
 $conn = mysqli_connect('localhost', 'root', '', 'MHSMYsql');
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$key = $_POST['key'];
 
-if($username=="" && $password=="")  { echo '! enter username and password';}
-else if ($username=="")             { echo '! enter username'; }
-else if ($password=="")             { echo '! enter password'; }
 
+
+switch($key){
+  case 'validate':
+    echo validateUser($currentUser, $currentUserType);
+    break;
+
+  case 'getCurrentUser':
+    echo json_encode($currentUser);
+    break;
+
+  case 'getResidence':
+    echo getResidence($conn, $currentUser);
+
+}
+
+function validateUser($currentUser, $currentUserType){
+  return $currentUserType=="housingOfficer";
+}
+
+function getResidence($conn, $currentUser){
+  $message= array();
+  $staffID = $currentUser['staffID'];
+  $query = "SELECT * FROM Residence WHERE staffID='$staffID'";
+  if($result = $conn->query($query)){
+    while($row = $result->fetch_assoc()){
+      array_push($message, $row);
+    }
+  }
+  return json_encode($message);
+}
+
+/*
 //if user enter username and password
 if ($username!="" && $password!=""){
   $query1 = "SELECT * FROM Applicant WHERE username='$username' AND password='$password'";
@@ -22,7 +51,7 @@ if ($username!="" && $password!=""){
   if($result = $conn->query($query1)){
     //if only 1 entry is found based on entered username and password
     if($result->num_rows == 1){
-      $_SESSION['currentUser'] = $result->fetch_assoc();
+      $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
       $_SESSION['currentUserType'] = "applicant";
 
       echo 'success-applicant';
@@ -33,7 +62,7 @@ if ($username!="" && $password!=""){
       //query on HousingOfficer table
       if($result = $conn->query($query2)){
         if($result->num_rows == 1){
-          $_SESSION['currentUser'] = $result->fetch_assoc();
+          $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
           $_SESSION['currentUserType'] = "housingOfficer";
           echo 'success-housingOfficer';
         }
@@ -43,5 +72,5 @@ if ($username!="" && $password!=""){
     }
   }
   else{  echo 'sorry, database error' ; }
-}
+}*/
 ?>
