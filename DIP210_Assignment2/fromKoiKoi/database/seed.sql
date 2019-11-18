@@ -51,8 +51,8 @@ CREATE TABLE Residence (
 INSERT INTO residence VALUES 
 ('R001','Tolong Jaya Condominium','Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur','120','735','850','walking distance to MRT station','admin'),
 ('R002','Desa Damansara Condominium','Jalan Setiakasih, Bukit Damansara, 50490 Kuala Lumpur','85','780','880','walking distance to MRT station','admin'),
-('R003','Park Seven Condominium','Jalan Tujuh, Kuala Lumpur City Centre, 50450 Kuala Lumpur','85','780','880','walking distance to MRT station','admin'),
-('R004','One KL','Jalan Satu, Kuala Lumpur City Centre, 50450 Kuala Lumpur','50','930','950','walking distance to MRT station','admin'),
+('R003','Park Seven Condominium','Jalan Tujuh, KL City Centre, 50450 Kuala Lumpur','85','780','880','walking distance to MRT station','admin'),
+('R004','One KL','Jalan Satu, KL City Centre, 50450 Kuala Lumpur','50','930','950','walking distance to MRT station','admin'),
 ('R005','Le Chato Apartments','Jalan Raya, Bukit Seputeh, 50460 Kuala Lumpur','100','620','600','walking distance to MRT station','admin'),
 ('R006','Taman Bantu Jaya','Jalan Duta, Bukit Damansara, 50490 Kuala Lumpur','100','620','600','walking distance to MRT station','admin'),
 ('R007','Apartment Prima','Jalan Prima 2, Kepong, 52100 Kuala Lumpur','110','700','750','walking distance to MRT station','admin'),
