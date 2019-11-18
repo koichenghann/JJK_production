@@ -30,6 +30,7 @@ WHERE Application.residenceID = Residence.residenceID
 AND Residence.staffID = HousingOfficer.staffID
 AND HousingOfficer.staffID = 'admin';
 
+SELECT * FROM Residence;
 DROP TABLE residence;
 INSERT INTO residence VALUES 
 ('R001','Tolong Jaya Condominium','Jalan Semantan, Bukit Damansara, 50490 Kuala Lumpur','120','735','850','admin'),
