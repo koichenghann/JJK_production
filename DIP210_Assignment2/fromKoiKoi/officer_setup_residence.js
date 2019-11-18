@@ -2,9 +2,14 @@
 var xmlhttp = new XMLHttpRequest();
 var response =  function(){};
 var currentUser; var responsibleOfficer;
+var rowID;
+var tableRow;
 validateUser();
 
 
+
+
+//done
 function validateUser(){
   response = function(responseText){
     if (responseText=="1") {
@@ -12,52 +17,57 @@ function validateUser(){
       getCurrentUser();
     }
     else {
-      //console.log("this fucked up");
-      window.location.href="login.html";
+      console.log("this fucked up");
+      //window.location.href="login.html";
     }
   };
   submit("key=validate&userType=housingOffcier");
 }
 
+
+//done
 function getCurrentUser(){
   response = function(responseText){
     if (responseText!="") {
       currentUser = JSON.parse(responseText);
       responsibleOfficer = currentUser;
-      console.log(currentUser);
+      //console.log('respinsible officer: ' + responsibleOfficer.username);
       main();
     }
   };
   submit("key=getCurrentUser");
 }
 
+
+//done
 function submit(message){
   xmlhttp.open("POST", "officer_setup_residence.php");
   xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xmlhttp.send(message);
-  xmlhttp.onload = function(){console.log(this.responseText+"jeff");response(this.responseText);};
+  xmlhttp.onload = function(){console.log(this.responseText);response(this.responseText);};
 }
 
 
-
+//done
 function main(){
   populateTable();
 }
 
+
 //scoll table into view
-function scrollToMain2(){
+function scrollToMain(){
   document.getElementById("rightPane").scrollIntoView();
   console.log("ran");
 }
 
-residenceList = new Array;
 
+residenceList = new Array;
 
 
 displayForm();
 
 
-
+/*
 function writeToLocalStorage(){
   localStorage.residence = JSON.stringify(residenceList);
 }
@@ -70,19 +80,38 @@ function clearLocalStorage(){
   document.getElementById("rightPane").innerHTML = (residenceList == "");
   localStorage.residence = "";
 }
+*/
 
-
-function populateTable(){
+//done
+function populateTable(key){
   //readFromLocalStorage();
   response = function(responseText){
     residenceList = JSON.parse(responseText);
     for(var i=0; i<residenceList.length; i++){
       insertRowToTable(i);
     }
+
+    if (key != undefined) {
+      tableRow = document.getElementById("residenceTable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+      resetForm(tableRow[key]);
+    }
+
+
+    if(key=='add'){
+      var tableRow = document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+      for(var i=0; i<tableRow.length; i++){
+        if(tableRow[i].cells[0].innerHTML == form_residenceID.value){
+          resetForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i]);
+          break;
+        }
+      }
+    }
   };
   submit('key=getResidence');
 }
 
+
+//done
 function insertRowToTable(rowNum){
   table = document.getElementById("residenceTable").getElementsByTagName("tbody")[0];
   newRow = table.insertRow(table.length)
@@ -111,6 +140,8 @@ function insertRowToTable(rowNum){
   staffID.innerHTML       = residenceList[rowNum].staffID;
 }
 
+
+//done
 function resetTable(){
   document.getElementById("residenceTable").getElementsByTagName("tbody")[0].innerHTML = ``;
 }
@@ -181,17 +212,17 @@ function displayForm(inRow){
                                                     </div>-->
                                                    </form>`;
 
-  document.getElementById("staffID_in").value = responsibleOfficer.staffID;
+  if(responsibleOfficer!=undefined){document.getElementById("staffID_in").value = responsibleOfficer.staffID;}
 
 
   if(inRow == undefined){
-    //console.log("form - inRow undefined")
+    console.log('here');
     getFormElement();
     formOptionList.innerHTML = `<button onclick="addToArray();" class="btn btn-success" type="button" name="button">Add Residence</button>
-                                <button onclick="resetForm();" class="btn" type="button" name="button">Cancel</button>`;
+                                <!--<button onclick="resetForm();" class="btn" type="button" name="button">Cancel</button>-->`;
   }
   else{
-    //console.log("form - inRow defined");
+    console.log('there');
     var residenceID = inRow.cells[0].innerHTML;
     for(var i=0; i<residenceList.length; i++){
       if(residenceList[i].residenceID == residenceID){
@@ -220,14 +251,14 @@ function displayForm(inRow){
     form_amenities           .setAttribute("readonly", null);
     form_staffID             .setAttribute("readonly", null);
 
-    formOptionList.innerHTML = `<button onclick="modifyArray(residence); scrollToMain();"class="btn btn-success" type="button" name="button">Edit</button>`;
+    formOptionList.innerHTML = `<button onclick="modifyArray(residence); scrollToMain();"class="btn btn-success" type="button" name="button">Edit</button>
+                                <button onclick="displayForm(undefined);" class="btn btn-success" type="button" name="button">Add New Residence</button>`;
 
     afterEnableEdit = `<button onclick="deleteRowFromArray(rowNo); showForm();"class="btn btn-danger" type="button" name="button">Del</button>
                                 <button onclick="addFormDataToArray(rowNo); showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn btn-success" type="button" name="button">Save Changes</button>
                                 <button onclick="showForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[rowNo]);"class="btn" type="button" name="button">Cancel</button>`;
     document.getElementById("mainForm").scrollIntoView();
   }
-  //document.getElementById("mainForm").scrollIntoView();
 }
 
 
@@ -238,14 +269,16 @@ function modifyArray(residence){
 
       //get inRow to execute resetForm function
       tableRow = document.getElementById("residenceTable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
       for(var i=0; i<tableRow.length; i++){
         if(tableRow[i].cells[0].innerHTML == residence.residenceID){
           inRow = tableRow[i];
+          rowID = i;
         }
       }
 
-      formOptionList.innerHTML = `<button onclick="delFromArray(residence); closeForm();"class="btn btn-danger" type="button" name="button">Del</button>
-                                  <button onclick="editInArray(residence); resetForm(inRow);"class="btn btn-success" type="button" name="button">Save Changes</button>
+      formOptionList.innerHTML = `<button onclick="deleteResidence(residence); closeForm();"class="btn btn-danger" type="button" name="button">Del</button>
+                                  <button onclick="updateResidence(rowID); "class="btn btn-success" type="button" name="button">Save Changes</button>
                                   <button onclick="resetForm(inRow);"class="btn" type="button" name="button">Cancel</button>`;
 
       //form_residenceID         .removeAttribute("readonly", null);
@@ -261,13 +294,45 @@ function modifyArray(residence){
     alert("[Access Denied]\n" + responsibleOfficer.staffID + ":" + responsibleOfficer.fullName + " doesn't have the required permission for editing this record");
   }
 
+  /*
+  if(validateResidenceID(form_residenceID.innerHTML) && validateUnitCount(form_unitCount.value)){
+    response = function(responseText){
+      if(responseText/=""){
+        resetTable();
+        populateTable(0);
+        //console.log('reached here my friend');
+        var tableRow = document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        for(var i=0; i<tableRow.length; i++){
+          console.log('ggwp ' + i);
+          if(tableRow[i].cells[0].innerHTML == form_residenceID.value){
+            resetForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i]);
+            console.log('it ran');
+            break;
+          }
+        }
+      }
+      else {
+        alert('this is the response text man:' + responseText);
+      }
+    }
+    submit("key=addResidence&residenceID="+ form_residenceID.value
+                        +"&residenceName="+ form_residenceName.value
+                        +"&address="      + form_address.value
+                        +"&unitCount="    + form_unitCount.value
+                        +"&unitSize="     + form_unitSize.value
+                        +"&monthlyRental="+ form_monthlyRental.value
+                        +"&amenities="    + form_amenities.value
+                        +"&staffID="      + form_staffID.value);
+  }
+  */
+
 }
 
-
+//done
 function validateResidenceID(residenceID){
   //alert(form_residenceID.value == null);
   for(var i=0; i<residenceList.length; i++){
-    readFromLocalStorage();
+    //readFromLocalStorage();
     if(residenceList[i].residenceID.toLowerCase() == form_residenceID.value.toLowerCase() || form_residenceID.value == null || form_residenceID.value == undefined || form_residenceID.value == ""){
       alert("residenceID must be unique and not empty.");
       return false;
@@ -275,6 +340,8 @@ function validateResidenceID(residenceID){
   }
   return true;
 }
+
+//done
 function validateUnitCount(unitCount){
 
   if(unitCount == null || unitCount == "" || unitCount == undefined || isNaN(unitCount)){
@@ -285,85 +352,69 @@ function validateUnitCount(unitCount){
   return true;
 }
 
-
+//important
 function addToArray(){
   if(validateResidenceID(form_residenceID.innerHTML) && validateUnitCount(form_unitCount.value)){
-    units = new Array;
-
-    //alert(validateResidenceID("A001"));
-    for(var i=0; i<form_unitCount.value; i++){
-      units.push({unitNo:i, availability:"available"});
-    }
-    //console.log("here");
-    //console.log("tgis" + form_unitCount.value + " " + units.length + " " + units[5].availability);
-    residenceList.push({residenceID   : form_residenceID.value,
-                        residenceName : form_residenceName.value,
-                        address       : form_address.value,
-                        unitCount     : form_unitCount.value,
-                        unitSize      : form_unitSize.value,
-                        monthlyRental : form_monthlyRental.value,
-                        amenities     : form_amenities.value,
-                        units         : units,
-                        staffID       : form_staffID.value});
-
-    writeToLocalStorage();
-    //console.log("in add to array " + inRow);
-    //resetForm(inRow);
-
-    tableRow = document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-
-
-
-    resetTable();
-    populateTable();
-    //resetForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1]);
-    //alert(form_residenceID.value + " " + tableRow[i].cells[0].innerHTML)
-
-    for(var i=0; i<tableRow.length; i++){
-      if(tableRow[i].cells[0].innerHTML == form_residenceID.value){
-        resetForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i]);
+    response = function(responseText){
+      if(responseText/=""){
+        resetTable();
+        populateTable('add');
+        //console.log('reached here my friend');
+        var tableRow = document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        for(var i=0; i<tableRow.length; i++){
+          if(tableRow[i].cells[0].innerHTML == form_residenceID.value){
+            resetForm(document.getElementById('residenceTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i]);
+            break;
+          }
+        }
+      }
+      else {
+        alert('this is the response text man:' + responseText);
       }
     }
+    submit("key=addResidence&residenceID="+ form_residenceID.value
+                        +"&residenceName="+ form_residenceName.value
+                        +"&address="      + form_address.value
+                        +"&unitCount="    + form_unitCount.value
+                        +"&unitSize="     + form_unitSize.value
+                        +"&monthlyRental="+ form_monthlyRental.value
+                        +"&amenities="    + form_amenities.value
+                        +"&staffID="      + form_staffID.value);
   }
 }
 
-function editInArray(residence){
-  /*
-  This function parse in the seleceted residence object and retrives its
-  residenceID. The residenceID retrieved is then compared to residenceID in the
-  residenceList and the residence List item that match will be updated with
-  the form value
-  */
-  for(var i=0; i<residenceList.length; i++){
-    if(residenceList[i].residenceID == residence.residenceID){
-      residenceList[i] = {residenceID   : form_residenceID.value,
-                          residenceName : form_residenceName.value,
-                          address       : form_address.value,
-                          unitCount     : form_unitCount.value,
-                          unitSize      : form_unitSize.value,
-                          monthlyRental : form_monthlyRental.value,
-                          amenities     : form_amenities.value,
-                          units         : residenceList[i].units,
-                          staffID       : form_staffID.value};
+function updateResidence(rowID){
+  response = function(responseText){
+    if (responseText!="") {
+      resetTable();
+      populateTable(rowID);
     }
-  }
-  //console.log("ran" + residence.residenceName);
-  writeToLocalStorage();
-  resetTable();
-  populateTable();
+    else{
+      alert(responseText);
+    }
+  };
+  submit("key=updateResidence&"
+                      +"residenceID="   + form_residenceID.value
+                      +"&residenceName="+ form_residenceName.value
+                      +"&address="      + form_address.value
+                      +"&unitCount="    + form_unitCount.value
+                      +"&unitSize="     + form_unitSize.value
+                      +"&monthlyRental="+ form_monthlyRental.value
+                      +"&amenities="    + form_amenities.value
+                      +"&staffID="      + form_staffID.value);
 }
 
 
-function delFromArray(residence){
-  for(var i=0; i<residenceList.length; i++){
-    if(residence.residenceID == residenceList[i].residenceID){
-      residenceList.splice(i, 1);
-    }
+
+function deleteResidence(residence){
+  response = function(responseText){
+    resetTable();
+    populateTable()
+    displayForm();
+  };
+  if(confirm("deleting the record might crash the database as well as the system. Proceed?")){
+    submit("key=deleteResidence&residenceID="+form_residenceID.value);
   }
-  resetTable();
-  writeToLocalStorage();
-  populateTable()
-  closeForm();
 }
 
 function getFormElement(){
@@ -398,7 +449,7 @@ function resetForm(inRow){
   }
 
   else{
-    //console.log("reset form with row");
+    console.log("reset form with row");
     displayForm(inRow);
   }
 }

@@ -9,6 +9,16 @@ $conn = mysqli_connect('localhost', 'root', '', 'MHSMYsql');
 
 $key = $_POST['key'];
 
+$newResidence = NEW \stdClass();
+if(isset($_POST['residenceID'])){$newResidence->residenceID =$_POST['residenceID'];}
+if(isset($_POST['residenceName'])){$newResidence->residenceName =$_POST['residenceName'];}
+if(isset($_POST['address'])){$newResidence->address =$_POST['address'];}
+if(isset($_POST['unitCount'])){(int)$newResidence->unitCount =$_POST['unitCount'];}
+if(isset($_POST['unitSize'])){(double)$newResidence->unitSize =$_POST['unitSize'];}
+if(isset($_POST['monthlyRental'])){(double)$newResidence->monthlyRental =$_POST['monthlyRental'];}
+if(isset($_POST['amenities'])){$newResidence->amenities =$_POST['amenities'];}
+if(isset($_POST['staffID'])){$newResidence->staffID =$_POST['staffID'];}
+
 
 
 switch($key){
@@ -22,12 +32,77 @@ switch($key){
 
   case 'getResidence':
     echo getResidence($conn, $currentUser);
+    break;
 
+  case 'addResidence':
+    echo addResidence($conn, $newResidence);
+    break;
+
+  case 'updateResidence':
+    echo updateResidence($conn, $newResidence);
+    break;
+
+  case 'deleteResidence':
+    echo deleteResidence($conn, $newResidence);
+    break;
 }
+
+
+function deleteResidence($conn, $newResidence){
+  $query = "DELETE FROM Residence WHERE residenceID='$newResidence->residenceID'";
+  $query2 = "DELETE FROM Application WHERE residenceID='$newResidence->residenceID'";
+  $query3 = "DELETE FROM Unit WHERE residenceID='$newResidence->residenceID'";
+
+  if($conn->query($query) && $conn->query($query) && $conn->query($query)){
+    return strval(TRUE);
+  }
+  else {
+    return 'database error';
+  }
+}
+
+
+function updateResidence($conn, $newResidence){
+  $query = "UPDATE Residence SET
+          residenceName  =   '$newResidence->residenceName',
+                address  =   '$newResidence->address',
+               unitSize  =   '$newResidence->unitSize',
+          monthlyRental  =   '$newResidence->monthlyRental',
+              amenities  =   '$newResidence->amenities',
+                staffID  =   '$newResidence->staffID'
+      WHERE residenceID  =   '$newResidence->residenceID'";
+  if($conn->query($query)){
+    return strval(TRUE);
+  }
+  else {
+    return 'database error';
+  }
+}
+
+
+function addResidence($conn, $newResidence){
+  $query = "INSERT INTO Residence VALUES
+            ( '$newResidence->residenceID',
+              '$newResidence->residenceName',
+              '$newResidence->address',
+              '$newResidence->unitCount',
+              '$newResidence->unitSize',
+              '$newResidence->monthlyRental',
+              '$newResidence->amenities',
+              '$newResidence->staffID')";
+  if($conn->query($query)){
+    return strval(TRUE);
+  }
+  else {
+    return 'database error';
+  }
+}
+
 
 function validateUser($currentUser, $currentUserType){
   return $currentUserType=="housingOfficer";
 }
+
 
 function getResidence($conn, $currentUser){
   $message= array();
@@ -41,36 +116,4 @@ function getResidence($conn, $currentUser){
   return json_encode($message);
 }
 
-/*
-//if user enter username and password
-if ($username!="" && $password!=""){
-  $query1 = "SELECT * FROM Applicant WHERE username='$username' AND password='$password'";
-  $query2 = "SELECT * FROM HousingOfficer WHERE username='$username' AND password='$password'";
-
-  //query on Applicant table
-  if($result = $conn->query($query1)){
-    //if only 1 entry is found based on entered username and password
-    if($result->num_rows == 1){
-      $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
-      $_SESSION['currentUserType'] = "applicant";
-
-      echo 'success-applicant';
-    }
-
-    //if there is less than or more than 1 entry found based on the enterd username and password
-    else{
-      //query on HousingOfficer table
-      if($result = $conn->query($query2)){
-        if($result->num_rows == 1){
-          $_SESSION['currentUser'] = json_encode($result->fetch_assoc());
-          $_SESSION['currentUserType'] = "housingOfficer";
-          echo 'success-housingOfficer';
-        }
-        else{ echo '! invalid username and password combination'; }
-      }
-      else{echo 'sorry, database error'; }
-    }
-  }
-  else{  echo 'sorry, database error' ; }
-}*/
 ?>
