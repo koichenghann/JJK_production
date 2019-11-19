@@ -1,0 +1,112 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url('pic/register_bla.jpg');
+  ;/*#3f3f3f;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav-item:hover{
+  border-bottom: 1.5px solid #ff4444;
+}
+.fa-home{
+  color: #ffbb33;
+}
+
+.form-box{
+  width: 550px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:#2d2d2d;
+  border-radius: 15px;
+  padding: 35px;
+  background-color:#ffffff;
+  opacity:0.95;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-box h1{
+  float: left;
+  font-size: 35px;
+  border-bottom: 5px solid #ff4444; /*#008cff*/
+  margin-bottom: 35px;
+  padding: 13px 0;
+
+}
+.font-styling{
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-bottom:20px;
+  text-align: center;
+}
+.textbox{
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  /*border-bottom: 1px solid #008cff;*/
+}
+
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+.textbox input{
+  border:none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  margin: 0 10px;
+  border-bottom: 1.5px solid #c9c9c9;
+}
+.textbox input:focus{
+  border-bottom: 1.5px solid #ff4444;
+  transition:1s;
+}
+.btn{
+  overflow: hidden;
+  width: 100%;
+  background-color: #ff4444!important;
+  border: 2px solid #ff4444!important;
+  color: #ffffff!important;
+  padding: 5px;
+  margin-bottom:5px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 120px;
+  height: 45px;
+}
+.btn:hover{
+  background-color: #800000!important;
+  border-color:#800000!important;
+  transition: 0.7s;
+}
+
+.italic-font{
+  font-style: italic;
+  font-size: 14px;
+}
+
+footer{
+  clear:both;
+  opacity:0.95;
+  color:#ffffff;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  margin:0;
+  text-align:center;
+  height: auto;
+  display:block;
+  padding-top:1em;
+  background-color:#a9a9a9;
+}

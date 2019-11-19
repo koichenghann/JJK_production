@@ -1,34 +1,5 @@
 <?php
 
-
-//----------------------- start of initialisation -----------------------
-//generate unit for harcoded residence
-$conn = mysqli_connect('localhost', 'root', '', 'MHSMYsql');
-$getResidenceList = "SELECT * FROM Residence";
-$residenceList = array();
-$result = $conn->query($getResidenceList);
-while ($row=$result->fetch_assoc()) {
-  array_push($residenceList, $row);
-}
-for ($i=0; $i < count($residenceList); $i++) {
-  $residenceID = $residenceList[$i]['residenceID'];
-  $query3 = "SELECT * FROM Unit WHERE residenceID='$residenceID'";
-  $result5 = $conn->query($query3);
-  $residence = $residenceList[$i];
-  if($result5->num_rows == 0){
-    for ($x=0; $x < $residence['unitCount']; $x++) {
-      $residenceID = $residence['residenceID'];
-      $query2 = "INSERT INTO Unit VALUES('$x', True, '$residenceID')";
-      $conn->query($query2);
-    }
-  }
-}
-//------------------------ end of initialisation ------------------------
-
-
-
-
-
 session_start();
 $_SESSION['currentUser'] = "";
 $_SESSION['currentUserType'] = "";

@@ -1,0 +1,189 @@
+/*Navbar logo*/
+.fa-home{
+  color: #ffbb33;
+}
+.bg_dark_black{
+  background-color: #343333;
+}
+
+/*Media query to make responsive table view*/
+@media
+only screen and (max-width: 1000px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+
+  h1{
+    display: none;
+  }
+  .space1{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body{
+    margin: 0 !important;
+    padding: 0!important;
+    width: 100%;
+  }
+  #footer{
+    display: sticky;
+  }
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; margin-top: 5vh;}
+
+	td {
+		/* Behave  like a "row" */
+    top:2px;
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+    top:-5px;
+    left:2.5px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+    font-weight: bold;
+	}
+
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Application ID:"; }
+  td:nth-of-type(2):before { content: "Residence ID:"; }
+	td:nth-of-type(3):before { content: "Units Available:"; }
+	td:nth-of-type(4):before { content: "Monthly Rental:"; }
+	td:nth-of-type(5):before { content: "Applicant Username:"; }
+	td:nth-of-type(6):before { content: "Ammenities:"; }
+  td:nth-of-type(7):before { content: "Monthly Income";}
+  td:nth-of-type(8):before { content: "Month Required";}
+  td:nth-of-type(9):before { content: "Year Required";}
+  td:nth-of-type(10):before { content: "Application Status";}
+  td:nth-of-type(11):before { content: "";}
+}
+
+
+#footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0 !important;
+}
+
+/* css for table*/
+.table-wrapper-scroll-y {
+display: block;
+}
+
+.tableFixHead {
+  overflow-y: auto;
+}
+
+.tableFixHead thead th {
+  top: 0;
+
+	position:sticky;
+
+}
+
+.table_height{
+	max-height: 100%;
+}
+
+table  {
+  width: 100% !important;
+	max-width: inherit!important;
+	height: 65vh!important;
+  margin: 0 !important;
+  /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 5px 18px 0 rgba(0, 0, 0, 0.19);*/
+  border: 1px solid #eee;
+
+
+}
+
+th     {
+  background:#eee;
+  font-size: 10px;
+  padding-top: 0.2em!important;
+  padding-bottom: 0.2em!important;
+}
+
+
+thead{
+  border-color: #eee!important;
+}
+.custom_select{
+  background: inherit !important;
+  border: none;
+  font-size: 13px;
+}
+.custom_select:focus{
+  border: none !important;
+  outline: none !important;
+}
+.hidden{
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  td:nth-child(11) button{
+    background-color: inherit !important;
+    color: orange;
+
+  }
+  td:nth-child(11) button:hover{
+    background-color: orange !important;
+    color: black;
+    border: none;
+  }
+  .custom_hover{
+    background-color: orange !important;
+    color: white;
+  }
+
+  th:nth-child(1),th:nth-child(2),th:nth-child(3),th:nth-child(4),th:nth-child(7),th:nth-child(8),th:nth-child(9),th:nth-child(10){
+    max-width: 9em !important;
+    font-size: 10px;
+  }
+  th:nth-child(5){
+    min-width: 12em !important;
+  }
+  th:nth-child(6){
+    min-width: 15em !important;
+  }
+
+  td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(7),td:nth-child(8),td:nth-child(9),td:nth-child(10){
+    max-width: 9em !important;
+  }
+  td:nth-child(5){
+    min-width: 12em !important;
+  }
+  td:nth-child(6){
+    min-width: 15em !important;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  body{
+
+  }
+  .space1{
+    margin: 1em !important;
+  }
+}

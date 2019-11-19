@@ -32,7 +32,7 @@ function getCurrentUser(){
       currentUser = JSON.parse(responseText);
       responsibleOfficer = currentUser;
       //console.log('respinsible officer: ' + responsibleOfficer.username);
-      main(responsibleOfficer);
+      main();
     }
   };
   submit("key=getCurrentUser");
@@ -49,9 +49,8 @@ function submit(message){
 
 
 //done
-function main(responsibleOfficer){
+function main(){
   populateTable();
-  displayForm(undefined, responsibleOfficer);
 }
 
 
@@ -65,7 +64,7 @@ function scrollToMain(){
 residenceList = new Array;
 
 
-
+displayForm();
 
 
 /*
@@ -148,7 +147,7 @@ function resetTable(){
 }
 
 
-function displayForm(inRow, officer){
+function displayForm(inRow){
   document.getElementById("rightPane").innerHTML = `<form id="mainForm" class="pt-3 pr-3" action="index.html" method="post">
                                                      <div class="row pb-3">
                                                       <div class="col-4">
@@ -213,7 +212,7 @@ function displayForm(inRow, officer){
                                                     </div>-->
                                                    </form>`;
 
-  if(officer!=undefined){document.getElementById("staffID_in").value = officer.staffID;}
+  if(responsibleOfficer!=undefined){document.getElementById("staffID_in").value = responsibleOfficer.staffID;}
 
 
   if(inRow == undefined){
@@ -411,7 +410,7 @@ function deleteResidence(residence){
   response = function(responseText){
     resetTable();
     populateTable()
-    displayForm(undefined, responsibleOfficer);
+    displayForm();
   };
   if(confirm("deleting the record might crash the database as well as the system. Proceed?")){
     submit("key=deleteResidence&residenceID="+form_residenceID.value);

@@ -90,12 +90,7 @@ function addResidence($conn, $newResidence){
               '$newResidence->monthlyRental',
               '$newResidence->amenities',
               '$newResidence->staffID')";
-
   if($conn->query($query)){
-    for ($i=0; $i < $newResidence->unitCount; $i++) {
-      $query2 = "INSERT INTO Unit VALUES('$i', True, '$newResidence->residenceID')";
-      $conn->query($query2);
-    }
     return strval(TRUE);
   }
   else {
