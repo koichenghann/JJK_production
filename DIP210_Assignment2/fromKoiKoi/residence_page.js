@@ -22,7 +22,7 @@ function getCurrentUser(){
     if (responseText!="") {
       currentUser = JSON.parse(responseText);
       console.log(currentUser);
-      getAllResidences();
+      viewResidence();
       //document.getElementById("form_username").innerHTML = currentUser.username;
       //document.getElementById("form_staffID").innerHTML = currentUser.staffID;
       //getStatistic();
@@ -33,8 +33,7 @@ function getCurrentUser(){
 
 validateUser();
 
-
-function getAllResidences(){
+function viewResidence(){
 
   response = function(responseText){
     residenceList  = JSON.parse(responseText);
@@ -156,7 +155,7 @@ function generateView(source){
                               </tr>
                               <tr>
                                 <div class="font-weight-bold" >Amenities:</div>
-                                <p class="text-justify" >` + source[i].ammenities + `</p>
+                                <p class="text-justify" >` + source[i].amenities + `</p>
                               </tr>
                               <tr>
                                 <div class="font-weight-bold">Available Units:</div>
@@ -197,19 +196,7 @@ function requiredDateAndYear(){
 }
 
 
-
-//          ___           ___           ___           ___           ___           ___
-//         /  /\         /  /\         /  /\         /  /\         /  /\         /__/\
-//        /  /:/_       /  /:/_       /  /::\       /  /::\       /  /:/         \  \:\
-//       /  /:/ /\     /  /:/ /\     /  /:/\:\     /  /:/\:\     /  /:/           \__\:\
-//      /  /:/ /::\   /  /:/ /:/_   /  /:/~/::\   /  /:/~/:/    /  /:/  ___   ___ /  /::\
-//     /__/:/ /:/\:\ /__/:/ /:/ /\ /__/:/ /:/\:\ /__/:/ /:/___ /__/:/  /  /\ /__/\  /:/\:\
-//     \  \:\/:/~/:/ \  \:\/:/ /:/ \  \:\/:/__\/ \  \:\/:::::/ \  \:\ /  /:/ \  \:\/:/__\/
-//      \  \::/ /:/   \  \::/ /:/   \  \::/       \  \::/~~~~   \  \:\  /:/   \  \::/
-//       \__\/ /:/     \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \  \:\
-//         /__/:/       \  \::/       \  \:\        \  \:\        \  \::/       \  \:\
-//         \__\/         \__\/         \__\/         \__\/         \__\/         \__\/
-//
+//search residence based on criteria
 function searchEngine(source,criteria1,criteria2,criteria3){
   //return all residence in source if user enter all
   if (criteria1.toLowerCase()=="all") {
@@ -283,14 +270,3 @@ function searchEngine(source,criteria1,criteria2,criteria3){
   console.log("SEARCH ENGINE - result[" + result.length + "]: empty");
   return("empty");
 }
-//          ___           ___           ___           ___           ___           ___
-//         /  /\         /  /\         /  /\         /  /\         /  /\         /__/\
-//        /  /:/_       /  /:/_       /  /::\       /  /::\       /  /:/         \  \:\
-//       /  /:/ /\     /  /:/ /\     /  /:/\:\     /  /:/\:\     /  /:/           \__\:\
-//      /  /:/ /::\   /  /:/ /:/_   /  /:/~/::\   /  /:/~/:/    /  /:/  ___   ___ /  /::\
-//     /__/:/ /:/\:\ /__/:/ /:/ /\ /__/:/ /:/\:\ /__/:/ /:/___ /__/:/  /  /\ /__/\  /:/\:\
-//     \  \:\/:/~/:/ \  \:\/:/ /:/ \  \:\/:/__\/ \  \:\/:::::/ \  \:\ /  /:/ \  \:\/:/__\/
-//      \  \::/ /:/   \  \::/ /:/   \  \::/       \  \::/~~~~   \  \:\  /:/   \  \::/
-//       \__\/ /:/     \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \  \:\
-//         /__/:/       \  \::/       \  \:\        \  \:\        \  \::/       \  \:\
-//         \__\/         \__\/         \__\/         \__\/         \__\/         \__\/
