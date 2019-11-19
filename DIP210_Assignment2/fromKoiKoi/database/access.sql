@@ -29,7 +29,12 @@ SELECT applicationID FROM Application, Residence, HousingOfficer
 WHERE Application.residenceID = Residence.residenceID 
 AND Residence.staffID = HousingOfficer.staffID
 AND HousingOfficer.staffID = 'admin';
-
+UPDATE Application SET status='new' WHERE (status='new' OR status='waitlist') AND applicationID='1';
+UPDATE Application SET status='appealed' WHERE applicationID=1;
+SELECT * FROM Application;
+DROP TABLE Application;
+SELECT * FROM Unit;
+DROP TABLE Unit;
 SELECT * FROM Residence;
 DROP TABLE residence;
 INSERT INTO residence VALUES 

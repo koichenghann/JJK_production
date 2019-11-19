@@ -4,7 +4,7 @@ $currentUser = "";
 $currentUserType = "";
 if(isset($_SESSION['currentUser']))     {$currentUser     = $_SESSION['currentUser'];}else{echo "";}
 if(isset($_SESSION['currentUserType'])) {$currentUserType = $_SESSION['currentUserType'];}else{echo "";}
-
+if(isset($_POST['applicationID'])) {$applicationID = $_POST['applicationID'];}else{echo "";}
 $conn = mysqli_connect('localhost', 'root', '', 'MHSMYsql');
 
 $key = $_POST['key'];
@@ -29,6 +29,21 @@ switch($key){
     $_SESSION['selectedApplicationID'] = $selectedAppplicationID;
     echo "1";
     break;
+
+  case 'appeal':
+    echo appealRejection($conn, $applicationID);
+    break;
+}
+
+
+function appealRejection($conn, $applicationID){
+  $query="UPDATE Application SET status='appealed' WHERE applicationID='$applicationID'";
+  if ($conn->query($query)) {
+    return 'success';
+  }
+  else {
+    return '$applicationID';
+  }
 }
 
 function validateUser($currentUser, $currentUserType){

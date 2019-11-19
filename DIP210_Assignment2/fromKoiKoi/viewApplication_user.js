@@ -1,6 +1,17 @@
 var xmlhttp = new XMLHttpRequest();
 var response = function(responseText){};
-
+var applicationNum;
+function appealRejection(selectedCell){
+  console.log('clicked');
+  applicationNum = parseInt(selectedCell.parentElement.parentElement.getElementsByTagName("td")[1].innerHTML.substring(1,6),10);
+  console.log(applicationNum);
+  button_appealRejection.addEventListener("click", function(){
+    response = function(responseText){
+      console.log(responseText);
+    };
+    submit('key=appeal&applicationID='+applicationNum);
+  });
+}
 
 //var currentUser = JSON.parse(localStorage.currentUser);
 //var residenceList = JSON.parse(localStorage.residence);
@@ -75,8 +86,16 @@ function loadDataSet(currentUser){
       table.insertRow(table.length).insertCell(0).innerHTML = `<br><br><br>`;
     }
 
-    function insertRowToTable(i){
+    function appealRejection(selectedCell){
+      applicationNum = parseInt(selectedCell.parentElement.parentElement.getElementsByTagName("td")[1].innerHTML.substring(1,6),10);
+      inputIncome.value = currentUser.monthlyIncome;
+    }
 
+    function insertRowToTable(i){
+      function appealRejection(selectedCell){
+        applicationNum = parseInt(selectedCell.parentElement.parentElement.getElementsByTagName("td")[1].innerHTML.substring(1,6),10);
+        inputIncome.value = currentUser.monthlyIncome;
+      }
       var residence;
       for (var x = 0; x < residenceList.length; x++) {
         if (residenceList[x].residenceID == applicationList[i].residenceID) {
@@ -146,18 +165,7 @@ function loadDataSet(currentUser){
     var applicationNum;
     var inputIncome = document.getElementById("inputIncome");
 
-    function appealRejection(selectedCell){
-      applicationID = parseInt(selectedCell.parentElement.parentElement.getElementsByTagName("td")[1].innerHTML.substring(1,6),10);
 
-      for (var i = 0; i < applicationList.length; i++){
-        console.log(i);
-        if(applicationList[i].applicationID.toString() == applicationID.toString()){
-          console.log("found");
-          applicationNum = i;
-        }
-      }
-      inputIncome.value = currentUser.monthlyIncome;
-    }
 
 
     var button_appealRejection = document.getElementById("button_appealRejection");
@@ -174,38 +182,7 @@ function loadDataSet(currentUser){
       }
     }
 
-    //event handler for submit appeal button
-    button_appealRejection.addEventListener("click", function(){
-      if(file_incomeSlip.value!=""){
-        //store the revised income
-        applicantList[currentUserNum].monthlyIncome = inputIncome.value;
-        currentUser.monthlyIncome = inputIncome.value;
 
-
-        //store the uploaded file
-        if (applicationList[applicationNum].attachment!=undefined) {
-          applicationList[applicationNum].attachment[0] = {name:"incomeSlip",item:file_incomeSlip.value}
-        } else(
-          applicationList[applicationNum].attachment.push({name:"incomeSlip",item:file_incomeSlip.value})
-        )
-
-        //update local storage
-
-        //localStorage.application=JSON.stringify(applicationList);
-
-
-        console.log("attachment: " + applicationList[applicationNum].attachment + " end.");
-      }
-      console.log(file_incomeSlip.value);
-      applicationList[applicationNum].status = "appealed";
-
-      localStorage.applicant=JSON.stringify(applicantList);
-      localStorage.application = JSON.stringify(applicationList);
-      localStorage.currentUser = JSON.stringify(currentUser);
-    })
-
-    console.log(applicationList);
-    //console.log(applicantList[applicationNum].attachment[0]);
   };
   submit('key=loadDataSet');
 

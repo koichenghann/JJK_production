@@ -6,7 +6,7 @@ validateUser();
 
 
 function scrollToMain(){
-  document.getElementById("form_main").scrollIntoView();
+  //document.getElementById("form_main").scrollIntoView();
 }
 document.getElementById("form_main").addEventListener("mouseover", function(){scrollToMain(); console.log("scrolled");});
 

@@ -87,7 +87,7 @@ INSERT INTO Application VALUES
 (6, 1, 'R001', '2017-6-15', '10', '2020', 'new'),
 (7, 1, 'R001', '2017-6-15', '10', '2020', 'new'),
 (8, 1, 'R001', '2017-6-15', '10', '2020', 'new');
-drop table application;
+
 CREATE TABLE ApplicationAttachment (
 	attachmentID int,
     applicationID int,
