@@ -1,0 +1,177 @@
+/*Navbar logo*/
+.fa-home{
+  color: #ffbb33;
+}
+
+.carousel{
+  margin-top: 6vh;
+}
+
+.carousel-inner img{
+  width: 100%;
+  height: 45em;
+}
+
+.carousel-caption {
+  position: absolute;
+  top:56%;
+  transform: translateY(-30%);
+}
+
+.carousel-caption h1 {
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 300;
+}
+
+.btn-primary{
+  background-color: #6648b1;
+  border: 1px solid #6648b1;
+}
+
+.btn-primary:hover {
+  background-color: #563d7c;
+  border: 1px solid #563d7c;
+}
+
+
+.spaceBetweenNavAndMain{
+  height:6vh;
+}
+
+
+.newResidenceList{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fa-search{
+  font-size: 20px;
+}
+.btn-default{
+    background: #ffbb33!important;
+    width: 100px;
+    padding: 12.5px;
+    border-top-left-radius:0!important;
+    border-bottom-left-radius:0!important;
+   }
+
+.btn-default:hover{
+  background: #ff8800!important;
+}
+
+.viewHousingList{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card{
+  min-height: 100%;
+  border:none!important;
+}
+
+.box_shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.card a:hover{
+  text-decoration: none!important;
+}
+
+
+.social a{
+  font-size: 4rem;
+  padding: 1em;
+}
+.fa-facebook{
+  transition:0.4s;
+  transition-timing-function:ease;
+  color: #3b5998;
+}
+.fa-twitter{
+  transition:0.4s;
+  transition-timing-function:ease;
+  color: #00aced;
+}
+.fa-instagram{
+  transition:0.5s;
+  transition-timing-function:ease;
+  color: #517fa4;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover{
+  color: #d5d5d5;
+  font-size: 4.5rem;
+
+}
+
+/*Media queries for index.html*/
+@media (max-width: 992px){
+.carousel-inner img{
+    width: 100%;
+    height: 32em;
+  }
+
+  .carousel-caption h1 {
+    font-size: 300%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #000;
+  }
+
+  .carousel-caption h2 {
+    font-size: 200%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #000;
+  }
+
+  .carousel-caption h3 {
+    font-size: 100%;
+    font-weight: 300;
+  }
+}
+
+
+@media (max-width: 768px){
+  .carousel-inner img{
+      width: 100%;
+      height: 28em;
+    }
+
+    .carousel-caption h2 {
+      font-size: 150%;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 10px #000;
+    }
+
+    .carousel-caption h3 {
+      font-size: 80%;
+      font-weight: 300;
+    }
+}
+
+@media (max-width: 576px){
+  .carousel-inner img{
+      width: 100%;
+      height: 22em;
+    }
+
+    .carousel-caption h2 {
+      font-size: 150%;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 10px #000;
+    }
+
+    .carousel-caption h3 {
+      font-size: 80%;
+      font-weight: 300;
+    }
+
+
+    .btn_title{
+      visibility: hidden;
+    }
+}

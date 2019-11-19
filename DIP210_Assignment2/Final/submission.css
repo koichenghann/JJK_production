@@ -1,0 +1,25 @@
+.fa-home{
+  color: #ffbb33;
+}
+.page-header {
+  background-image:url("pic/KLCC18_9_bla.jpg");
+	background-repeat:no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position:50% 30%;
+}
+.page-caption {
+  padding-top: 8vh;
+  padding-bottom: 11vh;
+}
+.page-title { font-size: 3.5em;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 320;
+  text-align: center;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.box_shadow{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
