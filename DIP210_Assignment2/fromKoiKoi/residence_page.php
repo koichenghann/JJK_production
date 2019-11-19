@@ -33,7 +33,6 @@
   //key declaration, to get pointing value
   $key = $_POST['key'];
 
-
   //switch case statement to specific internal function to be triggered
   switch($key){
 
@@ -49,7 +48,10 @@
 
     case 'getAllResidences':
       echo getAllResidences($conn, $currentUser);
+      break;
 
+    case 'getSelectedResidence':
+      echo getSelectedResidence();
   }
 
   //function to validate user and return currectUserType
@@ -86,86 +88,11 @@
 
   //$result = mysqli_query($conn, $sql); /*database connection , database sql query code*/
 
-
-
   //run this statement if the num of row is bigger than 0
-
-
-
-
-
-
-
 
   //if failed to connect to database
   if ( $conn->connect_error)
   {
 	   die (" Connection failure" );
   }
-
-
-
-
-
-
-
-
-
-/*
-  if($districtArea=='Damansara'){
-    $sql = "SELECT * FROM residence WHERE address LIKE "%50490%";" ;
-    $results = $conn->query($sql);
-
-
-    echo "<script type="text/javascript">
-
-
-    </script>";
-  }
-
-  elseif($districtArea=='Seputeh'){
-
-  }
-
-  elseif($districtArea=='Segambut'){
-
-  }
-
-  elseif($districtArea=='Kepong'){
-
-  }
-
-  elseif($districtArea=='KLCC'){
-
-  }
-
-  elseif($districtArea=='Setiawangsa'){
-
-  }
-
-  elseif($districtArea=='Bandar Tun Razak'){
-
-  }
-
-  elseif($districtArea=='Sungai Besi'){
-
-  }
-  else{
-    echo "SEARCH ERROR";
-  }
-
-*/
-
-
-/*
-  if ($resultCheck >0) {
-    //fetch each row of data into an array
-    while($row = mysqli_fetch_assoc($result)){
-      $residenceID = $row['residenceID'];
-      $residenceName = $row['residenceName'];
-
-      echo "<br>".$row['residenceID']." : ".$row['residenceName']."<br>";
-    }
-  }
-  */
 ?>
